@@ -9,7 +9,9 @@ import { cn } from '@/lib/cn'
 import { formatTime } from '@/lib/formatTime'
 import type { PitchDrill } from '@/types/content'
 
+import { RecordingPlayback, RecordingToggle } from './RecordingControls'
 import { TimerDisplay } from './TimerDisplay'
+import { useAudioRecorder } from './useAudioRecorder'
 import { useCountdown } from './useCountdown'
 
 type Phase = 'setup' | 'speaking' | 'reflection'
@@ -26,7 +28,12 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
   const [drillId, setDrillId] = useState(firstDrill.id)
   const [duration, setDuration] = useState(firstDrill.durations[0] ?? FALLBACK_DURATION_SECONDS)
   const [phase, setPhase] = useState<Phase>('setup')
-  const countdown = useCountdown(() => setPhase('reflection'))
+  const [recordEnabled, setRecordEnabled] = useState(false)
+  const recorder = useAudioRecorder()
+  const countdown = useCountdown(() => {
+    recorder.stop()
+    setPhase('reflection')
+  })
 
   const drill = pitchDrills.find((candidate) => candidate.id === drillId) ?? firstDrill
 
@@ -40,15 +47,18 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
   const startSpeaking = () => {
     setPhase('speaking')
     countdown.start(duration)
+    if (recordEnabled) void recorder.start()
   }
 
   const finishEarly = () => {
     countdown.stop()
+    recorder.stop()
     setPhase('reflection')
   }
 
   const resetDrill = () => {
     countdown.reset()
+    recorder.reset()
     setPhase('setup')
   }
 
@@ -103,6 +113,12 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
             </div>
           </div>
 
+          <RecordingToggle
+            enabled={recordEnabled}
+            onToggle={() => setRecordEnabled((value) => !value)}
+            isSupported={recorder.isSupported}
+          />
+
           <Button onClick={startSpeaking}>Los geht's!</Button>
         </div>
       )}
@@ -116,6 +132,11 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
             remainingSeconds={countdown.remainingSeconds}
             totalSeconds={countdown.totalSeconds}
           />
+          {recorder.isRecording && (
+            <p className="text-center text-xs font-medium text-red-600 dark:text-red-400">
+              ● Aufnahme läuft (lokal)
+            </p>
+          )}
           <div className="flex justify-center gap-2">
             <Button variant="secondary" onClick={finishEarly}>
               Fertig
@@ -127,7 +148,12 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
         </div>
       )}
 
-      {phase === 'reflection' && <ReflectionChecklist drill={drill} onRestart={resetDrill} />}
+      {phase === 'reflection' && (
+        <div className="space-y-4">
+          <RecordingPlayback audioUrl={recorder.audioUrl} error={recorder.error} />
+          <ReflectionChecklist drill={drill} onRestart={resetDrill} />
+        </div>
+      )}
     </Card>
   )
 }

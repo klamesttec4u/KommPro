@@ -7,6 +7,7 @@ import {
   ChatIcon,
   HomeIcon,
   MicIcon,
+  NotebookIcon,
   PresentationIcon,
 } from '@/components/ui/icons'
 import { modules } from '@/data/modules'
@@ -93,6 +94,12 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           <NavLink to={routes.training()} className={navLinkClasses} onClick={onNavigate}>
             <MicIcon className="h-4 w-4" />
             Trainingscenter
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={routes.myAnswers()} className={navLinkClasses} onClick={onNavigate}>
+            <NotebookIcon className="h-4 w-4" />
+            Meine Antworten
           </NavLink>
         </li>
       </ul>

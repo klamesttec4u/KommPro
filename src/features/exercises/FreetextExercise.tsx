@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { ChecklistItem } from '@/components/ui/ChecklistItem'
 import { FeedbackPanel } from '@/components/ui/FeedbackPanel'
+import { useProgressStore } from '@/features/progress/store'
 import type { Exercise } from '@/types/content'
 
 import type { ExerciseComponentProps } from './types'
@@ -15,11 +16,20 @@ export function FreetextExercise({
   exercise,
   onAnswered,
 }: ExerciseComponentProps<FreetextExerciseContent>) {
+  const savedAnswer = useProgressStore((state) => state.freetextAnswers[exercise.id])
+  const saveFreetextAnswer = useProgressStore((state) => state.saveFreetextAnswer)
+
   const [phase, setPhase] = useState<Phase>('writing')
-  const [answer, setAnswer] = useState('')
+  // Prefill with the previously saved answer so learners can refine it over time
+  const [answer, setAnswer] = useState(savedAnswer ?? '')
   const [checkedItems, setCheckedItems] = useState<boolean[]>(() =>
     exercise.checklist.map(() => false),
   )
+
+  const startReview = () => {
+    saveFreetextAnswer(exercise.id, answer)
+    setPhase('review')
+  }
 
   const toggleItem = (index: number) => {
     if (phase === 'done') return
@@ -46,7 +56,7 @@ export function FreetextExercise({
       />
 
       {phase === 'writing' && (
-        <Button onClick={() => setPhase('review')} disabled={answer.trim().length === 0}>
+        <Button onClick={startReview} disabled={answer.trim().length === 0}>
           Mit Musterlösung vergleichen
         </Button>
       )}
@@ -81,7 +91,8 @@ export function FreetextExercise({
             {phase === 'done' && (
               <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
                 {checkedItems.filter(Boolean).length} von {exercise.checklist.length} Kriterien
-                erfüllt – gut gemacht, Selbstreflexion ist der wichtigste Schritt!
+                erfüllt – gut gemacht, Selbstreflexion ist der wichtigste Schritt! Deine Antwort
+                findest du jederzeit unter „Meine Antworten".
               </p>
             )}
           </div>

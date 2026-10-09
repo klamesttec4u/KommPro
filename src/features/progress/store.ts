@@ -11,8 +11,11 @@ export interface ExerciseResult {
 interface ProgressState {
   exerciseResults: Record<string, ExerciseResult>
   completedLessons: string[]
+  /** The learner's own freetext answers, kept as a personal prep dossier */
+  freetextAnswers: Record<string, string>
   recordExerciseResult: (exerciseId: string, result: ExerciseResult) => void
   markLessonCompleted: (lessonId: string) => void
+  saveFreetextAnswer: (exerciseId: string, answer: string) => void
   resetProgress: () => void
 }
 
@@ -21,6 +24,7 @@ export const useProgressStore = create<ProgressState>()(
     (set) => ({
       exerciseResults: {},
       completedLessons: [],
+      freetextAnswers: {},
       recordExerciseResult: (exerciseId, result) =>
         set((state) => ({
           exerciseResults: { ...state.exerciseResults, [exerciseId]: result },
@@ -31,7 +35,13 @@ export const useProgressStore = create<ProgressState>()(
             ? state
             : { completedLessons: [...state.completedLessons, lessonId] },
         ),
-      resetProgress: () => set({ exerciseResults: {}, completedLessons: [] }),
+      saveFreetextAnswer: (exerciseId, answer) =>
+        set((state) =>
+          answer.trim().length === 0
+            ? state
+            : { freetextAnswers: { ...state.freetextAnswers, [exerciseId]: answer } },
+        ),
+      resetProgress: () => set({ exerciseResults: {}, completedLessons: [], freetextAnswers: {} }),
     }),
     {
       name: 'kommpro-progress',
@@ -42,6 +52,7 @@ export const useProgressStore = create<ProgressState>()(
         const candidate = persisted as Partial<ProgressState> | null | undefined
         const exerciseResults = candidate?.exerciseResults
         const completedLessons = candidate?.completedLessons
+        const freetextAnswers = candidate?.freetextAnswers
         return {
           ...current,
           exerciseResults:
@@ -53,6 +64,12 @@ export const useProgressStore = create<ProgressState>()(
           completedLessons: Array.isArray(completedLessons)
             ? completedLessons.filter((id): id is string => typeof id === 'string')
             : current.completedLessons,
+          freetextAnswers:
+            freetextAnswers !== null &&
+            typeof freetextAnswers === 'object' &&
+            !Array.isArray(freetextAnswers)
+              ? freetextAnswers
+              : current.freetextAnswers,
         }
       },
     },

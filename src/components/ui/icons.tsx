@@ -59,6 +59,17 @@ export function MicIcon(props: IconProps) {
   )
 }
 
+export function NotebookIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5z" />
+      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+      <path d="M8 13h8" />
+      <path d="M8 17h5" />
+    </Icon>
+  )
+}
+
 export function BriefcaseIcon(props: IconProps) {
   return (
     <Icon {...props}>

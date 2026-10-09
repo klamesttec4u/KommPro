@@ -68,6 +68,19 @@ export type Exercise =
 
 export type ExerciseKind = Exercise['kind']
 
+/** One recruiter question for the interview trainer drill. */
+export interface InterviewQuestion {
+  id: string
+  /** Approximate minute in the reference call, for orientation */
+  minute: number
+  /** Who asks, e.g. "Projektleitung" or "Architekt" */
+  interviewer: string
+  question: string
+  idealAnswer: string
+  /** Self-assessment criteria shown after answering */
+  checklist: string[]
+}
+
 /** Presentation drill: free-speech prompt practiced against a timer. */
 export interface PitchDrill {
   id: string
