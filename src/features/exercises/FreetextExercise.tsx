@@ -44,15 +44,16 @@ export function FreetextExercise({
 
   return (
     <div className="space-y-4">
-      <p className="font-medium whitespace-pre-line">{exercise.task}</p>
+      <p className="text-lg leading-snug font-semibold whitespace-pre-line">{exercise.task}</p>
 
       <textarea
         value={answer}
         onChange={(event) => setAnswer(event.target.value)}
         placeholder={exercise.placeholder}
         readOnly={phase !== 'writing'}
-        rows={6}
-        className="w-full rounded-lg border border-slate-300 bg-white p-3 text-sm leading-relaxed outline-brand-500 focus-visible:outline-2 read-only:opacity-70 dark:border-slate-700 dark:bg-slate-800"
+        rows={7}
+        aria-label="Deine Antwort"
+        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 font-serif text-[1.0625rem] leading-[1.7] outline-brand-500 placeholder:font-sans placeholder:text-slate-400 focus-visible:outline-2 read-only:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:read-only:bg-slate-800/60"
       />
 
       {phase === 'writing' && (
@@ -64,12 +65,15 @@ export function FreetextExercise({
       {phase !== 'writing' && (
         <>
           <FeedbackPanel tone="info" title="Musterlösung">
-            <p className="whitespace-pre-line">{exercise.sampleSolution}</p>
+            <p className="font-serif text-[1.0625rem] leading-[1.7] whitespace-pre-line">
+              {exercise.sampleSolution}
+            </p>
           </FeedbackPanel>
 
-          <div className="rounded-lg border border-slate-200 p-4 dark:border-slate-700">
-            <p className="mb-3 text-sm font-semibold">
-              Selbstbewertung: Was trifft auf deine Antwort zu?
+          <div className="rounded-lg border border-slate-200 p-5 dark:border-slate-700">
+            <p className="font-semibold">Was trifft auf deine Antwort zu?</p>
+            <p className="mt-0.5 mb-3 text-sm text-slate-600 dark:text-slate-400">
+              Hake ehrlich ab, was du schon erfüllt hast.
             </p>
             <ul className="space-y-2">
               {exercise.checklist.map((item, index) => (
@@ -91,8 +95,8 @@ export function FreetextExercise({
             {phase === 'done' && (
               <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
                 {checkedItems.filter(Boolean).length} von {exercise.checklist.length} Kriterien
-                erfüllt – gut gemacht, Selbstreflexion ist der wichtigste Schritt! Deine Antwort
-                findest du jederzeit unter „Meine Antworten".
+                erfüllt. Deine Antwort ist unter „Meine Antworten“ gespeichert, dort kannst du sie
+                später mit der Musterlösung vergleichen.
               </p>
             )}
           </div>

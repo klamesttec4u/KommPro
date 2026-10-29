@@ -1,43 +1,48 @@
 import { Link, useParams } from 'react-router-dom'
 
 import { routes } from '@/app/routes'
+import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { Card } from '@/components/ui/Card'
 import { PageHeader } from '@/components/ui/PageHeader'
-import { ArrowLeftIcon, ArrowRightIcon, CheckCircleIcon } from '@/components/ui/icons'
-import { findModule } from '@/data/modules'
+import { ArrowRightIcon, CheckIcon } from '@/components/ui/icons'
+import { findModule, trackLabel } from '@/data/modules'
 import { useLessonProgress } from '@/features/progress/hooks'
+import { lessonReadingMinutes } from '@/lib/readingTime'
 import type { Lesson, Module } from '@/types/content'
-
-const categoryLabels: Record<Module['category'], string> = {
-  communication: 'Kommunikation',
-  presentation: 'Präsentation',
-  consulting: 'IT Consulting',
-}
 
 function LessonItem({ module, lesson, index }: { module: Module; lesson: Lesson; index: number }) {
   const progress = useLessonProgress(lesson)
+  const isStarted = progress.answeredExercises > 0 && !progress.isCompleted
+
   return (
     <li>
-      <Link to={routes.lesson(module.id, lesson.id)}>
-        <Card className="flex items-center gap-4 p-4 transition-colors hover:border-brand-400 dark:hover:border-brand-600">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700 dark:bg-brand-950 dark:text-brand-300">
-            {index + 1}
-          </span>
-          <div className="min-w-0 flex-1">
-            <p className="truncate font-medium">{lesson.title}</p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              {lesson.exercises.length} Übungen
-              {progress.answeredExercises > 0 &&
-                !progress.isCompleted &&
-                ` · ${progress.answeredExercises} bearbeitet`}
-            </p>
-          </div>
-          {progress.isCompleted ? (
-            <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-500" />
-          ) : (
-            <ArrowRightIcon className="h-5 w-5 shrink-0 text-slate-400" />
-          )}
-        </Card>
+      <Link
+        to={routes.lesson(module.id, lesson.id)}
+        className="group flex items-center gap-4 px-5 py-4 outline-brand-500 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:-outline-offset-2 dark:hover:bg-slate-800/60"
+      >
+        {/* Lessons build on each other, so their order is shown */}
+        <span
+          className={
+            progress.isCompleted
+              ? 'flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white dark:bg-brand-400 dark:text-brand-950'
+              : 'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-300 text-sm font-bold text-slate-600 tabular-nums dark:border-slate-600 dark:text-slate-300'
+          }
+        >
+          {progress.isCompleted ? <CheckIcon className="h-4 w-4" /> : index + 1}
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="font-semibold group-hover:text-brand-700 dark:group-hover:text-brand-300">
+            {lesson.title}
+          </p>
+          <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
+            {progress.isCompleted
+              ? 'Abgeschlossen'
+              : isStarted
+                ? `${progress.answeredExercises} von ${progress.totalExercises} Übungen bearbeitet`
+                : `ca. ${lessonReadingMinutes(lesson)} Min. lesen, ${lesson.exercises.length} Übungen`}
+          </p>
+        </div>
+        <ArrowRightIcon className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-brand-600" />
       </Link>
     </li>
   )
@@ -51,7 +56,7 @@ export function ModulePage() {
     return (
       <PageHeader
         title="Modul nicht gefunden"
-        eyebrow={<BackToDashboardLink />}
+        eyebrow={<Breadcrumb items={[{ label: 'Übersicht', to: routes.dashboard() }]} />}
         description="Dieses Modul existiert nicht. Wähle links ein Modul aus der Liste."
       />
     )
@@ -61,30 +66,26 @@ export function ModulePage() {
     <>
       <PageHeader
         eyebrow={
-          <span className="text-xs font-semibold tracking-wide text-brand-600 uppercase dark:text-brand-400">
-            {categoryLabels[module.category]}
-          </span>
+          <Breadcrumb
+            items={[
+              { label: 'Übersicht', to: routes.dashboard() },
+              { label: trackLabel(module.category) },
+            ]}
+          />
         }
         title={module.title}
         description={module.description}
       />
-      <ul className="space-y-3">
-        {module.lessons.map((lesson, index) => (
-          <LessonItem key={lesson.id} module={module} lesson={lesson} index={index} />
-        ))}
-      </ul>
+      <h2 className="mb-3 text-sm text-slate-500 dark:text-slate-400">
+        {module.lessons.length} Lektionen
+      </h2>
+      <Card>
+        <ul className="divide-y divide-slate-200 dark:divide-slate-800">
+          {module.lessons.map((lesson, index) => (
+            <LessonItem key={lesson.id} module={module} lesson={lesson} index={index} />
+          ))}
+        </ul>
+      </Card>
     </>
-  )
-}
-
-function BackToDashboardLink() {
-  return (
-    <Link
-      to={routes.dashboard()}
-      className="inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:underline dark:text-brand-400"
-    >
-      <ArrowLeftIcon className="h-4 w-4" />
-      Zum Dashboard
-    </Link>
   )
 }

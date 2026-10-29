@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
 import { ChecklistItem } from '@/components/ui/ChecklistItem'
 import { RotateCcwIcon, TimerIcon } from '@/components/ui/icons'
 import { pitchDrills } from '@/data/drills'
@@ -9,8 +8,9 @@ import { cn } from '@/lib/cn'
 import { formatTime } from '@/lib/formatTime'
 import type { PitchDrill } from '@/types/content'
 
-import { RecordingPlayback, RecordingToggle } from './RecordingControls'
+import { RecordingIndicator, RecordingPlayback, RecordingToggle } from './RecordingControls'
 import { TimerDisplay } from './TimerDisplay'
+import { TrainingCard } from './TrainingCard'
 import { useAudioRecorder } from './useAudioRecorder'
 import { useCountdown } from './useCountdown'
 
@@ -63,18 +63,14 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
   }
 
   return (
-    <Card className="p-5 sm:p-6">
-      <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold">
-        <TimerIcon className="h-5 w-5 text-brand-600 dark:text-brand-400" />
-        Pitch-Timer
-      </h2>
-      <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">
-        Wähle eine Aufgabe und eine Dauer – dann sprich laut und frei, bis die Zeit abläuft.
-      </p>
-
+    <TrainingCard
+      icon={<TimerIcon className="h-5 w-5" />}
+      title="Pitch-Timer"
+      description="Wähle eine Aufgabe und eine Dauer. Dann sprich laut und frei, bis die Zeit abläuft."
+    >
       {phase === 'setup' && (
         <div className="space-y-5">
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {pitchDrills.map((candidate) => (
               <button
                 key={candidate.id}
@@ -82,14 +78,14 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
                 aria-pressed={candidate.id === drillId}
                 onClick={() => selectDrill(candidate.id)}
                 className={cn(
-                  'w-full cursor-pointer rounded-lg border px-4 py-3 text-left transition-colors',
+                  'w-full cursor-pointer rounded-lg border px-4 py-3.5 text-left transition-colors outline-brand-500 focus-visible:outline-2 focus-visible:outline-offset-2',
                   candidate.id === drillId
-                    ? 'border-brand-500 bg-brand-50 dark:border-brand-500 dark:bg-brand-950/40'
-                    : 'border-slate-300 hover:border-brand-400 dark:border-slate-700 dark:hover:border-brand-600',
+                    ? 'border-brand-600 bg-brand-50 ring-1 ring-brand-600 dark:border-brand-400 dark:bg-brand-950/40 dark:ring-brand-400'
+                    : 'border-slate-300 bg-white hover:border-brand-500 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-brand-400',
                 )}
               >
-                <p className="text-sm font-medium">{candidate.title}</p>
-                <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-400">
+                <p className="font-semibold">{candidate.title}</p>
+                <p className="mt-0.5 text-sm text-slate-600 dark:text-slate-400">
                   {candidate.description}
                 </p>
               </button>
@@ -97,7 +93,7 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
           </div>
 
           <div>
-            <p className="mb-2 text-sm font-medium">Dauer</p>
+            <p className="mb-2 font-semibold">Dauer</p>
             <div className="flex flex-wrap gap-2">
               {drill.durations.map((seconds) => (
                 <Button
@@ -119,24 +115,20 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
             isSupported={recorder.isSupported}
           />
 
-          <Button onClick={startSpeaking}>Los geht's!</Button>
+          <Button onClick={startSpeaking}>Timer starten</Button>
         </div>
       )}
 
       {phase === 'speaking' && (
         <div className="space-y-5 py-4">
-          <p className="text-center text-sm font-medium text-slate-600 dark:text-slate-400">
-            {drill.title} – sprich jetzt laut!
+          <p className="text-center font-semibold text-slate-600 dark:text-slate-300">
+            {drill.title}: Sprich jetzt laut.
           </p>
           <TimerDisplay
             remainingSeconds={countdown.remainingSeconds}
             totalSeconds={countdown.totalSeconds}
           />
-          {recorder.isRecording && (
-            <p className="text-center text-xs font-medium text-red-600 dark:text-red-400">
-              ● Aufnahme läuft (lokal)
-            </p>
-          )}
+          {recorder.isRecording && <RecordingIndicator />}
           <div className="flex justify-center gap-2">
             <Button variant="secondary" onClick={finishEarly}>
               Fertig
@@ -154,7 +146,7 @@ function PitchTimerInner({ firstDrill }: { firstDrill: PitchDrill }) {
           <ReflectionChecklist drill={drill} onRestart={resetDrill} />
         </div>
       )}
-    </Card>
+    </TrainingCard>
   )
 }
 
@@ -168,7 +160,7 @@ function ReflectionChecklist({ drill, onRestart }: { drill: PitchDrill; onRestar
 
   return (
     <div className="space-y-4">
-      <p className="font-medium">Zeit um! Kurze Selbstreflexion:</p>
+      <p className="font-semibold">Zeit um. Was ist dir gelungen?</p>
       <ul className="space-y-2">
         {drill.reflectionChecklist.map((item, index) => (
           <ChecklistItem

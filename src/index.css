@@ -1,18 +1,37 @@
 @import 'tailwindcss';
 
-/* Brand palette: professional business blue (indigo scale) */
+/*
+ * Palette: ink-blue text on cool paper, petrol for everything you can act on,
+ * a highlighter yellow reserved for key takeaways only, and muted good/critical
+ * tones for examples and feedback.
+ */
 @theme {
-  --color-brand-50: #eef2ff;
-  --color-brand-100: #e0e7ff;
-  --color-brand-200: #c7d2fe;
-  --color-brand-300: #a5b4fc;
-  --color-brand-400: #818cf8;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
-  --color-brand-950: #1e1b4b;
+  --font-sans: 'Atkinson Hyperlegible Next Variable', ui-sans-serif, system-ui, sans-serif;
+  /* Reserved for example wording: what you would actually say or write */
+  --font-serif: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
+
+  --color-ink: #16213a;
+  --color-paper: #f6f7f9;
+
+  /* Petrol */
+  --color-brand-50: #eef8f8;
+  --color-brand-100: #d3eeee;
+  --color-brand-200: #a8dcdd;
+  --color-brand-300: #72c2c4;
+  --color-brand-400: #3aa5aa;
+  --color-brand-500: #178a90;
+  --color-brand-600: #0e6e74;
+  --color-brand-700: #0b5a5f;
+  --color-brand-800: #0a4a4e;
+  --color-brand-900: #093d41;
+  --color-brand-950: #052528;
+
+  --color-marker: #ffe27a;
+
+  --color-good: #2f7d4f;
+  --color-good-soft: #eaf4ee;
+  --color-bad: #b4443a;
+  --color-bad-soft: #fbedeb;
 }
 
 @layer base {
@@ -21,6 +40,46 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    @apply bg-paper font-sans text-ink antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Highlighter stroke over the lower part of each line, wraps across lines */
+  .marker {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 50%,
+      var(--color-marker) 50%,
+      var(--color-marker) 92%,
+      transparent 92%
+    );
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .marker {
+      background-image: linear-gradient(
+        to bottom,
+        transparent 8%,
+        rgb(255 226 122 / 0.2) 8%,
+        rgb(255 226 122 / 0.2) 96%,
+        transparent 96%
+      );
+    }
   }
 }

@@ -12,8 +12,13 @@ export function RecordingToggle({ enabled, onToggle, isSupported }: RecordingTog
   return (
     <ul>
       <ChecklistItem checked={enabled} onToggle={onToggle}>
-        Aufnahme aktivieren – nimm dich beim Sprechen auf und höre dich danach an. Die Aufnahme
-        bleibt lokal in deinem Browser und wird nach der Runde verworfen.
+        <span>
+          <span className="font-semibold">Aufnahme aktivieren</span>
+          <span className="block text-sm text-slate-600 dark:text-slate-400">
+            Hör dich danach an. Die Aufnahme bleibt lokal in deinem Browser und wird nach der Runde
+            verworfen.
+          </span>
+        </span>
       </ChecklistItem>
     </ul>
   )
@@ -30,10 +35,20 @@ export function RecordingPlayback({ audioUrl, error }: RecordingPlaybackProps) {
   if (!audioUrl) return null
   return (
     <div>
-      <p className="mb-2 text-sm font-medium">
-        Deine Aufnahme – hör besonders auf Füllwörter, Tempo und Pausen:
+      <p className="mb-2 text-sm font-semibold">
+        Deine Aufnahme: Achte auf Füllwörter, Tempo und Pausen.
       </p>
       <audio controls src={audioUrl} className="w-full" />
     </div>
+  )
+}
+
+/** Live hint while the microphone is recording. */
+export function RecordingIndicator() {
+  return (
+    <p className="flex items-center justify-center gap-2 text-sm font-semibold text-bad dark:text-red-400">
+      <span aria-hidden="true" className="h-2.5 w-2.5 animate-pulse rounded-full bg-current" />
+      Aufnahme läuft (nur lokal)
+    </p>
   )
 }

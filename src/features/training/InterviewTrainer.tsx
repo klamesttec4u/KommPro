@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
 import { ChecklistItem } from '@/components/ui/ChecklistItem'
 import { FeedbackPanel } from '@/components/ui/FeedbackPanel'
 import { ProgressBar } from '@/components/ui/ProgressBar'
@@ -9,8 +8,9 @@ import { ArrowRightIcon, ChatIcon, CheckCircleIcon, RotateCcwIcon } from '@/comp
 import { interviewQuestions } from '@/data/interview'
 import type { InterviewQuestion } from '@/types/content'
 
-import { RecordingPlayback, RecordingToggle } from './RecordingControls'
+import { RecordingIndicator, RecordingPlayback, RecordingToggle } from './RecordingControls'
 import { TimerDisplay } from './TimerDisplay'
+import { TrainingCard } from './TrainingCard'
 import { useAudioRecorder } from './useAudioRecorder'
 import { useCountdown } from './useCountdown'
 
@@ -67,17 +67,11 @@ export function InterviewTrainer() {
   }
 
   return (
-    <Card className="p-5 sm:p-6">
-      <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold">
-        <ChatIcon className="h-5 w-5 text-brand-600 dark:text-brand-400" />
-        Interview-Trainer
-      </h2>
-      <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">
-        Die {interviewQuestions.length} Recruiter-Fragen aus dem Referenzgespräch – ohne sichtbare
-        Muster-Antwort. Antworte laut, erst danach siehst du die Ideal-Antwort und bewertest dich
-        selbst.
-      </p>
-
+    <TrainingCard
+      icon={<ChatIcon className="h-5 w-5" />}
+      title="Interview-Trainer"
+      description={`Die ${interviewQuestions.length} Fragen aus dem Referenzgespräch, eine nach der anderen. Du antwortest laut, erst danach siehst du die Musterantwort und bewertest dich selbst.`}
+    >
       {phase === 'intro' && (
         <div className="space-y-5">
           <RecordingToggle
@@ -95,21 +89,23 @@ export function InterviewTrainer() {
       {phase !== 'intro' && phase !== 'done' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between gap-4">
-            <p className="text-sm font-medium text-slate-600 dark:text-slate-400">
+            <p className="text-sm font-semibold tabular-nums">
               Frage {questionIndex + 1} von {interviewQuestions.length}
             </p>
-            <span className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-              Min. {question.minute} · {question.interviewer}
+            <span className="text-sm text-slate-500 dark:text-slate-400">
+              im Original etwa Minute {question.minute}
             </span>
           </div>
           <ProgressBar percent={(questionIndex / interviewQuestions.length) * 100} />
 
-          <div className="rounded-lg border border-slate-200 bg-slate-100/70 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-            <p className="mb-1 text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400">
+          <figure className="rounded-lg bg-slate-100 px-5 py-4 dark:bg-slate-800/60">
+            <figcaption className="text-sm font-semibold text-slate-600 dark:text-slate-300">
               {question.interviewer} fragt
-            </p>
-            <p className="font-medium">„{question.question}"</p>
-          </div>
+            </figcaption>
+            <blockquote className="mt-1.5 font-serif text-xl leading-snug">
+              „{question.question}“
+            </blockquote>
+          </figure>
 
           {phase === 'question' && (
             <Button onClick={startAnswer}>
@@ -124,11 +120,7 @@ export function InterviewTrainer() {
                 remainingSeconds={countdown.remainingSeconds}
                 totalSeconds={countdown.totalSeconds}
               />
-              {recorder.isRecording && (
-                <p className="text-center text-xs font-medium text-red-600 dark:text-red-400">
-                  ● Aufnahme läuft (lokal)
-                </p>
-              )}
+              {recorder.isRecording && <RecordingIndicator />}
               <div className="flex justify-center">
                 <Button variant="secondary" onClick={finishAnswer}>
                   Fertig
@@ -139,8 +131,10 @@ export function InterviewTrainer() {
 
           {phase === 'reveal' && (
             <div className="space-y-4">
-              <FeedbackPanel tone="success" title="Ideale Muster-Antwort">
-                <p className="whitespace-pre-line">{question.idealAnswer}</p>
+              <FeedbackPanel tone="info" title="Musterantwort">
+                <p className="font-serif text-[1.0625rem] leading-[1.7] whitespace-pre-line">
+                  {question.idealAnswer}
+                </p>
               </FeedbackPanel>
               <RecordingPlayback audioUrl={recorder.audioUrl} error={recorder.error} />
               <SelfCheck key={question.id} question={question} />
@@ -157,11 +151,9 @@ export function InterviewTrainer() {
 
       {phase === 'done' && (
         <div className="space-y-4 py-4 text-center">
-          <CheckCircleIcon className="mx-auto h-12 w-12 text-emerald-500" />
-          <p className="font-semibold">
-            Interview durchgespielt – alle {interviewQuestions.length} Fragen beantwortet!
-          </p>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
+          <CheckCircleIcon className="mx-auto h-12 w-12 text-good dark:text-emerald-400" />
+          <p className="text-xl font-bold">Alle {interviewQuestions.length} Fragen beantwortet</p>
+          <p className="mx-auto max-w-[52ch] text-slate-600 dark:text-slate-400">
             Tipp: Wiederhole die Fragen, bei denen du ins Stocken geraten bist, bis die Antworten
             sitzen – am besten einmal pro Tag bis zum Gespräch.
           </p>
@@ -171,7 +163,7 @@ export function InterviewTrainer() {
           </Button>
         </div>
       )}
-    </Card>
+    </TrainingCard>
   )
 }
 
@@ -185,8 +177,8 @@ function SelfCheck({ question }: { question: InterviewQuestion }) {
     setCheckedItems((items) => items.map((checked, i) => (i === index ? !checked : checked)))
 
   return (
-    <div className="rounded-lg border border-slate-200 p-4 dark:border-slate-700">
-      <p className="mb-3 text-sm font-semibold">Selbstbewertung: Was traf auf deine Antwort zu?</p>
+    <div className="rounded-lg border border-slate-200 p-5 dark:border-slate-700">
+      <p className="mb-3 font-semibold">Was traf auf deine Antwort zu?</p>
       <ul className="space-y-2">
         {question.checklist.map((item, index) => (
           <ChecklistItem

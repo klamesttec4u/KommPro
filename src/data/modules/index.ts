@@ -1,4 +1,4 @@
-import type { Lesson, Module } from '@/types/content'
+import type { Lesson, Module, ModuleCategory } from '@/types/content'
 
 import { communicationBasics } from './01-communication-basics'
 import { listeningQuestioning } from './02-listening-questioning'
@@ -39,4 +39,24 @@ export function findModule(moduleId: string | undefined): Module | undefined {
 
 export function findLesson(module: Module, lessonId: string | undefined): Lesson | undefined {
   return module.lessons.find((lesson) => lesson.id === lessonId)
+}
+
+export interface Track {
+  category: ModuleCategory
+  label: string
+}
+
+/** The three learning tracks in display order. */
+export const tracks: Track[] = [
+  { category: 'communication', label: 'Kommunikation' },
+  { category: 'presentation', label: 'Präsentation' },
+  { category: 'consulting', label: 'IT Consulting' },
+]
+
+export function trackLabel(category: ModuleCategory): string {
+  return tracks.find((track) => track.category === category)?.label ?? ''
+}
+
+export function modulesInTrack(category: ModuleCategory): Module[] {
+  return modules.filter((module) => module.category === category)
 }

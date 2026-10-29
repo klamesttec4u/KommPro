@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ChoiceButton } from '@/components/ui/ChoiceButton'
+import { ChoiceButton, type ChoiceState } from '@/components/ui/ChoiceButton'
 import { FeedbackPanel } from '@/components/ui/FeedbackPanel'
 import { shuffleArray } from '@/lib/shuffle'
 import type { Exercise, QuizOption } from '@/types/content'
@@ -26,24 +26,23 @@ export function QuizExercise({
 
   return (
     <div className="space-y-4">
-      <p className="font-medium whitespace-pre-line">{exercise.question}</p>
-      <div className="space-y-2">
+      <p className="text-lg leading-snug font-semibold whitespace-pre-line">{exercise.question}</p>
+      <div className="space-y-2.5">
         {options.map((option, index) => {
           const isSelected = selectedOption === option
+          const state: ChoiceState = !isAnswered
+            ? 'idle'
+            : option.correct
+              ? 'best'
+              : isSelected
+                ? 'bad'
+                : 'muted'
           return (
             <ChoiceButton
               key={index}
-              answered={isAnswered}
+              state={state}
+              selected={isSelected}
               onClick={() => handleSelect(option)}
-              className={
-                isAnswered
-                  ? option.correct
-                    ? 'border-emerald-400 bg-emerald-50 dark:border-emerald-700 dark:bg-emerald-950/40'
-                    : isSelected
-                      ? 'border-red-400 bg-red-50 dark:border-red-700 dark:bg-red-950/40'
-                      : 'border-slate-200 opacity-60 dark:border-slate-800'
-                  : undefined
-              }
             >
               {option.text}
             </ChoiceButton>
@@ -53,7 +52,7 @@ export function QuizExercise({
       {selectedOption && (
         <FeedbackPanel
           tone={selectedOption.correct ? 'success' : 'error'}
-          title={selectedOption.correct ? 'Richtig!' : 'Leider nicht richtig.'}
+          title={selectedOption.correct ? 'Richtig' : 'Nicht ganz'}
         >
           {selectedOption.explanation}
         </FeedbackPanel>

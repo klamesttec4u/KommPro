@@ -53,13 +53,16 @@ export function AppLayout() {
         >
           {isSidebarOpen ? <MenuIconToggle open /> : <MenuIconToggle />}
         </button>
-        <span className="text-base font-bold tracking-tight">KommPro</span>
+        <span className="flex items-center gap-2 text-base font-bold tracking-tight">
+          <img src="/favicon.svg" alt="" className="h-6 w-6" />
+          KommPro
+        </span>
       </header>
 
       {/* Mobile drawer backdrop */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 z-30 bg-slate-900/50 lg:hidden"
+          className="fixed inset-0 z-30 bg-ink/50 lg:hidden"
           onClick={closeSidebar}
           aria-hidden="true"
         />
@@ -69,14 +72,14 @@ export function AppLayout() {
       <aside
         id="app-sidebar"
         className={cn(
-          'fixed inset-y-0 left-0 z-40 w-72 border-r border-slate-200 bg-white transition-transform lg:translate-x-0 dark:border-slate-800 dark:bg-slate-900/60',
+          'fixed inset-y-0 left-0 z-40 w-72 border-r border-slate-200 bg-white transition-transform lg:translate-x-0 dark:border-slate-800 dark:bg-slate-900',
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
         <Sidebar onNavigate={closeSidebar} />
       </aside>
 
-      <main className="min-w-0 flex-1 px-4 py-8 sm:px-8 lg:ml-72 lg:px-12">
+      <main className="min-w-0 flex-1 px-4 pt-8 pb-16 sm:px-8 lg:ml-72 lg:px-12 lg:pt-12">
         <div className="mx-auto max-w-3xl">
           <Outlet />
         </div>

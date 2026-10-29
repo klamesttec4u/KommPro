@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ChoiceButton } from '@/components/ui/ChoiceButton'
+import { ChoiceButton, type ChoiceState } from '@/components/ui/ChoiceButton'
 import { FeedbackPanel, type FeedbackTone } from '@/components/ui/FeedbackPanel'
 import { shuffleArray } from '@/lib/shuffle'
 import type { ChoiceQuality, Exercise, ScenarioChoice } from '@/types/content'
@@ -16,15 +16,19 @@ const qualityTone: Record<ChoiceQuality, FeedbackTone> = {
 }
 
 const qualityTitle: Record<ChoiceQuality, string> = {
-  best: 'Sehr gut – die beste Reaktion!',
-  ok: 'Okay, aber es geht noch besser.',
-  bad: 'Das ist ungünstig.',
+  best: 'Die beste Reaktion',
+  ok: 'Vertretbar, aber es geht besser',
+  bad: 'Ungünstige Reaktion',
 }
 
-const qualityClasses: Record<ChoiceQuality, string> = {
-  best: 'border-emerald-400 bg-emerald-50 dark:border-emerald-700 dark:bg-emerald-950/40',
-  ok: 'border-amber-400 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40',
-  bad: 'border-red-400 bg-red-50 dark:border-red-700 dark:bg-red-950/40',
+// After answering, the picked choice and the best one show their rating; the rest fade
+function choiceState(
+  choice: ScenarioChoice,
+  isSelected: boolean,
+  isAnswered: boolean,
+): ChoiceState {
+  if (!isAnswered) return 'idle'
+  return isSelected || choice.quality === 'best' ? choice.quality : 'muted'
 }
 
 export function ScenarioExercise({
@@ -44,28 +48,22 @@ export function ScenarioExercise({
 
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-slate-200 bg-slate-100/70 p-4 text-sm leading-relaxed whitespace-pre-line dark:border-slate-700 dark:bg-slate-800/60">
-        <p className="mb-1 text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400">
-          Situation
+      <div className="rounded-lg bg-slate-100 px-5 py-4 dark:bg-slate-800/60">
+        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">Situation</p>
+        <p className="mt-1.5 text-[1.0625rem] leading-[1.7] whitespace-pre-line">
+          {exercise.situation}
         </p>
-        {exercise.situation}
       </div>
-      <p className="text-sm font-medium">Wie reagierst du?</p>
-      <div className="space-y-2">
+      <p className="text-lg font-semibold">Wie reagierst du?</p>
+      <div className="space-y-2.5">
         {choices.map((choice, index) => {
           const isSelected = selectedChoice === choice
           return (
             <ChoiceButton
               key={index}
-              answered={isAnswered}
+              state={choiceState(choice, isSelected, isAnswered)}
+              selected={isSelected}
               onClick={() => handleSelect(choice)}
-              className={
-                isAnswered
-                  ? isSelected || choice.quality === 'best'
-                    ? qualityClasses[choice.quality]
-                    : 'border-slate-200 opacity-60 dark:border-slate-800'
-                  : undefined
-              }
             >
               {choice.text}
             </ChoiceButton>

@@ -72,3 +72,21 @@ export function getOverallProgress(modules: Module[], completedLessons: string[]
     percent: toPercent(done, allLessons.length),
   }
 }
+
+export interface NextLesson {
+  module: Module
+  lesson: Lesson
+  /** True once at least one lesson anywhere is completed */
+  hasStarted: boolean
+}
+
+/** First not-yet-completed lesson in display order, or null when everything is done. */
+export function getNextLesson(modules: Module[], completedLessons: string[]): NextLesson | null {
+  const hasStarted = completedLessons.length > 0
+  for (const module of modules) {
+    for (const lesson of module.lessons) {
+      if (!completedLessons.includes(lesson.id)) return { module, lesson, hasStarted }
+    }
+  }
+  return null
+}

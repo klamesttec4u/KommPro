@@ -2,7 +2,12 @@ import { useMemo } from 'react'
 
 import type { Lesson, Module } from '@/types/content'
 
-import { getLessonProgress, getModuleProgress, getOverallProgress } from './selectors'
+import {
+  getLessonProgress,
+  getModuleProgress,
+  getNextLesson,
+  getOverallProgress,
+} from './selectors'
 import { useProgressStore } from './store'
 
 export function useLessonProgress(lesson: Lesson) {
@@ -22,4 +27,9 @@ export function useModuleProgress(module: Module) {
 export function useOverallProgress(modules: Module[]) {
   const completedLessons = useProgressStore((state) => state.completedLessons)
   return useMemo(() => getOverallProgress(modules, completedLessons), [modules, completedLessons])
+}
+
+export function useNextLesson(modules: Module[]) {
+  const completedLessons = useProgressStore((state) => state.completedLessons)
+  return useMemo(() => getNextLesson(modules, completedLessons), [modules, completedLessons])
 }

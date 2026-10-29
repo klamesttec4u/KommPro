@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { ProgressBar } from '@/components/ui/ProgressBar'
+import { ArrowRightIcon } from '@/components/ui/icons'
 import { useProgressStore, type ExerciseResult } from '@/features/progress/store'
 import { assertNever } from '@/lib/assertNever'
 import type { Exercise } from '@/types/content'
@@ -37,9 +38,9 @@ function ExerciseView({
 }
 
 const kindLabels: Record<Exercise['kind'], string> = {
-  quiz: 'Quiz',
-  scenario: 'Szenario',
-  freetext: 'Freitext',
+  quiz: 'Wissensfrage',
+  scenario: 'Situation',
+  freetext: 'Eigene Formulierung',
 }
 
 /**
@@ -69,22 +70,23 @@ export function ExerciseRunner({ exercises, onFinished }: ExerciseRunnerProps) {
       onFinished(results)
     } else {
       setCurrentIndex((index) => index + 1)
+      window.scrollTo(0, 0)
     }
   }
 
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-4">
-        <p className="text-sm font-medium text-slate-600 dark:text-slate-400">
+        <p className="text-sm font-semibold tabular-nums">
           Übung {currentIndex + 1} von {exercises.length}
         </p>
-        <span className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+        <span className="text-sm text-slate-500 dark:text-slate-400">
           {kindLabels[currentExercise.kind]}
         </span>
       </div>
       <ProgressBar percent={(results.length / exercises.length) * 100} />
 
-      <Card className="p-5 sm:p-6">
+      <Card className="p-5 sm:p-8">
         {/* key resets the exercise component's local state per exercise */}
         <ExerciseView
           key={currentExercise.id}
@@ -95,7 +97,10 @@ export function ExerciseRunner({ exercises, onFinished }: ExerciseRunnerProps) {
 
       {isAnswered && (
         <div className="flex justify-end">
-          <Button onClick={handleNext}>{isLast ? 'Lektion abschließen' : 'Weiter'}</Button>
+          <Button onClick={handleNext} className="w-full sm:w-auto">
+            {isLast ? 'Lektion abschließen' : 'Nächste Übung'}
+            <ArrowRightIcon className="h-4 w-4" />
+          </Button>
         </div>
       )}
     </div>

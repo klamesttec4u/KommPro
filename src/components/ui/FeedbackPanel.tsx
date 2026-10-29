@@ -10,14 +10,25 @@ interface FeedbackPanelProps {
   children?: ReactNode
 }
 
-const toneClasses: Record<FeedbackTone, string> = {
-  success:
-    'border-emerald-300 bg-emerald-50 text-emerald-900 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200',
-  error:
-    'border-red-300 bg-red-50 text-red-900 dark:border-red-800 dark:bg-red-950/50 dark:text-red-200',
-  warning:
-    'border-amber-300 bg-amber-50 text-amber-900 dark:border-amber-800 dark:bg-amber-950/50 dark:text-amber-200',
-  info: 'border-brand-300 bg-brand-50 text-brand-900 dark:border-brand-800 dark:bg-brand-950/50 dark:text-brand-200',
+// Same left-rule shape as the before/after examples in the theory, so
+// "good / critical" always looks the same across the app
+const toneClasses: Record<FeedbackTone, { box: string; title: string }> = {
+  success: {
+    box: 'border-good bg-good-soft dark:border-emerald-500 dark:bg-emerald-950/30',
+    title: 'text-good dark:text-emerald-300',
+  },
+  error: {
+    box: 'border-bad bg-bad-soft dark:border-red-400 dark:bg-red-950/30',
+    title: 'text-bad dark:text-red-300',
+  },
+  warning: {
+    box: 'border-amber-500 bg-amber-50 dark:border-amber-500 dark:bg-amber-950/30',
+    title: 'text-amber-800 dark:text-amber-300',
+  },
+  info: {
+    box: 'border-brand-600 bg-brand-50 dark:border-brand-400 dark:bg-brand-950/40',
+    title: 'text-brand-800 dark:text-brand-200',
+  },
 }
 
 /** Colored callout used for exercise feedback and hints. Announced to assistive tech. */
@@ -26,10 +37,12 @@ export function FeedbackPanel({ tone, title, children }: FeedbackPanelProps) {
     <div
       role="status"
       aria-live="polite"
-      className={cn('rounded-lg border p-4', toneClasses[tone])}
+      className={cn('rounded-r-lg border-l-4 px-5 py-4', toneClasses[tone].box)}
     >
-      <p className="font-semibold">{title}</p>
-      {children && <div className="mt-1 text-sm leading-relaxed">{children}</div>}
+      <p className={cn('font-semibold', toneClasses[tone].title)}>{title}</p>
+      {children && (
+        <div className="mt-1.5 leading-relaxed text-ink dark:text-slate-100">{children}</div>
+      )}
     </div>
   )
 }

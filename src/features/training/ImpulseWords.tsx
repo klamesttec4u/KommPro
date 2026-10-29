@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
 import { ShuffleIcon } from '@/components/ui/icons'
 import { impulseWords } from '@/data/drills'
 import { randomItem } from '@/lib/random'
 
 import { TimerDisplay } from './TimerDisplay'
+import { TrainingCard } from './TrainingCard'
 import { useCountdown } from './useCountdown'
 
 const SPEAKING_SECONDS = 60
@@ -22,26 +22,21 @@ export function ImpulseWords() {
   }
 
   return (
-    <Card className="p-5 sm:p-6">
-      <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold">
-        <ShuffleIcon className="h-5 w-5 text-brand-600 dark:text-brand-400" />
-        Impulswörter-Drill
-      </h2>
-      <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">
-        Du bekommst ein zufälliges Business-Stichwort und sprichst 60 Sekunden frei dazu – perfektes
-        Training für Spontanrede.
-      </p>
-
+    <TrainingCard
+      icon={<ShuffleIcon className="h-5 w-5" />}
+      title="Impulswörter"
+      description="Du bekommst ein zufälliges Business-Stichwort und sprichst 60 Sekunden frei dazu. So trainierst du spontanes Reden."
+    >
       {word === null ? (
         <Button onClick={nextWord}>Erstes Wort ziehen</Button>
       ) : (
         <div className="space-y-5 py-2">
-          <p className="text-center text-3xl font-bold tracking-tight text-brand-700 sm:text-4xl dark:text-brand-300">
+          <p className="text-center text-3xl font-bold tracking-tight text-balance sm:text-4xl">
             {word}
           </p>
           {isTimeUp ? (
-            <p className="text-center text-sm font-medium text-emerald-600 dark:text-emerald-400">
-              Zeit um – stark durchgehalten!
+            <p className="text-center font-semibold text-good dark:text-emerald-400">
+              Zeit um. 60 Sekunden durchgesprochen.
             </p>
           ) : (
             <TimerDisplay
@@ -57,6 +52,6 @@ export function ImpulseWords() {
           </div>
         </div>
       )}
-    </Card>
+    </TrainingCard>
   )
 }

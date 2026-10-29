@@ -9,7 +9,7 @@ export function TrainingPage() {
     <>
       <PageHeader
         title="Trainingscenter"
-        description="Hier übst du das freie Sprechen ganz praktisch – Interview-Simulation, Pitch-Timer und Spontanrede-Drills. Am besten laut und im Stehen!"
+        description="Hier übst du freies Sprechen: Interview-Simulation, Pitch-Timer und Spontanrede. Am besten laut und im Stehen."
       />
       <div className="space-y-6">
         <InterviewTrainer />
