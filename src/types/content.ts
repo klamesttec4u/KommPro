@@ -71,14 +71,22 @@ export type ExerciseKind = Exercise['kind']
 /** One recruiter question for the interview trainer drill. */
 export interface InterviewQuestion {
   id: string
-  /** Approximate minute in the reference call, for orientation */
-  minute: number
+  /** Approximate minute in the reference call, for orientation (omitted for generic sets) */
+  minute?: number
   /** Who asks, e.g. "Projektleitung" or "Architekt" */
   interviewer: string
   question: string
   idealAnswer: string
   /** Self-assessment criteria shown after answering */
   checklist: string[]
+}
+
+/** A selectable question set for the interview trainer. */
+export interface InterviewQuestionSet {
+  id: string
+  title: string
+  description: string
+  questions: InterviewQuestion[]
 }
 
 /** Presentation drill: free-speech prompt practiced against a timer. */

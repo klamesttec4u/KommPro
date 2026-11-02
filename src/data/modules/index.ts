@@ -41,6 +41,31 @@ export function findLesson(module: Module, lessonId: string | undefined): Lesson
   return module.lessons.find((lesson) => lesson.id === lessonId)
 }
 
+export interface LessonRef {
+  module: Module
+  lesson: Lesson
+}
+
+/** All lessons across all modules, flattened in catalog order. */
+const lessonSequence: LessonRef[] = modules.flatMap((module) =>
+  module.lessons.map((lesson) => ({ module, lesson })),
+)
+
+/**
+ * The lesson after the given one in reading order, continuing into the
+ * next module when the current one ends. Undefined on the very last lesson.
+ */
+export function findNextLesson(lessonId: string): LessonRef | undefined {
+  const index = lessonSequence.findIndex((ref) => ref.lesson.id === lessonId)
+  return index === -1 ? undefined : lessonSequence[index + 1]
+}
+
+/** The lesson before the given one in reading order. */
+export function findPreviousLesson(lessonId: string): LessonRef | undefined {
+  const index = lessonSequence.findIndex((ref) => ref.lesson.id === lessonId)
+  return index <= 0 ? undefined : lessonSequence[index - 1]
+}
+
 export interface Track {
   category: ModuleCategory
   label: string

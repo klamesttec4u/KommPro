@@ -4,7 +4,7 @@ export const communicationPitfalls: Module = {
   id: 'communication-pitfalls',
   title: 'Die größten Fehler im Gespräch',
   description:
-    'Was Qualifizierungsgespräche wirklich scheitern lässt: die häufigsten inhaltlichen und sprachlichen Fehler in der Selbstpräsentation – und welche Fragen du (so) besser nicht stellst.',
+    'Was Qualifizierungsgespräche wirklich scheitern lässt: die häufigsten inhaltlichen, sprachlichen und Verhaltens-Fehler in der Selbstpräsentation – und welche Fragen du (so) besser nicht stellst.',
   category: 'consulting',
   lessons: [
     {
@@ -328,6 +328,199 @@ export const communicationPitfalls: Module = {
             'Ich habe Buzzwords ohne Substanz („agiles Mindset") durch Konkretes ersetzt.',
             'Meine Version enthält mindestens eine Zahl oder ein überprüfbares Faktum.',
             'Die Aussage bleibt ehrlich – nichts ist übertrieben, nur präzisiert.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'mistakes-behavior',
+      title: 'Verhaltens-No-Gos: vor, während und nach dem Gespräch',
+      theory: [
+        {
+          kind: 'text',
+          body: 'Inhalt und Sprache können perfekt sitzen – und trotzdem kippt das Gespräch am Verhalten. Der Grund: Verhaltensfehler werden nicht als Ausrutscher gelesen, sondern als Charakter-Signal. Wer zu spät kommt, gilt als unzuverlässig. Wer das Handy checkt, als respektlos. Diese Urteile fallen in Sekunden, färben alles Folgende ein (Halo-Effekt) – und lassen sich im Gespräch kaum noch korrigieren.\n\nDie gute Nachricht: Verhaltens-No-Gos sind die am leichtesten vermeidbaren Fehler überhaupt. Sie kosten keine Vorbereitung im eigentlichen Sinn – nur eine Checkliste und etwas Disziplin.',
+        },
+        {
+          kind: 'table',
+          headers: ['No-Go VOR dem Gespräch', 'Wirkung', 'Stattdessen'],
+          rows: [
+            [
+              'Zu spät – ohne Nachricht',
+              'Unzuverlässig. Für einen Externen, der Tagessätze abrechnet, das K.-o.-Signal schlechthin',
+              '15 Minuten Puffer einplanen; wenn es doch eng wird: sofort anrufen, nicht erst mailen',
+            ],
+            [
+              'Kunde nicht recherchiert',
+              '„Der nimmt jedes Projekt" – Massenabfertigung statt Interesse',
+              '15 Minuten reichen: Website, aktuelle News, LinkedIn der Gesprächspartner – zwei, drei Bezüge vorbereiten',
+            ],
+            [
+              'Remote: Technik ungetestet',
+              'Die ersten fünf Minuten gehen an „Hören Sie mich?" verloren – unprofessionell für einen IT-Berater',
+              'Setup am Vortag testen, Kamera auf Augenhöhe, Headset, ruhiger Hintergrund, Telefonnummer als Plan B',
+            ],
+            [
+              'Eigenes Profil nicht parat',
+              'Wer beim eigenen CV blättern oder raten muss, wirkt unvorbereitet',
+              'Profil ausgedruckt oder geöffnet, Notizblock und vorbereitete Rückfragen daneben',
+            ],
+          ],
+        },
+        {
+          kind: 'table',
+          headers: ['No-Go IM Gespräch', 'Wirkung', 'Stattdessen'],
+          rows: [
+            [
+              'Handy auf dem Tisch / es klingelt',
+              'Respektlosigkeit – und ein Vorgeschmack auf dein Verhalten in Kundenterminen',
+              'Stumm UND weg damit, schon vor dem Betreten des Raums',
+            ],
+            [
+              'Gesprächspartner unterbrechen',
+              '„Der hört im Projekt auch nicht zu" – fatal für eine Beraterrolle',
+              'Ausreden lassen, kurze Pause, dann antworten – die Pause wirkt souverän, nicht langsam',
+            ],
+            [
+              'Nur die ranghöchste Person adressieren',
+              'HR und Einkauf merken es sofort – und jeder am Tisch hat ein Veto',
+              'Blickkontakt und Antworten an alle verteilen, auch an die stillen Teilnehmer',
+            ],
+            [
+              'Lästern über Ex-Kunden, Wettbewerber oder den Vermittler',
+              '„So redet er später über uns" – zerstört Vertrauen irreversibel',
+              'Neutral und faktisch bleiben, Learnings statt Schuldige',
+            ],
+            [
+              'Ungefragt kumpelhaft werden (Duzen, Witzeleien)',
+              'Distanzlos – gerade bei konservativen Kunden ein Ausschlusskriterium',
+              'Den Ton des Gegenübers spiegeln; im Zweifel eine Stufe förmlicher als nötig',
+            ],
+            [
+              'Remote: Kamera aus, Blick aufs zweite Fenster, Tippen nebenbei',
+              'Sichtbares Desinteresse – Multitasking fällt IMMER auf',
+              'Kamera an, Benachrichtigungen aus, alle anderen Fenster geschlossen',
+            ],
+          ],
+        },
+        {
+          kind: 'text',
+          heading: 'Körpersprache: die stillen No-Gos',
+          body: 'Auch ohne Worte sendest du pausenlos: Dauerhaft verschränkte Arme lesen sich als Abwehr, fehlender Blickkontakt als Unsicherheit oder Desinteresse, Lümmeln im Stuhl als mangelnder Respekt, hektisches Klicken mit dem Kugelschreiber als Nervosität. Der Blick auf die Uhr ist der Klassiker: Er sagt „ich will hier weg" – egal, wie interessiert deine Worte klingen.\n\nDas Gegenprogramm ist einfach: aufrecht und dem Gegenüber zugewandt sitzen, Hände sichtbar und ruhig, Blickkontakt beim Zuhören UND beim Sprechen, bewusst ruhig atmen. Nervosität selbst ist übrigens kein No-Go – jeder Prüfer kennt sie. Entscheidend ist, dass du handlungsfähig bleibst: lieber eine kurze Pause und ein Schluck Wasser als überspieltes Dauerreden.',
+        },
+        {
+          kind: 'text',
+          heading: 'Nach dem Gespräch: das vergessene Drittel',
+          body: 'Das Gespräch endet nicht mit dem Händedruck. Zwei Fehler sind typisch: gar nicht nachfassen (wirkt desinteressiert, gerade wenn der Kunde zwischen zwei Kandidaten schwankt) – oder täglich nachbohren (wirkt verzweifelt). Professionell ist eine kurze Dank-Nachricht am selben oder nächsten Tag über den vereinbarten Kanal, mit einem inhaltlichen Bezug zum Gespräch, und danach Geduld bis zum genannten Entscheidungstermin.\n\nUnd wenn es eine Absage gibt: niemals beleidigt reagieren. Bedanke dich, frag nach dem ausschlaggebenden Punkt (ehrliches Feedback ist Gold) und halte die Tür offen. Der IT-Markt ist klein, Projektleiter wechseln die Firma – wer bei einer Absage professionell bleibt, bekommt auffallend oft den zweiten Anruf.',
+        },
+        {
+          kind: 'keypoints',
+          title: 'Das Wichtigste in Kürze',
+          points: [
+            'Verhaltensfehler werden als Charakter-Signal gelesen und färben das ganze Gespräch (Halo-Effekt).',
+            'Vorher: Puffer einplanen, Kunden recherchieren, Remote-Technik testen, eigenes Profil parat haben.',
+            'Währenddessen: Handy weg, ausreden lassen, alle am Tisch adressieren, nie lästern, Ton des Gegenübers spiegeln.',
+            'Körpersprache: zugewandt, Hände ruhig, Blickkontakt – und nie auf die Uhr schauen.',
+            'Nachher: einmal professionell nachfassen, bei Absagen Feedback erfragen und die Tür offen halten.',
+          ],
+        },
+        {
+          kind: 'example',
+          title:
+            'Der Projektleiter startet das Gespräch zehn Minuten zu spät und entschuldigt sich',
+          good: '„Kein Problem – ich habe die Zeit genutzt und mir Ihre Pressemitteilung zum neuen Kundenportal noch einmal angesehen. Da hätte ich später ohnehin eine Frage zu. Sollen wir direkt einsteigen?"',
+          bad: '„Ja, ich habe es gemerkt. Ich sage es nur ungern, aber ich habe heute noch weitere Termine – können wir das jetzt bitte zügig durchziehen? Bei mir zahlt ja niemand die Wartezeit."',
+        },
+      ],
+      exercises: [
+        {
+          kind: 'quiz',
+          id: 'mistakes-behavior-q1',
+          question: 'Warum sind Verhaltensfehler im Gespräch überproportional schädlich?',
+          options: [
+            {
+              text: 'Sie werden als stabile Charakter-Signale gelesen („unzuverlässig", „respektlos") und färben über den Halo-Effekt die Bewertung aller weiteren Aussagen ein.',
+              correct: true,
+              explanation:
+                'Richtig. Ein inhaltlicher Fehler lässt sich korrigieren („da habe ich mich eben unklar ausgedrückt") – ein Verhaltensurteil wie „unzuverlässig" revidiert im Gespräch fast niemand mehr.',
+            },
+            {
+              text: 'Weil sie in Protokollen festgehalten werden und bei späteren Ausschreibungen automatisch wieder auftauchen.',
+              correct: false,
+              explanation:
+                'Formale Protokolle sind nicht der Mechanismus. Der Schaden entsteht psychologisch und sofort: Der erste Eindruck wirkt als Filter für alles, was danach kommt.',
+            },
+            {
+              text: 'Sind sie gar nicht – am Ende zählt ausschließlich die fachliche Qualifikation, Verhalten ist Geschmackssache.',
+              correct: false,
+              explanation:
+                'Gerade bei Consultant-Rollen mit Kundenkontakt ist das Verhalten Teil der fachlichen Prüfung: Wer sich im Quali-Gespräch nicht benehmen kann, wird nicht vor Stakeholder gestellt.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'mistakes-behavior-q2',
+          question: 'Welche Kombination beschreibt die größten No-Gos in einem Remote-Gespräch?',
+          options: [
+            {
+              text: 'Ungetestete Technik, Kamera aus und sichtbares Nebenbei-Arbeiten (Blick aufs zweite Fenster, Tippen).',
+              correct: true,
+              explanation:
+                'Richtig. Alle drei senden dasselbe Signal: mangelnde Professionalität und Desinteresse. Für einen IT-Consultant wiegt die ungetestete Technik doppelt – sie ist dein Handwerkszeug.',
+            },
+            {
+              text: 'Ein Headset tragen und einen neutralen Hintergrund verwenden – das wirkt distanziert und überinszeniert.',
+              correct: false,
+              explanation:
+                'Im Gegenteil: Headset (klarer Ton) und ruhiger Hintergrund sind Standards professioneller Remote-Kommunikation und werden positiv wahrgenommen.',
+            },
+            {
+              text: 'Fünf Minuten vor dem Termin in den Call einwählen – das wirkt übereifrig.',
+              correct: false,
+              explanation:
+                'Früh im (Warte-)Raum zu sein ist nie ein Fehler – es gibt dir Puffer für Technikprobleme und signalisiert Verlässlichkeit.',
+            },
+          ],
+        },
+        {
+          kind: 'scenario',
+          id: 'mistakes-behavior-s1',
+          situation:
+            'Mitten in deiner Antwort schaut der Einkäufer demonstrativ aufs Handy, und die Projektleiterin unterbricht dich mit einer ganz anderen Frage: „Sagen Sie – wie halten Sie es eigentlich mit Dokumentation?"',
+          choices: [
+            {
+              text: 'Du nimmst die Unterbrechung sportlich, beantwortest die Dokumentationsfrage kurz und präzise – und bietest am Ende an: „Zu der Architektur-Frage von eben ergänze ich gern noch den letzten Punkt, falls das für Sie relevant ist."',
+              quality: 'best',
+              feedback:
+                'Sehr gut: Du spiegelst nicht die Unhöflichkeit, sondern bleibst flexibel und souverän – und holst dir den offenen Punkt elegant zurück, ohne zu belehren. Genau diese Gelassenheit prüfen manche Interviewer mit solchen Situationen sogar bewusst.',
+            },
+            {
+              text: 'Du sagst freundlich, aber bestimmt: „Einen Moment bitte, ich würde gern erst meinen Gedanken zu Ende führen" – und setzt deine ursprüngliche Antwort fort.',
+              quality: 'ok',
+              feedback:
+                'In einem Workshop unter Kollegen wäre das legitim. Im Quali-Gespräch ist die Rollenverteilung aber asymmetrisch: Der Kunde steuert das Gespräch. Wer auf seinem Redefluss besteht, wirkt schnell unflexibel – besser kurz wechseln und den Punkt später anbieten.',
+            },
+            {
+              text: 'Du redest einfach lauter weiter, bis dein Punkt fertig ist – wer sich unterbrechen lässt, zeigt Schwäche. Den Einkäufer mit dem Handy ignorierst du demonstrativ mit einem langen Blick.',
+              quality: 'bad',
+              feedback:
+                'Doppelter Schaden: Gegen eine Unterbrechung anzureden wirkt rechthaberisch, und der strafende Blick macht aus einer kleinen Unhöflichkeit des Gegenübers DEIN Verhaltensproblem. Merke: Du gewinnst das Gespräch nicht gegen den Kunden.',
+            },
+          ],
+        },
+        {
+          kind: 'freetext',
+          id: 'mistakes-behavior-f1',
+          task: 'Erstelle deine persönliche Vor-dem-Gespräch-Checkliste mit mindestens fünf Punkten, die du ab jetzt vor jedem (Remote-)Qualifizierungsgespräch abhakst – von Recherche über Technik bis Handy.',
+          placeholder: '1. …\n2. …\n3. …\n4. …\n5. …',
+          sampleSolution:
+            '1. Kunde recherchiert: Website, News, LinkedIn der Gesprächspartner – zwei, drei Bezüge notiert.\n2. Eigenes Profil durchgegangen, zu jeder Zeile eine mögliche Frage überlegt.\n3. Drei STAR-Projektgeschichten und drei Rückfragen parat.\n4. Remote-Setup am Vortag getestet: Kamera auf Augenhöhe, Headset, Hintergrund, Licht – Telefonnummer als Plan B notiert.\n5. 15 Minuten Puffer eingeplant; Einwahl fünf Minuten vor Beginn.\n6. Handy stumm und außer Reichweite, Benachrichtigungen am Rechner aus, alle anderen Fenster zu.',
+          checklist: [
+            'Meine Liste enthält mindestens fünf konkrete, abhakbare Punkte.',
+            'Recherche zum Kunden und zu den Gesprächspartnern ist enthalten.',
+            'Technik-Check (bei Remote) inklusive Plan B ist enthalten.',
+            'Handy/Benachrichtigungen sind als eigener Punkt enthalten.',
+            'Pufferzeit vor dem Termin ist eingeplant.',
           ],
         },
       ],

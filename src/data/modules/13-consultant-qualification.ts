@@ -4,7 +4,7 @@ export const consultantQualification: Module = {
   id: 'consultant-qualification',
   title: 'Qualifizierungsgespräch: IT-Consultant',
   description:
-    'Souverän durchs Quali-Gespräch beim Kunden: Vorbereitung, Selbstpräsentation als Consultant & Mendix-Entwickler, KI-Einsatz (Claude) überzeugend positionieren, typische Fragen und starke Rückfragen.',
+    'Souverän durchs Quali-Gespräch beim Kunden: Vorbereitung, Selbstpräsentation nach SEAT, Projekt-Storys nach STAR, KI-Einsatz (Claude) positionieren, die klassischen Interviewfragen im Ideal/Fehler-Format und das komplette Referenzgespräch.',
   category: 'consulting',
   lessons: [
     {
@@ -308,6 +308,169 @@ export const consultantQualification: Module = {
       ],
     },
     {
+      id: 'quali-projects',
+      title: 'Struktur-Methoden: SEAT für dich, STAR für deine Projekte',
+      theory: [
+        {
+          kind: 'text',
+          body: 'Unter Druck fällt jeder auf seine Struktur zurück – oder auf das Fehlen einer. In der vorigen Lektion hast du gelernt, WAS in deinen Pitch gehört. Diese Lektion gibt dir zwei Gerüste an die Hand, mit denen du Inhalte jederzeit abrufbar machst: SEAT für deine Selbstpräsentation als Ganzes und STAR für jede einzelne Projektgeschichte.\n\nDer Unterschied: SEAT ist ein Vollständigkeits-Check – bevor du ins Gespräch gehst, prüfst du, ob deine Vorstellung alle vier Bausteine abdeckt. STAR ist ein Erzählmuster – es gibt jeder Projektantwort live im Gespräch einen Anfang, eine Mitte und ein Ende.',
+        },
+        {
+          kind: 'text',
+          heading: 'Die SEAT-Methode: dein Vollständigkeits-Check',
+          body: 'SEAT steht für Skills, Experience, Achievements und Training. Die Methode stammt aus dem Interview-Coaching und beantwortet die Frage: „Habe ich in meiner Selbstpräsentation alles untergebracht, was der Kunde braucht, um mich einzuordnen?"\n\nWichtig: SEAT ist keine starre Reihenfolge, die du im Gespräch Punkt für Punkt abarbeitest – das würde mechanisch klingen. Nutze es in der Vorbereitung als Checkliste: Geh deinen Pitch durch und prüfe, ob alle vier Bausteine vorkommen. Fehlt einer, wirkt die Vorstellung unvollständig – meist fehlen Achievements (konkrete Ergebnisse) oder Training (der Beleg, dass du aktuell bleibst).',
+        },
+        {
+          kind: 'table',
+          headers: ['SEAT-Baustein', 'Leitfrage', 'Beispiel Consultant & Mendix'],
+          rows: [
+            [
+              'Skills (Fähigkeiten)',
+              'Was kann ich, das DIESE Rolle braucht?',
+              'Mendix-Entwicklung (Domain Model, Microflows, Integrationen), Anforderungs-Workshops moderieren, Pre-Sales-Demos, KI-gestütztes Arbeiten mit Claude',
+            ],
+            [
+              'Experience (Erfahrung)',
+              'Wo und wie lange habe ich es angewendet?',
+              'Sechs Jahre IT-Consulting, davon drei Jahre Mendix in Fertigung und Handel – als Lead Developer und im direkten Kundenkontakt',
+            ],
+            [
+              'Achievements (Erfolge)',
+              'Was kam messbar dabei heraus?',
+              'Lieferantenportal live nach vier Monaten, 800 Nutzer, Durchlaufzeit von zwei Wochen auf zwei Tage; zwei Folgeaufträge aus Pre-Sales-Demos',
+            ],
+            [
+              'Training (Weiterbildung)',
+              'Was belegt, dass ich fachlich aktuell bleibe?',
+              'Mendix-Zertifizierungen (z.B. Intermediate/Advanced), laufende Weiterbildung zu KI-gestützter Entwicklung, Community und Release-Notes im Blick',
+            ],
+          ],
+        },
+        {
+          kind: 'text',
+          heading: 'Dein Projekt-Portfolio: drei Geschichten reichen',
+          body: 'Du brauchst nicht zwanzig Projekte parat – du brauchst drei bis vier, die zusammen alle Kernanforderungen der Rolle abdecken. Wähle sie gezielt: eines mit technischer Tiefe (für den Architekten), eines mit Stakeholder- oder Workshop-Anteil (für die Projektleitung), eines mit sichtbarem Geschäftsnutzen (für alle).\n\nBereite jedes als STAR-One-Pager vor: Situation in ein, zwei Sätzen, deine Aufgabe, dein konkreter Beitrag, das messbare Ergebnis – plus ein Learning. Und übe zwei Versionen: die 60-Sekunden-Kurzfassung für den Gesprächsfluss und den Deep-Dive für Nachfragen. Wer nur die lange Version kann, erzählt Monologe; wer nur die kurze kann, wirkt bei Nachfragen hohl.',
+        },
+        {
+          kind: 'text',
+          heading: 'Der Deep-Dive: wenn der Architekt tiefer bohrt',
+          body: 'Im Deep-Dive überzeugst du nicht mit Vollständigkeit, sondern mit Entscheidungen: „Wir standen vor der Wahl, die SAP-Anbindung über REST oder über eine Middleware zu lösen. Ich habe REST direkt gewählt, weil …, der Preis dafür war …" Wer Trade-offs benennen kann, hat das Projekt wirklich verantwortet – das lässt sich nicht vortäuschen.\n\nZwei Grenzen gehören dazu: Erstens ehrlich sagen, was du heute anders machen würdest – ein reflektiertes Learning wirkt stärker als behauptete Fehlerlosigkeit. Zweitens Vertraulichkeit wahren: Kundennamen nur nennen, wenn sie öffentlich bekannt oder freigegeben sind, Zahlen notfalls als Größenordnung („ein dreistelliger Nutzerkreis"). Diskretion ist kein Hindernis, sondern ein Qualitätssignal – der Kunde sieht daran, wie du später über IHN sprechen wirst.',
+        },
+        {
+          kind: 'keypoints',
+          title: 'Das Wichtigste in Kürze',
+          points: [
+            'SEAT (Skills, Experience, Achievements, Training) als Vollständigkeits-Check der Selbstpräsentation – in der Vorbereitung, nicht als starres Skript.',
+            'Drei bis vier Projekte als Portfolio, die zusammen alle Kernanforderungen abdecken – je als 60-Sekunden- und als Deep-Dive-Version.',
+            'Jede Projektgeschichte nach STAR, mit messbarem Ergebnis und einem Learning.',
+            'Im Deep-Dive Entscheidungen und Trade-offs erzählen – das unterscheidet Verantwortung von Mitgelaufen-Sein.',
+            'Vertraulichkeit wahren: Diskretion über frühere Kunden ist deine Arbeitsprobe für den Umgang mit diesem Kunden.',
+          ],
+        },
+        {
+          kind: 'example',
+          title: 'Frage: „Was bringen Sie konkret für diese Rolle mit?"',
+          good: '„Drei Dinge: Erstens die Mendix-Entwicklung selbst – Domain Model, Microflows, Integrationen, zuletzt als Lead Developer. Zweitens Erfahrung vor dem Kunden: Ich moderiere regelmäßig Anforderungs-Workshops und halte Pre-Sales-Demos, aus den letzten beiden sind Folgeaufträge entstanden. Drittens eine moderne Arbeitsweise: KI-gestützt mit Claude, mit klaren Leitplanken. Fachlich halte ich mich über die Mendix-Zertifizierungspfade aktuell – die Advanced-Prüfung habe ich letztes Jahr gemacht."',
+          bad: '„Ich bin sehr teamfähig, belastbar und lernbereit. Ich arbeite strukturiert und eigenverantwortlich, und ich würde sagen, ich bin ein kommunikativer Mensch. Technisch kenne ich mich gut aus, da müssen Sie sich keine Sorgen machen."',
+        },
+      ],
+      exercises: [
+        {
+          kind: 'quiz',
+          id: 'quali-projects-q1',
+          question: 'Wofür steht SEAT – und wie setzt du die Methode am wirksamsten ein?',
+          options: [
+            {
+              text: 'Skills, Experience, Achievements, Training – als Vollständigkeits-Check in der Vorbereitung: Deckt mein Pitch alle vier Bausteine ab?',
+              correct: true,
+              explanation:
+                'Richtig. SEAT ist eine Checkliste für die Vorbereitung, kein Skript fürs Gespräch. Am häufigsten fehlen Achievements (messbare Ergebnisse) und Training (der Beleg für Aktualität).',
+            },
+            {
+              text: 'Situation, Evidence, Action, Transfer – ein Erzählmuster, mit dem man jede Interviewfrage live strukturiert.',
+              correct: false,
+              explanation:
+                'Nein – das Erzählmuster für Geschichten ist STAR (Situation, Task, Action, Result). SEAT steht für Skills, Experience, Achievements, Training und prüft die Vollständigkeit deiner Selbstpräsentation.',
+            },
+            {
+              text: 'Eine feste Reihenfolge, in der man die Selbstpräsentation Punkt für Punkt vorträgt – erst alle Skills, dann die komplette Erfahrung und so weiter.',
+              correct: false,
+              explanation:
+                'Genau das macht Vorstellungen mechanisch und auswendig gelernt. SEAT gehört in die Vorbereitung als Check – im Gespräch webst du die Bausteine natürlich in deine Erzählung ein.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-projects-q2',
+          question:
+            'Wie stellst du dein Projekt-Portfolio für das Qualifizierungsgespräch zusammen?',
+          options: [
+            {
+              text: 'Drei bis vier Projekte, die zusammen die Kernanforderungen abdecken – jedes als 60-Sekunden-Kurzfassung UND als Deep-Dive vorbereitet.',
+              correct: true,
+              explanation:
+                'Richtig. Gezielte Auswahl schlägt Masse: eine Geschichte mit Technik-Tiefe, eine mit Workshop-/Stakeholder-Anteil, eine mit Geschäftsnutzen – und jede in zwei Längen abrufbar.',
+            },
+            {
+              text: 'Möglichst alle Projekte chronologisch durchgehen, damit der Kunde den kompletten Werdegang nachvollziehen kann.',
+              correct: false,
+              explanation:
+                'Das ist der klassische Lebenslauf-Monolog: Der Zuhörer steigt aus, und die relevanten Projekte gehen in der Masse unter. Der Kunde will Passung sehen, nicht Vollständigkeit.',
+            },
+            {
+              text: 'Nur das technisch beeindruckendste Projekt in voller Tiefe – Qualität schlägt Quantität.',
+              correct: false,
+              explanation:
+                'Ein einziges Projekt deckt selten alle Prüfkriterien ab: Die Projektleitung will auch Stakeholder-Kompetenz sehen, der Vertrieb Pre-Sales-Nähe. Außerdem wirkt ein Ein-Projekt-Profil schnell schmal.',
+            },
+          ],
+        },
+        {
+          kind: 'scenario',
+          id: 'quali-projects-s1',
+          situation:
+            'Im Deep-Dive zu deinem Lieferantenportal fragt der Architekt: „Klingt rund. Und was würden Sie heute anders machen, wenn Sie das Projekt noch einmal starten könnten?"',
+          choices: [
+            {
+              text: '„Zwei Dinge: Ich würde die SAP-Schnittstelle früher gegen reale Daten testen – wir haben zu lange mit Mock-Daten gearbeitet und dadurch am Ende zwei Wochen verloren. Und ich würde das Berechtigungskonzept von Anfang an mit dem Fachbereich durchspielen statt es nachträglich zu verfeinern. Beides habe ich im Folgeprojekt so gemacht, das lief deutlich glatter."',
+              quality: 'best',
+              feedback:
+                'Sehr gut: konkrete Entscheidungen, ehrliche Einordnung der Konsequenz und der Beleg, dass aus dem Learning geänderte Praxis wurde. Genau diese Reflexionsfähigkeit prüft die Frage – sie ist ein Geschenk, kein Angriff.',
+            },
+            {
+              text: '„Hm, gute Frage – im Großen und Ganzen war das Projekt eigentlich optimal aufgesetzt. Vielleicht hätte man insgesamt noch ein bisschen mehr testen können."',
+              quality: 'ok',
+              feedback:
+                'Ausweichend: „mehr testen" ohne Konkretes ist eine Floskel, und „eigentlich optimal" wirkt unreflektiert. Erfahrene Prüfer haken hier nach – und dann wird es unangenehm. Bereite auf diese Standardfrage eine echte Antwort vor.',
+            },
+            {
+              text: '„Ehrlich gesagt nichts – das Projekt war ein voller Erfolg, da gab es keine Fehler. Probleme kamen höchstens von außen, der Fachbereich hat ständig die Anforderungen geändert."',
+              quality: 'bad',
+              feedback:
+                'Doppelt schädlich: Behauptete Fehlerlosigkeit wirkt unglaubwürdig oder unreflektiert – und die Schuld beim Fachbereich abzuladen ist genau das Lästern über frühere Kunden, das sofort auf dich zurückfällt.',
+            },
+          ],
+        },
+        {
+          kind: 'freetext',
+          id: 'quali-projects-f1',
+          task: 'Erstelle den STAR-One-Pager für DEIN wichtigstes Projekt: Situation (1–2 Sätze), Task (deine Aufgabe), Action (dein konkreter Beitrag), Result (messbar) – plus ein Learning. Das ist die Kurzfassung, die du im Gespräch in 60 Sekunden erzählen kannst.',
+          placeholder:
+            'Situation: …\nTask: …\nAction (mein Beitrag): …\nResult (messbar): …\nLearning: …',
+          sampleSolution:
+            'Situation: „Beim Maschinenbauer X liefen Bestellanfragen per E-Mail und Excel – Durchlaufzeit zwei Wochen, keine Transparenz."\nTask: „Ich sollte als Lead Developer ein Lieferantenportal mit Mendix konzipieren und bauen, Team: drei Personen."\nAction: „Ich habe das Domain Model entworfen, die Prozesslogik in Microflows umgesetzt, SAP per REST angebunden und das Rechtekonzept über Modulrollen und XPath-Constraints abgebildet."\nResult: „Go-live nach vier Monaten, rund 800 aktive Nutzer, Durchlaufzeit heute unter zwei Tagen."\nLearning: „Schnittstellen so früh wie möglich gegen reale Daten testen – das habe ich im Folgeprojekt von Sprint 1 an so gemacht."',
+          checklist: [
+            'Die Situation ist in maximal zwei Sätzen beschrieben.',
+            'Mein eigener Beitrag ist klar als „ich" formuliert, nicht nur als „wir".',
+            'Das Ergebnis enthält mindestens eine Zahl oder einen messbaren Effekt.',
+            'Ein echtes Learning ist enthalten – mit Bezug, was ich seitdem anders mache.',
+            'Laut erzählt dauert die Geschichte etwa eine Minute.',
+          ],
+        },
+      ],
+    },
+    {
       id: 'quali-questions',
       title: 'Typische Fragen, starke Rückfragen & Pre-Sales-Kompetenz zeigen',
       theory: [
@@ -460,6 +623,222 @@ export const consultantQualification: Module = {
             'Mindestens eine Frage betrifft Ziele oder Erfolgskriterien der Rolle.',
             'Keine meiner Fragen dreht sich primär um Komfort-Themen (Urlaub, Spesen, Rate).',
             'Ich habe daran gedacht, den nächsten Schritt im Prozess zu erfragen.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'quali-classic-questions',
+      title: 'Die Klassiker: jede Standardfrage mit Ideal- und Fehler-Antwort',
+      theory: [
+        {
+          kind: 'text',
+          body: 'Neben den fachlichen und situativen Fragen aus der vorigen Lektion gibt es einen festen Kanon von Klassikern, die in fast jedem Interview auftauchen – von „Was sind Ihre Stärken?" bis zur Tagessatz-Frage. Der Schlüssel zu jeder dieser Fragen: Hinter der gestellten Frage steckt eine verdeckte Frage. Wer die erkennt, antwortet automatisch richtig.\n\nUnten findest du die Klassiker im bewährten Format: erst die verdeckte Frage verstehen, dann jede Frage mit einer Ideal-Antwort (grün) und einer typischen Fehler-Antwort (rot) – angepasst an deine Situation als externer Consultant. Zum lauten Üben gibt es die Fragen zusätzlich als eigenes Frageset im Trainingscenter (Interview-Trainer).',
+        },
+        {
+          kind: 'table',
+          headers: ['Gestellte Frage', 'Verdeckte Frage dahinter'],
+          rows: [
+            [
+              '„Was sind Ihre Stärken?"',
+              'Kennt er sich selbst – und passen die Stärken zu DIESER Rolle?',
+            ],
+            [
+              '„Was sind Ihre Schwächen?"',
+              'Geht er ehrlich und souverän mit Defiziten um – oder blufft er?',
+            ],
+            [
+              '„Warum arbeiten Sie freiberuflich?"',
+              'Ist er aus Überzeugung Consultant – oder nur, bis etwas Festes kommt?',
+            ],
+            [
+              '„Wo sehen Sie sich in fünf Jahren?"',
+              'Wie hoch ist das Risiko, dass er uns mitten im Projekt abspringt?',
+            ],
+            [
+              '„Ihr Tagessatz liegt über dem Budget."',
+              'Kennt er seinen Wert – und wie verhandelt er später für UNS?',
+            ],
+            [
+              '„Erzählen Sie von einem Konflikt."',
+              'Wie verhält er sich, wenn es im Projekt kracht – sachlich oder nachtragend?',
+            ],
+            [
+              '„Was wissen Sie über uns?"',
+              'Hat er sich vorbereitet – oder nimmt er jedes Projekt, das zahlt?',
+            ],
+          ],
+        },
+        {
+          kind: 'example',
+          title: '„Was sind Ihre größten Stärken?"',
+          good: '„Ich nenne Ihnen die zwei, die für diese Rolle am meisten zählen: Erstens die Verbindung aus Entwicklung und Kundenkontakt – ich kann eine Anwendung bauen UND sie dem Fachbereich erklären, das zeigt sich in meinen Workshops und Demos. Zweitens Struktur unter Zeitdruck: Auch im Lieferantenportal-Projekt mit hartem Go-live-Termin habe ich priorisiert statt hektisch zu werden – wir sind pünktlich live gegangen."',
+          bad: '„Ich bin teamfähig, zuverlässig, belastbar und sehr kommunikativ. Außerdem bin ich ein absoluter Perfektionist – ich gebe immer 120 Prozent."',
+        },
+        {
+          kind: 'example',
+          title: '„Und Ihre Schwächen?"',
+          good: '„Natives Mobile mit Mendix habe ich erst in einem Projekt gemacht – da bin ich noch nicht auf dem Niveau wie bei Web-Apps. Ich gleiche das gezielt aus: Beim letzten Mal habe ich mich über die Mendix-Academy-Module eingearbeitet und einen erfahrenen Kollegen reviewen lassen – nach drei Wochen lief das Modul produktiv. Wenn Mobile bei Ihnen zentral ist, sage ich das lieber jetzt als im Sprint 3."',
+          bad: '„Puh … eigentlich fällt mir da nichts ein. Vielleicht, dass ich manchmal zu gründlich bin? Meine Kollegen sagen immer, ich arbeite zu viel."',
+        },
+        {
+          kind: 'example',
+          title:
+            '„Warum sollten wir uns für Sie entscheiden – und nicht für einen der anderen Kandidaten?"',
+          good: '„Die anderen Kandidaten kenne ich nicht – aber ich kann Ihnen sagen, was Sie bei mir sicher bekommen: die Kombination aus Mendix-Entwicklung auf Lead-Niveau und echter Pre-Sales-Erfahrung, beides belegbar. Dazu eine moderne, KI-gestützte Arbeitsweise mit klaren Leitplanken. Wenn genau diese Kombination Ihr Engpass ist, bin ich eine sichere Wahl."',
+          bad: '„Ich bin einfach der Beste für den Job, das spüre ich. Die anderen können bestimmt auch was, aber so eine Erfahrung wie meine findet man selten am Markt."',
+        },
+        {
+          kind: 'example',
+          title: '„Warum arbeiten Sie als externer Consultant und nicht in Festanstellung?"',
+          good: '„Eine bewusste Entscheidung: Ich arbeite am liebsten dort, wo ein konkretes Vorhaben Tempo braucht – dafür ist das externe Modell ideal. Für Sie hat es einen Vorteil: Sie bekommen jemanden, der vom ersten Tag an liefern muss und will, ohne lange Einarbeitungsgarantien. Und innerhalb eines Vertrags bin ich voll committed – gerade bei einem längerfristigen Engagement wie diesem."',
+          bad: '„Ehrlich gesagt verdient man als Freiberufler einfach deutlich mehr. Und ich bin ungern von einem einzigen Arbeitgeber abhängig – wer weiß, wie lange es die Firma gibt."',
+        },
+        {
+          kind: 'example',
+          title: '„Wo sehen Sie sich in fünf Jahren?" / „Wie lange bleiben Sie uns erhalten?"',
+          good: '„Fachlich will ich in fünf Jahren der sein, den man holt, wenn eine Mendix-Landschaft strategisch aufgebaut werden soll – Architektur, Governance, Team-Enablement. Genau deshalb reizt mich ein längerfristiges Engagement wie Ihres: Hier kann ich das aufbauen statt nur zuzuliefern. Für die Vertragslaufzeit können Sie fest mit mir planen – Zusagen halte ich, das können Ihnen auch meine bisherigen Kunden bestätigen."',
+          bad: '„Och, so weit plane ich nicht. Im Projektgeschäft weiß man ja nie – wenn nächstes Jahr was Spannenderes kommt, schaue ich mir das natürlich an. Man muss ja flexibel bleiben."',
+        },
+        {
+          kind: 'example',
+          title: '„In Ihrem Profil ist eine Lücke von acht Monaten – was war da?"',
+          good: '„Das war eine bewusste Pause nach einem intensiven Großprojekt: drei Monate Auszeit mit Reisen, danach habe ich die Zeit für die Mendix-Advanced-Zertifizierung und den Aufbau meines KI-Workflows genutzt. Seit ich wieder im Projekt bin, profitiere ich jeden Tag davon."',
+          bad: '„Äh, da war … Moment, welche Lücke meinen Sie? Ach so, da. Ja, da war der Markt halt schwierig, es kam einfach nichts Passendes rein. Lag nicht an mir."',
+        },
+        {
+          kind: 'example',
+          title:
+            '„Erzählen Sie von einem Konflikt in einem Projekt – und wie Sie ihn gelöst haben."',
+          good: '„Im Portalprojekt wollte der Fachbereich kurz vor Go-live noch eine Workflow-Änderung, der Projektleiter wollte den Termin halten – ich saß dazwischen. Ich habe beide an einen Tisch geholt und den Konflikt auf die Sachfrage zurückgeführt: Was kostet die Änderung jetzt, was kostet sie nach Go-live? Ergebnis: Go-live wie geplant, die Änderung kam zwei Wochen später als erstes Update. Beide Seiten konnten damit leben – und ich habe gelernt, solche Wünsche früher aktiv abzufragen."',
+          bad: '„Konflikte habe ich eigentlich nie – ich komme mit allen klar. Also außer einmal, da war ein Projektleiter komplett beratungsresistent, aber den habe ich dann einfach machen lassen, war ja sein Projekt."',
+        },
+        {
+          kind: 'example',
+          title: '„Wie gehen Sie mit Druck und engen Deadlines um?"',
+          good: '„Mit Priorisierung und Transparenz: Wenn es eng wird, kläre ich mit dem Product Owner, was wirklich zum Termin muss und was danach kommen kann – und sage früh Bescheid, wenn etwas kippt, nicht erst am Tag der Deadline. Beim Portal-Go-live haben wir so zwei Nice-to-have-Features bewusst geschoben und den Termin gehalten. Dauerstress durch schlechte Planung spreche ich dagegen an, bevor er zum Normalzustand wird."',
+          bad: '„Druck macht mir gar nichts aus, ich arbeite dann einfach mehr. Nachtschichten, Wochenende – was eben nötig ist. Irgendwie ging es am Ende immer gut."',
+        },
+        {
+          kind: 'example',
+          title: '„Ihr Tagessatz liegt über unserem Budget – geht da noch was?"',
+          good: '„Ich verstehe, dass Sie aufs Budget schauen. Der Satz spiegelt, dass Sie zwei Profile in einem bekommen – Entwicklung auf Lead-Niveau plus Pre-Sales- und Workshop-Unterstützung – und dass ich ab Tag eins produktiv bin. Beim Preis selbst habe ich wenig Spielraum, aber reden wir über das Paket: Bei einer längeren Laufzeit mit planbarer Auslastung kann ich Ihnen entgegenkommen. Was wäre denn für Sie ein tragfähiger Rahmen?"',
+          bad: '„Okay, was hatten Sie sich denn vorgestellt? Also wenn es daran scheitert, gehe ich auch 20 Prozent runter – Hauptsache, wir kommen zusammen."',
+        },
+        {
+          kind: 'example',
+          title: '„Was wissen Sie über uns – und warum gerade dieses Projekt?"',
+          good: '„Ich habe gesehen, dass Sie seit zwei Jahren eine Mendix-Landschaft aufbauen und zuletzt das Kundenportal gelauncht haben – und Ihrer Ausschreibung entnehme ich, dass jetzt mehr Apps und mehr interne Enablement-Arbeit anstehen. Genau diese Phase finde ich spannend: nicht die erste App bauen, sondern die Plattform skalieren. Dazu kommt die Pre-Sales-Komponente – die Mischung bietet kaum eine Ausschreibung."',
+          bad: '„Ehrlich gesagt bin ich noch nicht dazu gekommen, mich einzulesen – der Vermittler hat mir den Termin erst gestern bestätigt. Aber erzählen Sie doch mal: Was machen Sie eigentlich genau?"',
+        },
+        {
+          kind: 'keypoints',
+          title: 'Das Wichtigste in Kürze',
+          points: [
+            'Hinter jeder Standardfrage steckt eine verdeckte Frage – beantworte die verdeckte, nicht nur die gestellte.',
+            'Stärken: zwei statt fünf, passend zur Rolle, je mit Beleg. Schwächen: echt, unkritisch für die Rolle, mit Gegenmaßnahme.',
+            'Commitment-Fragen (fünf Jahre, Laufzeit) ehrlich beantworten – und Verlässlichkeit für die Vertragslaufzeit zusichern.',
+            'Beim Tagessatz nie sofort nachgeben: erst den Wert begründen, dann über das Paket (Laufzeit, Auslastung) verhandeln.',
+            'Konflikt-Frage: einen echten Konflikt als Prozess erzählen (Sachebene, Lösung, Learning) – nie „ich habe keine Konflikte".',
+          ],
+        },
+        {
+          kind: 'text',
+          heading: 'So übst du die Klassiker',
+          body: 'Lesen reicht bei diesen Fragen nicht – sie müssen sitzen, wenn der Puls oben ist. Im Trainingscenter findest du die Klassiker als eigenes Frageset im Interview-Trainer: Frage für Frage laut beantworten, mit Timer und auf Wunsch mit Aufnahme, erst danach erscheint die Musterantwort. Zwei Durchläufe vor dem echten Gespräch machen einen hörbaren Unterschied.',
+        },
+      ],
+      exercises: [
+        {
+          kind: 'quiz',
+          id: 'quali-classic-q1',
+          question: 'Was prüft die Frage „Was sind Ihre Schwächen?" wirklich?',
+          options: [
+            {
+              text: 'Ob du ehrlich und souverän mit eigenen Defiziten umgehst – erkennbar an einer echten, für die Rolle unkritischen Schwäche plus konkreter Gegenmaßnahme.',
+              correct: true,
+              explanation:
+                'Richtig. Niemand erwartet Fehlerlosigkeit – geprüft wird Selbstreflexion. Die Formel: echte Schwäche, die die Kernanforderungen nicht trifft, plus belegter Umgang damit.',
+            },
+            {
+              text: 'Ob du geschickt genug bist, eine Stärke als Schwäche zu tarnen („Ich bin Perfektionist").',
+              correct: false,
+              explanation:
+                'Die getarnte Stärke ist der bekannteste Interview-Klischee-Fehler überhaupt – jeder Prüfer hat sie hundertmal gehört. Sie signalisiert: Dieser Kandidat weicht aus.',
+            },
+            {
+              text: 'Dein Fachwissen: Wer eine Schwäche zugibt, disqualifiziert sich für anspruchsvolle Rollen.',
+              correct: false,
+              explanation:
+                'Das Gegenteil stimmt: Eine ehrlich benannte Lücke mit Einarbeitungsplan wirkt professioneller als behauptete Allkompetenz – und schützt dich vor einem Projekt, in dem die Lücke zum Problem würde.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-classic-q2',
+          question:
+            'Der Einkauf sagt: „Ihr Tagessatz liegt über unserem Budget." Was ist die beste Reaktion?',
+          options: [
+            {
+              text: 'Erst den Wert begründen (zwei Profile in einem, produktiv ab Tag eins), dann über das Paket verhandeln – etwa Entgegenkommen bei längerer Laufzeit und planbarer Auslastung.',
+              correct: true,
+              explanation:
+                'Richtig. Wert vor Preis, Paket vor Rabatt: So bleibst du verhandlungsfähig, ohne dich zu entwerten. Nebenbei beobachtet der Kunde hier, wie du später in SEINEM Namen verhandeln würdest.',
+            },
+            {
+              text: 'Sofort einen deutlichen Nachlass anbieten – der Auftrag ist wichtiger als der Satz, und Flexibilität kommt gut an.',
+              correct: false,
+              explanation:
+                'Wer auf den ersten Druck 20 Prozent nachlässt, sagt damit: Mein ursprünglicher Preis war Fantasie. Das entwertet dich – und lädt zu weiteren Nachforderungen ein.',
+            },
+            {
+              text: 'Klarstellen, dass über Konditionen ausschließlich der Vermittler spricht, und das Thema komplett abblocken.',
+              correct: false,
+              explanation:
+                'Formal oft korrekt – aber ein komplettes Abblocken wirkt unflexibel und nimmt dir die Chance, deinen Wert zu begründen. Besser: Wert argumentieren und die Detailverhandlung dann an den Vermittlungsprozess übergeben.',
+            },
+          ],
+        },
+        {
+          kind: 'scenario',
+          id: 'quali-classic-s1',
+          situation:
+            'Die Projektleiterin fragt: „Ganz offen – Sie sind Freiberufler. Woher wissen wir, dass Sie nicht in sechs Monaten zum nächsten, besser zahlenden Projekt weiterziehen?"',
+          choices: [
+            {
+              text: '„Eine faire Frage. Zwei Antworten darauf: Erstens ist Verlässlichkeit mein Geschäftsmodell – ich lebe von Folgeaufträgen und Referenzen, ein geplatzter Vertrag würde mich mehr kosten als er bringt. Zweitens suche ich gezielt ein längerfristiges Engagement wie Ihres, weil ich lieber eine Landschaft mit aufbaue als alle vier Monate das Projekt zu wechseln. Innerhalb der Laufzeit können Sie fest mit mir planen – und eine Verlängerung besprechen wir rechtzeitig vor Ablauf, nicht danach."',
+              quality: 'best',
+              feedback:
+                'Sehr gut: Du nimmst die Sorge ernst statt sie wegzulächeln, lieferst ein strukturelles Argument (Reputation als Geschäftsmodell) plus ein persönliches (Präferenz für langfristige Engagements) und machst eine konkrete, belastbare Zusage.',
+            },
+            {
+              text: '„Das kann ich Ihnen zu 100 Prozent garantieren, ich bin absolut loyal. Geld spielt für mich ehrlich gesagt gar keine so große Rolle."',
+              quality: 'ok',
+              feedback:
+                'Gut gemeint, aber unglaubwürdig: Absolute Garantien und „Geld ist mir egal" nimmt dir niemand ab – du bist Unternehmer. Stärker ist das strukturelle Argument: Verlässlichkeit ist dein Geschäftsmodell, weil dein Markt von Reputation lebt.',
+            },
+            {
+              text: '„Na ja, das ist eben das Risiko bei Externen – das haben Sie bei jedem Freiberufler. Dafür können Sie mich ja auch jederzeit loswerden."',
+              quality: 'bad',
+              feedback:
+                'Du bestätigst die Sorge, statt sie zu entkräften, und das „Loswerden"-Argument rückt die Zusammenarbeit in ein Misstrauensverhältnis. Nach dieser Antwort ist das Abspringrisiko für die Projektleiterin real – und spricht gegen dich.',
+            },
+          ],
+        },
+        {
+          kind: 'freetext',
+          id: 'quali-classic-f1',
+          task: 'Formuliere deine persönlichen Antworten auf die zwei wichtigsten Klassiker: (1) „Was sind Ihre größten Stärken?" – zwei Stärken, passend zur Rolle, je mit Beleg. (2) „Was ist Ihre größte Schwäche?" – echt, unkritisch für die Rolle, mit Gegenmaßnahme.',
+          placeholder:
+            'Stärke 1 (+ Beleg): …\nStärke 2 (+ Beleg): …\nSchwäche (+ Gegenmaßnahme): …',
+          sampleSolution:
+            'Stärke 1: „Die Verbindung aus Entwicklung und Kundenkontakt – ich baue die Anwendung und kann sie dem Fachbereich erklären. Beleg: Anforderungs-Workshops und Pre-Sales-Demos, aus den letzten beiden entstanden Folgeaufträge."\nStärke 2: „Struktur unter Zeitdruck – beim Portal-Go-live habe ich priorisiert statt Nachtschichten zu schieben, wir waren pünktlich live."\nSchwäche: „Natives Mobile habe ich erst einmal gemacht – da bin ich noch nicht auf Web-App-Niveau. Mein Umgang damit: Mendix-Academy-Module plus Review durch einen erfahrenen Kollegen, so lief das Modul nach drei Wochen produktiv."',
+          checklist: [
+            'Meine zwei Stärken passen erkennbar zu den Kernanforderungen der Rolle.',
+            'Jede Stärke hat einen konkreten Beleg (Projekt, Ergebnis) statt eines Adjektivs.',
+            'Meine Schwäche ist echt und keine getarnte Stärke („Perfektionist").',
+            'Die Schwäche trifft keine Kernanforderung der Rolle – und hat eine Gegenmaßnahme.',
           ],
         },
       ],

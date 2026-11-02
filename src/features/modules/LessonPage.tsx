@@ -9,7 +9,7 @@ import { Card } from '@/components/ui/Card'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { StepIndicator } from '@/components/ui/StepIndicator'
 import { ClockIcon, ArrowRightIcon, CheckCircleIcon, RotateCcwIcon } from '@/components/ui/icons'
-import { findLesson, findModule, trackLabel } from '@/data/modules'
+import { findLesson, findModule, findNextLesson, trackLabel, type LessonRef } from '@/data/modules'
 import { ExerciseRunner } from '@/features/exercises/ExerciseRunner'
 import { summarizeResults } from '@/features/progress/selectors'
 import { useProgressStore, type ExerciseResult } from '@/features/progress/store'
@@ -46,7 +46,8 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
   const markLessonCompleted = useProgressStore((state) => state.markLessonCompleted)
 
   const lessonIndex = module.lessons.findIndex((candidate) => candidate.id === lesson.id)
-  const nextLesson = module.lessons[lessonIndex + 1]
+  // Reading order continues into the next module after the last lesson
+  const next = findNextLesson(lesson.id)
 
   const steps =
     lesson.exercises.length > 0 ? ['Lesen', 'Üben', 'Abschluss'] : ['Lesen', 'Abschluss']
@@ -88,7 +89,8 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
           <StepIndicator steps={steps} current={currentStep} />
           <p className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
             <ClockIcon className="h-4 w-4" />
-            ca. {lessonReadingMinutes(lesson)} Min. Lesezeit
+            Lektion {lessonIndex + 1} von {module.lessons.length} · ca.{' '}
+            {lessonReadingMinutes(lesson)} Min. Lesezeit
           </p>
         </div>
       </PageHeader>
@@ -100,17 +102,32 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
           ))}
           {/* Sticky on phones so the next step stays reachable while reading */}
           <div className="sticky bottom-0 -mx-4 border-t border-slate-200 bg-paper/95 px-4 py-4 backdrop-blur sm:static sm:mx-0 sm:bg-transparent sm:px-0 sm:pt-8 sm:backdrop-blur-none dark:border-slate-800 dark:bg-slate-950/95 sm:dark:bg-transparent">
-            {lesson.exercises.length > 0 ? (
-              <Button onClick={() => goTo('exercises')} className="w-full sm:w-auto">
-                Weiter zu den Übungen ({lesson.exercises.length})
-                <ArrowRightIcon className="h-4 w-4" />
-              </Button>
-            ) : (
-              <Button onClick={() => handleFinished([])} className="w-full sm:w-auto">
-                Lektion abschließen
-                <ArrowRightIcon className="h-4 w-4" />
-              </Button>
-            )}
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              {lesson.exercises.length > 0 ? (
+                <Button onClick={() => goTo('exercises')} className="w-full sm:w-auto">
+                  Weiter zu den Übungen ({lesson.exercises.length})
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Button>
+              ) : (
+                <Button onClick={() => handleFinished([])} className="w-full sm:w-auto">
+                  Lektion abschließen
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Button>
+              )}
+              {/* Pure reading flow: skip the exercises and keep moving through the catalog */}
+              {next && (
+                <ButtonLink
+                  variant="secondary"
+                  to={routes.lesson(next.module.id, next.lesson.id)}
+                  className="w-full sm:w-auto"
+                >
+                  {next.module.id === module.id
+                    ? 'Nur lesen: nächste Lektion'
+                    : 'Nur lesen: nächstes Modul'}
+                  <ArrowRightIcon className="h-4 w-4" />
+                </ButtonLink>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -123,7 +140,7 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
         <LessonSummary
           results={results}
           moduleId={module.id}
-          nextLessonId={nextLesson?.id}
+          next={next}
           onRepeat={repeatExercises}
         />
       )}
@@ -134,12 +151,12 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
 function LessonSummary({
   results,
   moduleId,
-  nextLessonId,
+  next,
   onRepeat,
 }: {
   results: ExerciseResult[]
   moduleId: string
-  nextLessonId?: string
+  next?: LessonRef
   onRepeat: () => void
 }) {
   const summary = summarizeResults(results)
@@ -163,9 +180,9 @@ function LessonSummary({
       )}
 
       <div className="mt-6 flex flex-wrap justify-center gap-3">
-        {nextLessonId ? (
-          <ButtonLink to={routes.lesson(moduleId, nextLessonId)}>
-            Nächste Lektion
+        {next ? (
+          <ButtonLink to={routes.lesson(next.module.id, next.lesson.id)}>
+            {next.module.id === moduleId ? 'Nächste Lektion' : 'Nächstes Modul starten'}
             <ArrowRightIcon className="h-4 w-4" />
           </ButtonLink>
         ) : (

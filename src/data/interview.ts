@@ -1,4 +1,4 @@
-import type { InterviewQuestion } from '@/types/content'
+import type { InterviewQuestion, InterviewQuestionSet } from '@/types/content'
 
 /**
  * Recruiter questions from the reference call (module 13, lesson 4),
@@ -178,5 +178,150 @@ export const interviewQuestions: InterviewQuestion[] = [
       'Keine Komfort-Fragen (Urlaub, Spesen, Rate) als Erstes.',
       'Ich habe den nächsten Schritt im Prozess erfragt.',
     ],
+  },
+]
+
+/**
+ * The classic interview questions (module 13, lesson "Die Klassiker"):
+ * the standard canon from strengths to daily rate, adapted to the
+ * external-consultant context.
+ */
+export const classicInterviewQuestions: InterviewQuestion[] = [
+  {
+    id: 'ciq-strengths',
+    interviewer: 'Projektleitung',
+    question: 'Was sind Ihre größten Stärken?',
+    idealAnswer:
+      '„Ich nenne Ihnen die zwei, die für diese Rolle am meisten zählen: Erstens die Verbindung aus Entwicklung und Kundenkontakt – ich kann eine Anwendung bauen UND sie dem Fachbereich erklären, das zeigt sich in meinen Workshops und Demos. Zweitens Struktur unter Zeitdruck: Auch im Portalprojekt mit hartem Go-live-Termin habe ich priorisiert statt hektisch zu werden – wir sind pünktlich live gegangen."',
+    checklist: [
+      'Ich habe zwei Stärken genannt, nicht fünf Adjektive.',
+      'Beide Stärken passen erkennbar zur ausgeschriebenen Rolle.',
+      'Jede Stärke hatte einen konkreten Beleg (Projekt, Ergebnis).',
+    ],
+  },
+  {
+    id: 'ciq-weaknesses',
+    interviewer: 'Projektleitung',
+    question: 'Und was ist Ihre größte Schwäche?',
+    idealAnswer:
+      '„Natives Mobile mit Mendix habe ich erst in einem Projekt gemacht – da bin ich noch nicht auf dem Niveau wie bei Web-Apps. Ich gleiche das gezielt aus: Beim letzten Mal habe ich mich über die Mendix-Academy-Module eingearbeitet und einen erfahrenen Kollegen reviewen lassen – nach drei Wochen lief das Modul produktiv. Wenn Mobile bei Ihnen zentral ist, sage ich das lieber jetzt als im Sprint 3."',
+    checklist: [
+      'Meine Schwäche war echt – keine getarnte Stärke („Perfektionist").',
+      'Sie trifft keine Kernanforderung der Rolle.',
+      'Ich habe eine konkrete Gegenmaßnahme genannt.',
+    ],
+  },
+  {
+    id: 'ciq-why-you',
+    interviewer: 'Projektleitung',
+    question:
+      'Warum sollten wir uns für Sie entscheiden – und nicht für einen der anderen Kandidaten?',
+    idealAnswer:
+      '„Die anderen Kandidaten kenne ich nicht – aber ich kann Ihnen sagen, was Sie bei mir sicher bekommen: die Kombination aus Mendix-Entwicklung auf Lead-Niveau und echter Pre-Sales-Erfahrung, beides belegbar. Dazu eine moderne, KI-gestützte Arbeitsweise mit klaren Leitplanken. Wenn genau diese Kombination Ihr Engpass ist, bin ich eine sichere Wahl."',
+    checklist: [
+      'Ich habe nicht über andere Kandidaten spekuliert oder sie abgewertet.',
+      'Ich habe meinen Profil-Match konkret benannt statt Superlative zu stapeln.',
+      'Die Antwort blieb unter 45 Sekunden.',
+    ],
+  },
+  {
+    id: 'ciq-why-freelance',
+    interviewer: 'HR',
+    question: 'Warum arbeiten Sie als externer Consultant und nicht in Festanstellung?',
+    idealAnswer:
+      '„Eine bewusste Entscheidung: Ich arbeite am liebsten dort, wo ein konkretes Vorhaben Tempo braucht – dafür ist das externe Modell ideal. Für Sie hat es einen Vorteil: Sie bekommen jemanden, der vom ersten Tag an liefern muss und will. Und innerhalb eines Vertrags bin ich voll committed – gerade bei einem längerfristigen Engagement wie diesem."',
+    checklist: [
+      'Ich habe die Freiberuflichkeit als bewusste, positive Entscheidung erzählt.',
+      'Geld war nicht mein Hauptargument.',
+      'Ich habe den Vorteil für den Kunden herausgestellt.',
+    ],
+  },
+  {
+    id: 'ciq-five-years',
+    interviewer: 'Projektleitung',
+    question: 'Wo sehen Sie sich in fünf Jahren – und wie lange bleiben Sie uns erhalten?',
+    idealAnswer:
+      '„Fachlich will ich in fünf Jahren der sein, den man holt, wenn eine Mendix-Landschaft strategisch aufgebaut werden soll – Architektur, Governance, Team-Enablement. Genau deshalb reizt mich ein längerfristiges Engagement wie Ihres: Hier kann ich das aufbauen statt nur zuzuliefern. Für die Vertragslaufzeit können Sie fest mit mir planen – Zusagen halte ich."',
+    checklist: [
+      'Ich habe eine ehrliche fachliche Perspektive skizziert.',
+      'Ich habe die Brücke zum längerfristigen Engagement geschlagen.',
+      'Ich habe Verlässlichkeit für die Vertragslaufzeit konkret zugesichert.',
+    ],
+  },
+  {
+    id: 'ciq-cv-gap',
+    interviewer: 'HR',
+    question: 'In Ihrem Profil ist eine Lücke von mehreren Monaten – was war da?',
+    idealAnswer:
+      '„Das war eine bewusste Pause nach einem intensiven Großprojekt: erst Auszeit, danach habe ich die Zeit für die Mendix-Advanced-Zertifizierung und den Aufbau meines KI-Workflows genutzt. Seit ich wieder im Projekt bin, profitiere ich jeden Tag davon."',
+    checklist: [
+      'Ich habe ruhig und ohne Rechtfertigungston geantwortet.',
+      'Die Lücke hatte eine nachvollziehbare Erzählung (Erholung + Weiterbildung).',
+      'Ich habe den Nutzen für heute benannt.',
+    ],
+  },
+  {
+    id: 'ciq-conflict',
+    interviewer: 'Projektleitung',
+    question: 'Erzählen Sie von einem Konflikt in einem Projekt – und wie Sie ihn gelöst haben.',
+    idealAnswer:
+      '„Im Portalprojekt wollte der Fachbereich kurz vor Go-live noch eine Workflow-Änderung, der Projektleiter wollte den Termin halten – ich saß dazwischen. Ich habe beide an einen Tisch geholt und den Konflikt auf die Sachfrage zurückgeführt: Was kostet die Änderung jetzt, was nach Go-live? Ergebnis: Go-live wie geplant, die Änderung kam zwei Wochen später als erstes Update. Mein Learning: solche Wünsche früher aktiv abfragen."',
+    checklist: [
+      'Ich habe einen ECHTEN Konflikt erzählt, nicht „ich habe nie Konflikte".',
+      'Ich habe den Lösungsweg als Prozess beschrieben (Sachebene, Beteiligte, Ergebnis).',
+      'Niemand wurde als Schuldiger dargestellt – und ein Learning war dabei.',
+    ],
+  },
+  {
+    id: 'ciq-pressure',
+    interviewer: 'Architekt',
+    question: 'Wie gehen Sie mit Druck und engen Deadlines um?',
+    idealAnswer:
+      '„Mit Priorisierung und Transparenz: Wenn es eng wird, kläre ich mit dem Product Owner, was wirklich zum Termin muss und was danach kommen kann – und sage früh Bescheid, wenn etwas kippt, nicht erst am Tag der Deadline. Beim Portal-Go-live haben wir so zwei Nice-to-have-Features bewusst geschoben und den Termin gehalten."',
+    checklist: [
+      'Meine Antwort zeigte eine Methode (priorisieren, kommunizieren), kein Heldentum.',
+      'Ich habe NICHT mit Nachtschichten und Wochenendarbeit geprahlt.',
+      'Ein konkretes Beispiel war enthalten.',
+    ],
+  },
+  {
+    id: 'ciq-rate',
+    interviewer: 'Einkauf',
+    question: 'Ihr Tagessatz liegt über unserem Budget – geht da noch was?',
+    idealAnswer:
+      '„Ich verstehe, dass Sie aufs Budget schauen. Der Satz spiegelt, dass Sie zwei Profile in einem bekommen – Entwicklung auf Lead-Niveau plus Pre-Sales- und Workshop-Unterstützung – und dass ich ab Tag eins produktiv bin. Beim Preis selbst habe ich wenig Spielraum, aber reden wir über das Paket: Bei einer längeren Laufzeit mit planbarer Auslastung kann ich Ihnen entgegenkommen. Was wäre für Sie ein tragfähiger Rahmen?"',
+    checklist: [
+      'Ich habe zuerst den Wert begründet statt sofort nachzugeben.',
+      'Ich habe über das Paket (Laufzeit, Auslastung) verhandelt, nicht nur über Rabatt.',
+      'Ich bin freundlich und verhandlungsbereit geblieben, ohne mich zu entwerten.',
+    ],
+  },
+  {
+    id: 'ciq-about-us',
+    interviewer: 'Projektleitung',
+    question: 'Was wissen Sie über uns – und warum gerade dieses Projekt?',
+    idealAnswer:
+      '„Ich habe gesehen, dass Sie seit zwei Jahren eine Mendix-Landschaft aufbauen und zuletzt das Kundenportal gelauncht haben – und Ihrer Ausschreibung entnehme ich, dass jetzt mehr Apps und mehr internes Enablement anstehen. Genau diese Phase finde ich spannend: nicht die erste App bauen, sondern die Plattform skalieren. Dazu kommt die Pre-Sales-Komponente – die Mischung bietet kaum eine Ausschreibung."',
+    checklist: [
+      'Ich hatte mindestens zwei konkrete, recherchierte Bezüge zum Kunden.',
+      'Ich habe erklärt, warum DIESES Projekt – nicht nur „ich suche halt was".',
+      'Die Motivation passte zur ausgeschriebenen Rolle.',
+    ],
+  },
+]
+
+/** Selectable question sets for the interview trainer. */
+export const interviewQuestionSets: InterviewQuestionSet[] = [
+  {
+    id: 'reference-call',
+    title: 'Referenzgespräch (45 Minuten)',
+    description: `Die ${interviewQuestions.length} Fragen aus dem Telefon-Interview in Originalreihenfolge – von der Vorstellung bis zu deinen Rückfragen.`,
+    questions: interviewQuestions,
+  },
+  {
+    id: 'classic-questions',
+    title: 'Die Klassiker',
+    description: `Die ${classicInterviewQuestions.length} Standardfragen von Stärken und Schwächen bis zur Tagessatz-Verhandlung.`,
+    questions: classicInterviewQuestions,
   },
 ]
