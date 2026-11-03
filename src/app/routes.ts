@@ -6,6 +6,7 @@ export const routePatterns = {
   lesson: '/modul/:moduleId/lektion/:lessonId',
   training: '/training',
   myAnswers: '/meine-antworten',
+  glossary: '/glossar',
 } as const
 
 export const routes = {
@@ -15,4 +16,5 @@ export const routes = {
     `/modul/${encodeURIComponent(moduleId)}/lektion/${encodeURIComponent(lessonId)}`,
   training: () => '/training',
   myAnswers: () => '/meine-antworten',
+  glossary: () => '/glossar',
 } as const

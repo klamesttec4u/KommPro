@@ -114,6 +114,57 @@ export const writtenCommunication: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'written-emails-q3',
+          question: 'Was macht eine Betreffzeile stark?',
+          options: [
+            {
+              text: 'Sie nennt Thema und erwartete Aktion, idealerweise mit Frist – und macht die Mail auch Wochen später in der Suche wiederfindbar.',
+              correct: true,
+              explanation:
+                'Richtig: „Angebot Berger: Freigabe bis Do 12 Uhr erbeten" sagt dem Empfänger vor dem Öffnen, worum es geht und was zu tun ist – und taucht bei der Suche nach „Berger" sofort wieder auf.',
+            },
+            {
+              text: 'Sie ist möglichst kurz und allgemein gehalten („Frage", „Info"), damit sie neugierig macht.',
+              correct: false,
+              explanation:
+                'Neugier ist im Posteingang kein Erfolgsfaktor, sondern ein Risiko: Vage Betreffs wie „Kurze Frage" werden aufgeschoben, falsch priorisiert und sind später unauffindbar.',
+            },
+            {
+              text: 'Sie enthält Großbuchstaben und „DRINGEND", damit die Mail bevorzugt geöffnet wird.',
+              correct: false,
+              explanation:
+                'Der Dringend-Stempel nutzt sich schnell ab und wirkt unprofessionell. Echte Dringlichkeit transportiert eine konkrete Frist im Betreff – nicht die Lautstärke.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'written-emails-q4',
+          question:
+            'Du brauchst in einer Mail etwas von drei verschiedenen Personen. Wie formulierst du den Call-to-Action wirksam?',
+          options: [
+            {
+              text: 'Jede Person namentlich mit ihrer Aufgabe und Frist adressieren: „@Anna: Zahlen bis Di, @Murat: Review bis Mi."',
+              correct: true,
+              explanation:
+                'Genau: Ohne namentliche Zuordnung entsteht Verantwortungsdiffusion – jeder denkt, die anderen machen es. Name plus Aufgabe plus Frist macht aus einer Rundmail drei klare Aufträge.',
+            },
+            {
+              text: 'Allgemein an alle schreiben: „Es wäre gut, wenn sich jemand um die offenen Punkte kümmern könnte."',
+              correct: false,
+              explanation:
+                '„Jemand" ist niemand: Eine Bitte ohne Adressaten, ohne konkrete Aufgabe und ohne Frist erfüllt keines der drei Kriterien eines Call-to-Action – und bleibt erfahrungsgemäß liegen.',
+            },
+            {
+              text: 'Den Call-to-Action weglassen – wer die Mail aufmerksam liest, erkennt selbst, was zu tun ist.',
+              correct: false,
+              explanation:
+                'Empfänger überfliegen Mails in Sekunden – was nicht explizit als Aufgabe mit Frist dasteht, wird nicht als Aufgabe behandelt. Jede Mail mit Ziel braucht einen klaren Call-to-Action.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'written-emails-s1',
           situation:
@@ -263,6 +314,57 @@ export const writtenCommunication: Module = {
               correct: false,
               explanation:
                 'Übertriebene Förmlichkeit erzeugt Distanz und oft genau das Beamtendeutsch, das Klarheit verhindert. Angemessenheit schlägt Förmlichkeit.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'written-tone-q3',
+          question:
+            'Warum müssen geschriebene Texte freundlicher formuliert werden, als es mündlich nötig wäre?',
+          options: [
+            {
+              text: 'Schrift hat keinen Tonfall und keine Mimik – neutrale Texte werden systematisch negativer gelesen als gemeint (Negativ-Verzerrung).',
+              correct: true,
+              explanation:
+                'Richtig: Was mündlich durch ein Lächeln oder einen warmen Ton entschärft wird, fehlt im Text komplett. Die Freundlichkeit muss deshalb in die Wortwahl – sonst liest der Empfänger Kälte, wo keine gemeint war.',
+            },
+            {
+              text: 'Weil geschriebene Kritik rechtlich angreifbarer ist als mündliche.',
+              correct: false,
+              explanation:
+                'Dokumentierbarkeit ist ein eigenes Thema – die Negativ-Verzerrung aber ist ein Wahrnehmungseffekt: Ohne Tonfall interpretiert der Leser neutrale Formulierungen tendenziell negativ.',
+            },
+            {
+              text: 'Das stimmt nicht – ein sachlicher Text wird genauso sachlich gelesen, wie er gemeint ist.',
+              correct: false,
+              explanation:
+                'Genau das ist der Irrtum: Studien zeigen, dass Empfänger neutrale Texte negativer deuten als beabsichtigt. Wer nur sachlich schreibt, klingt beim Leser schnell kühl oder verärgert.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'written-tone-q4',
+          question: 'Was bedeutet „positiv formulieren" in der Business-Kommunikation?',
+          options: [
+            {
+              text: 'Sagen, was geht und bis wann – statt was nicht geht: „Das Dokument liegt Ihnen Montag vor" statt „Vor Montag kann ich nicht liefern."',
+              correct: true,
+              explanation:
+                'Genau: Die Information bleibt identisch, aber der Leser erhält eine Zusage statt einer Abfuhr. Das ist keine Schönfärberei – nur die lösungsorientierte Hälfte derselben Wahrheit.',
+            },
+            {
+              text: 'Probleme und Verzögerungen freundlich verschweigen, damit keine schlechte Stimmung entsteht.',
+              correct: false,
+              explanation:
+                'Positiv formulieren heißt nie, Fakten zu unterschlagen oder unhaltbare Zusagen zu machen – eine gebrochene Zusage kostet mehr Vertrauen als jede ehrlich kommunizierte Verzögerung.',
+            },
+            {
+              text: 'Jede Mail mit Lob und Ausrufezeichen anreichern, damit sie optimistisch wirkt.',
+              correct: false,
+              explanation:
+                'Aufgesetzter Enthusiasmus ist nicht gemeint. Es geht um die Blickrichtung der Aussage: die machbare Lösung mit konkretem Termin statt der Absage in den Vordergrund stellen.',
             },
           ],
         },
@@ -421,6 +523,57 @@ export const writtenCommunication: Module = {
               correct: false,
               explanation:
                 'Das ist eine verdeckte Eskalation, die das Vertrauen dauerhaft beschädigt, sobald sie herauskommt – und sie kommt fast immer heraus. Erst das direkte Gespräch suchen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'written-chat-q3',
+          question:
+            'Ihr habt im Teams-Chat eine Freigabe mit einem externen Dienstleister grob abgestimmt. Was ist jetzt der richtige Umgang mit dem Kanal?',
+          options: [
+            {
+              text: 'Die Vereinbarung per E-Mail festhalten: Freigaben, Vereinbarungen und Kommunikation mit Externen gehören in den dokumentierten, wiederauffindbaren Kanal.',
+              correct: true,
+              explanation:
+                'Richtig: Chat ist schnell, aber flüchtig – Vereinbarungen versinken in Threads und sind später kaum belegbar. Die Mail mit dem festgehaltenen Ergebnis macht die Absprache verbindlich und auffindbar.',
+            },
+            {
+              text: 'Nichts weiter tun – der Chatverlauf ist ja gespeichert und kann notfalls durchsucht werden.',
+              correct: false,
+              explanation:
+                'Theoretisch ja, praktisch nein: Entscheidendes steht zwischen Smalltalk und Emojis verstreut, Beteiligte verlassen Kanäle, und gegenüber Externen fehlt die formale Verbindlichkeit einer Mail.',
+            },
+            {
+              text: 'Die Freigabe zusätzlich in drei weiteren Chat-Kanälen posten, damit sie niemand übersieht.',
+              correct: false,
+              explanation:
+                'Mehr Kanäle heißt mehr Streuung, nicht mehr Verbindlichkeit. Die Regel lautet Kanalwechsel: Dokumentationswürdiges wandert vom Chat in die E-Mail (oder das Ablagesystem), nicht in weitere Chats.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'written-chat-q4',
+          question: 'Was bedeutet es praktisch, dass Chat ein asynchroner Kanal ist?',
+          options: [
+            {
+              text: 'Niemand schuldet eine Antwort in Minuten: Der Status des Gegenübers wird respektiert, und wer echte Dringlichkeit hat, ruft an statt zu drängeln.',
+              correct: true,
+              explanation:
+                'Genau: Die Stärke von Chat ist, dass der Empfänger antwortet, wann es passt. Wer Sofort-Antworten erwartet („???"), missbraucht den Kanal – für Dringendes ist der Anruf da.',
+            },
+            {
+              text: 'Nachrichten dürfen jederzeit gesendet werden, und der Empfänger muss sie auch abends und am Wochenende zeitnah beantworten.',
+              correct: false,
+              explanation:
+                'Asynchron heißt das Gegenteil: Senden ist jederzeit okay – aber ohne Antwort-Erwartung. Außerhalb der Arbeitszeit gehört die Nachricht geplant oder mit dem Zusatz „Keine Eile – bis morgen reicht".',
+            },
+            {
+              text: 'Chat eignet sich nicht für wichtige Themen, weil die Antwort zu lange dauern kann.',
+              correct: false,
+              explanation:
+                'Auch wichtige Sachfragen funktionieren im Chat gut – solange sie nicht dringend, emotional oder dokumentationspflichtig sind. Die Kanalwahl hängt am Inhaltstyp, nicht an der Wichtigkeit allein.',
             },
           ],
         },

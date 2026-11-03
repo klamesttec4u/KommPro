@@ -121,6 +121,57 @@ export const bodyLanguage: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'body-posture-q3',
+          question:
+            'Wohin mit den Händen, wenn du gerade nicht gestikulierst – was ist die neutrale Grundposition?',
+          options: [
+            {
+              text: 'Locker auf Bauchnabelhöhe, leicht geöffnet oder locker aneinander – von dort entstehen Gesten natürlich und kehren dorthin zurück.',
+              correct: true,
+              explanation:
+                'Richtig. Die Grundposition löst das Hände-Problem elegant: Die Hände sind sichtbar, ruhig und jederzeit bereit für eine unterstützende Geste oberhalb der Gürtellinie.',
+            },
+            {
+              text: 'Hinter dem Rücken verschränkt – das wirkt diszipliniert und aufgeräumt.',
+              correct: false,
+              explanation:
+                'Versteckte Hände lassen dich passiv und distanziert wirken – und aus der Position hinter dem Rücken entsteht keine natürliche Gestik. Die Hände gehören sichtbar vor den Körper.',
+            },
+            {
+              text: 'Entspannt in die Hosentaschen – Hauptsache, sie hängen nicht unruhig herum.',
+              correct: false,
+              explanation:
+                'Hände in den Taschen wirken salopp bis desinteressiert und nehmen dir jede unterstützende Gestik. Ruhe entsteht durch die Grundposition auf Bauchnabelhöhe, nicht durch Wegsperren.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'body-posture-q4',
+          question: 'Warum sind Gegenstände wie Stift oder Moderationskarten in der Hand riskant?',
+          options: [
+            {
+              text: 'Sie werden unter Anspannung zum Ventil für Übersprungshandlungen – Klicken, Spielen, Drehen – und saugen die Aufmerksamkeit des Publikums ab.',
+              correct: true,
+              explanation:
+                'Richtig. Was du in der Hand hältst, wird unter Nervosität bespielt – und das Publikum schaut auf den klickenden Stift statt auf dich. Deshalb: nichts Spielbares in die Hände nehmen.',
+            },
+            {
+              text: 'Sie sind unproblematisch – ein Stift in der Hand wirkt professionell und beschäftigt die Finger sinnvoll.',
+              correct: false,
+              explanation:
+                'Genau das Gegenteil: Die „Beschäftigung" wird zur Übersprungshandlung, sobald die Anspannung steigt. Rhythmisches Klicken oder Kartenmischen lenkt zuverlässig vom Inhalt ab.',
+            },
+            {
+              text: 'Sie sind nur dann ein Problem, wenn man sie fallen lässt.',
+              correct: false,
+              explanation:
+                'Das Fallenlassen ist das kleinste Risiko. Der eigentliche Schaden passiert vorher und dauerhaft: nervöses Spielen mit dem Gegenstand, das Aufmerksamkeit vom Gesagten abzieht.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'body-posture-s1',
           situation:
@@ -247,6 +298,57 @@ export const bodyLanguage: Module = {
               correct: false,
               explanation:
                 'Es geht nicht um Etikette, sondern um Wirkung: Die bewusste Stille vor dem Einstieg bündelt die Aufmerksamkeit und lässt dich kontrolliert statt getrieben erscheinen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'body-eyes-q3',
+          question:
+            'Was ist die „Lieblingsseiten-Falle" beim Blickkontakt – und wie entgehst du ihr?',
+          options: [
+            {
+              text: 'Die meisten Redner blicken unbewusst fast nur in eine Richtung, oft zu den freundlich nickenden Gesichtern – dagegen hilft, den Raum gedanklich in Zonen zu teilen und bewusst alle zu bedienen.',
+              correct: true,
+              explanation:
+                'Richtig. Die Zonen-Technik (links, Mitte, rechts, vorne, hinten) macht aus dem unbewussten Muster eine bewusste Wanderung – so fühlt sich der ganze Raum angesprochen, nicht nur eine Ecke.',
+            },
+            {
+              text: 'Redner schauen zu oft zur Leinwand – dagegen hilft, die Folien auswendig zu lernen.',
+              correct: false,
+              explanation:
+                'Der Leinwand-Blick ist ein anderes Problem. Die Lieblingsseiten-Falle betrifft das Publikum selbst: Man bedient unbewusst immer dieselbe Raumhälfte – meist die mit den freundlichen Gesichtern.',
+            },
+            {
+              text: 'Redner fixieren die wichtigste Person – dagegen hilft, grundsätzlich über die Köpfe hinweg zu schauen.',
+              correct: false,
+              explanation:
+                'Über die Köpfe hinwegzuschauen zerstört die Verbindung komplett – das Publikum merkt es sofort. Die Lösung ist echter, verteilter Blickkontakt in alle Zonen, nicht der Blick ins Leere.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'body-eyes-q4',
+          question: 'Wie funktioniert Blickkontakt in einem großen Raum mit vielen Menschen?',
+          options: [
+            {
+              text: 'In eine Zone des Raums blicken genügt – alle Personen in dieser Zone haben das Gefühl, gemeint zu sein.',
+              correct: true,
+              explanation:
+                'Richtig. Aus Distanz kann niemand erkennen, wen genau du anschaust – der Blick in die Zone wirkt für alle dort wie persönlicher Blickkontakt. So bleibt die Technik auch vor 200 Leuten machbar.',
+            },
+            {
+              text: 'In großen Räumen ist Blickkontakt sinnlos – dort zählt nur die Stimme.',
+              correct: false,
+              explanation:
+                'Auch im großen Raum registriert das Publikum sehr genau, ob ein Redner den Saal anschaut oder auf Notizen und Leinwand blickt. Die Zuwendung bleibt sichtbar – nur die Technik ändert sich.',
+            },
+            {
+              text: 'Man muss jede einzelne Person nacheinander anschauen, sonst fühlen sich einige ausgeschlossen.',
+              correct: false,
+              explanation:
+                'Das wäre bei hundert Menschen unmöglich und hektisch. Genau dafür gibt es die Zonen-Lösung: Ein Blick in den Bereich erreicht alle, die dort sitzen.',
             },
           ],
         },
@@ -398,6 +500,58 @@ export const bodyLanguage: Module = {
               correct: false,
               explanation:
                 'Im Gegenteil – das ist ihre Stärke: Drei bis fünf Runden dauern kaum zwei Minuten und wirken auch kurz vor oder sogar während des Termins, etwa in einer natürlichen Pause.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'body-nerves-q3',
+          question:
+            'Wie ist Power-Posing (zwei Minuten „Siegerpose" vor dem Auftritt) wissenschaftlich einzuordnen?',
+          options: [
+            {
+              text: 'Die behauptete Hormon-Wirkung hat sich in Folgestudien nicht bestätigt – als mentales Ritual für das eigene Sicherheitsgefühl ist es dennoch legitim.',
+              correct: true,
+              explanation:
+                'Richtig. Wunder darf man keine erwarten: Der Hormon-Effekt der Originalstudie ließ sich nicht replizieren. Eine aufrechte, raumgreifende Haltung kann sich trotzdem gut anfühlen – als Ritual okay, als Wissenschaft überholt.',
+            },
+            {
+              text: 'Es ist wissenschaftlich bewiesen, dass zwei Minuten Siegerpose den Testosteronspiegel messbar erhöhen und Stresshormone senken.',
+              correct: false,
+              explanation:
+                'Das war die ursprüngliche Behauptung – genau sie hat sich in Replikationsstudien nicht bestätigt. Wer das als Fakt weitergibt, sitzt einem überholten Forschungsstand auf.',
+            },
+            {
+              text: 'Power-Posing ist schädlich und erhöht nachweislich die Nervosität.',
+              correct: false,
+              explanation:
+                'Schädlich ist es nicht – es ist nur kein Wundermittel. Wer sich mit dem Ritual wohler fühlt, darf es nutzen; die verlässlicheren Hebel sind Vorbereitung und Atmung.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'body-nerves-q4',
+          question:
+            'Warum empfiehlt sich, vor allem die erste Minute des Vortrags laut und mehrfach zu üben?',
+          options: [
+            {
+              text: 'Die Nervosität ist am Anfang am größten – ein im Schlaf sitzender Einstieg trägt dich durch die kritische Phase, danach übernimmt die Routine.',
+              correct: true,
+              explanation:
+                'Richtig. Der geübte Einstieg ist dein Sicherheitsnetz genau dort, wo Puls und Anspannung am höchsten sind. Wer die erste Minute souverän übersteht, findet fast immer in den normalen Fluss.',
+            },
+            {
+              text: 'Weil das Publikum nach der ersten Minute ohnehin nicht mehr richtig zuhört.',
+              correct: false,
+              explanation:
+                'Das Publikum hört durchaus weiter zu – mit den richtigen Wechseln sogar bis zum Schluss. Der Grund ist ein anderer: Deine eigene Anspannung ist am Anfang am größten, dort brauchst du das Sicherheitsnetz.',
+            },
+            {
+              text: 'Damit man den Rest des Vortrags gar nicht mehr vorbereiten muss.',
+              correct: false,
+              explanation:
+                'Der geübte Einstieg ersetzt die Vorbereitung des Restes nicht – er priorisiert sie nur: Anfang und Kernbotschaften zuerst, weil dort Nervosität und Wirkung am höchsten sind.',
             },
           ],
         },

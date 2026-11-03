@@ -3,6 +3,7 @@ import { NavLink, useMatch } from 'react-router-dom'
 
 import { routePatterns, routes } from '@/app/routes'
 import {
+  BookOpenIcon,
   BriefcaseIcon,
   ChatIcon,
   CheckCircleIcon,
@@ -159,6 +160,12 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           <NavLink to={routes.myAnswers()} className={navLinkClasses} onClick={onNavigate}>
             <NotebookIcon className="h-4 w-4" />
             Meine Antworten
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={routes.glossary()} className={navLinkClasses} onClick={onNavigate}>
+            <BookOpenIcon className="h-4 w-4" />
+            Glossar
           </NavLink>
         </li>
       </ul>

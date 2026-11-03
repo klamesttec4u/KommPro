@@ -117,6 +117,58 @@ export const listeningQuestioning: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'listening-active-q3',
+          question:
+            'Ein Teammitglied erzählt dir von einem Problem, und du antwortest: „Das kenne ich gut, bei mir war das letztes Jahr noch viel extremer – pass auf …" Warum ist das ein Zuhör-Fehler?',
+          options: [
+            {
+              text: 'Du ziehst das Gespräch auf dich selbst – das Gegenüber und sein Anliegen verschwinden aus dem Fokus, obwohl es gerade um sie gehen sollte.',
+              correct: true,
+              explanation:
+                'Richtig. Gut gemeinte Eigenbeispiele machen aus dem Zuhören eine Bühne für den Zuhörer. Erst vollständig verstehen – eigene Erfahrungen können später kommen, wenn sie wirklich helfen und erwünscht sind.',
+            },
+            {
+              text: 'Es ist kein Fehler – geteilte Erfahrungen zeigen Empathie und verbinden.',
+              correct: false,
+              explanation:
+                'Die Absicht ist oft empathisch, die Wirkung aber nicht: Das Gegenüber wollte gehört werden und sitzt nun im Publikum deiner Geschichte. Empathie zeigt sich zuerst im Nachfragen und Spiegeln.',
+            },
+            {
+              text: 'Der Fehler liegt nur darin, dass du übertreibst („viel extremer") – ohne Übertreibung wäre die Antwort in Ordnung.',
+              correct: false,
+              explanation:
+                'Auch ohne Übertreibung bleibt das Muster dasselbe: Der Fokus wandert vom Erzählenden zu dir. Genau dieser Fokuswechsel ist der Zuhör-Fehler.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'listening-active-q4',
+          question:
+            'Warum wirkt das Verbalisieren von Gefühlen (Stufe 3) gerade in angespannten Situationen oft deeskalierend?',
+          options: [
+            {
+              text: 'Wer sich mit seinem Ärger ernst genommen fühlt, muss ihn nicht mehr lauter beweisen – und kann wieder sachlich werden.',
+              correct: true,
+              explanation:
+                'Genau: Das Ansprechen der Emotion („Ich merke, das ärgert dich richtig") wirkt wie ein Ventil. Ignorierte Gefühle dagegen suchen sich ihren Weg – meist in Lautstärke oder Sturheit.',
+            },
+            {
+              text: 'Weil das Benennen von Gefühlen das Gegenüber verunsichert und dadurch ruhiger macht.',
+              correct: false,
+              explanation:
+                'Verunsichern ist weder Ziel noch Wirkung: Das Verbalisieren signalisiert Verständnis, nicht Überlegenheit – und genau dieses Sich-verstanden-Fühlen senkt die Anspannung.',
+            },
+            {
+              text: 'Weil man damit dem Gegenüber zeigt, dass seine Aufregung unangemessen ist.',
+              correct: false,
+              explanation:
+                'Das wäre eine Bewertung und würde eskalieren. Verbalisieren beschreibt die wahrgenommene Emotion wertfrei – es sagt „ich sehe dich", nicht „du übertreibst".',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'listening-active-s1',
           situation:
@@ -274,6 +326,58 @@ export const listeningQuestioning: Module = {
               correct: false,
               explanation:
                 'Gerade mündlich wirkt der soziale Druck am stärksten: Vor anderen einer Suggestivfrage zu widersprechen kostet Überwindung – viele nicken lieber und tragen die Entscheidung innerlich nicht mit.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'listening-questions-q3',
+          question:
+            'Du willst von einem Kollegen wissen, wieso er eine Entscheidung so getroffen hat. Warum ist „Was war der Grund für diese Entscheidung?" besser als „Warum hast du das so gemacht?"',
+          options: [
+            {
+              text: '„Warum"-Fragen an Personen klingen schnell nach Rechtfertigungsdruck – die Was-Formulierung fragt dasselbe, ohne anzuklagen.',
+              correct: true,
+              explanation:
+                'Richtig. Inhaltlich sind beide Fragen identisch, aber „Warum hast du …" löst bei vielen einen Verteidigungsreflex aus. Die neutrale Formulierung bekommt die ehrlichere Antwort.',
+            },
+            {
+              text: 'Weil „Warum"-Fragen geschlossene Fragen sind und nur Ja/Nein-Antworten zulassen.',
+              correct: false,
+              explanation:
+                '„Warum" ist ein W-Wort und damit eine offene Frage. Das Problem liegt nicht in der Frageform, sondern im anklagenden Unterton gegenüber Personen.',
+            },
+            {
+              text: 'Der Unterschied ist reine Höflichkeitskosmetik – auf die Antwort hat die Formulierung keinen Einfluss.',
+              correct: false,
+              explanation:
+                'Doch, erheblich: Wer sich angeklagt fühlt, rechtfertigt sich und lässt Unangenehmes weg. Wer neutral gefragt wird, erklärt offen – inklusive der Zweifel, die dich eigentlich interessieren.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'listening-questions-q4',
+          question:
+            'Eine Diskussion in deinem Team dreht sich im Kreis, weil alle nur die eigene Sicht wiederholen. Welcher Fragetyp bringt am gezieltesten eine neue Perspektive ins Gespräch?',
+          options: [
+            {
+              text: 'Eine zirkuläre Frage wie „Was würde unser Kunde sagen, wenn er diese Diskussion hören könnte?"',
+              correct: true,
+              explanation:
+                'Richtig. Zirkuläre Fragen zwingen zum Perspektivwechsel: Plötzlich argumentiert niemand mehr für die eigene Position, sondern alle denken aus einer dritten Sicht – das löst festgefahrene Fronten.',
+            },
+            {
+              text: 'Eine geschlossene Frage wie „Sind wir uns jetzt einig?"',
+              correct: false,
+              explanation:
+                'Geschlossene Fragen sichern Ergebnisse, die schon da sind – in einer festgefahrenen Diskussion erzwingen sie höchstens eine Scheinabstimmung, keine neue Sichtweise.',
+            },
+            {
+              text: 'Eine Suggestivfrage wie „Ihr seht doch auch, dass mein Vorschlag der beste ist?"',
+              correct: false,
+              explanation:
+                'Damit verhärtest du die Fronten zusätzlich: Suggestivfragen verteidigen die eigene Position, statt die Perspektive zu wechseln – genau das Gegenteil dessen, was die Diskussion braucht.',
             },
           ],
         },

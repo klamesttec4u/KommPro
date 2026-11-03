@@ -120,6 +120,58 @@ export const conflictCommunication: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'conflict-escalation-q3',
+          question:
+            'Warum ist es wichtig, die Konfliktart zu bestimmen, bevor man eine Lösung versucht?',
+          options: [
+            {
+              text: 'Jede Art braucht einen anderen Lösungsweg: Ein Sachkonflikt lässt sich mit Daten und Kriterien lösen, ein Beziehungskonflikt nur über ein Gespräch über die Zusammenarbeit selbst.',
+              correct: true,
+              explanation:
+                'Richtig – und viele Konflikte tarnen sich: Hinter dem scheinbaren Sachstreit über ein Tool steckt oft ein Anerkennungs- oder Beziehungskonflikt. Wer dann weitere Sachargumente liefert, verfehlt die eigentliche Ebene.',
+            },
+            {
+              text: 'Weil nur bestimmte Konfliktarten überhaupt gelöst werden können – die übrigen muss man aussitzen.',
+              correct: false,
+              explanation:
+                'Grundsätzlich ist jede Konfliktart bearbeitbar – aber eben mit unterschiedlichen Mitteln. Aussitzen ist bei keiner Art eine Strategie: Eskalation ist eine Abwärtstreppe, die von allein selten stoppt.',
+            },
+            {
+              text: 'Die Konfliktart bestimmt, wer rechtlich im Unrecht ist und sich entschuldigen muss.',
+              correct: false,
+              explanation:
+                'Um Schuld geht es bei der Einordnung nicht: Sie ist ein Diagnose-Werkzeug, das den passenden Lösungsweg zeigt – Daten und Kriterien beim Sachkonflikt, Klärungsgespräch beim Beziehungskonflikt.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'conflict-escalation-q4',
+          question:
+            'Welche Signale gelten als Frühwarnzeichen für einen schwelenden Konflikt im Team?',
+          options: [
+            {
+              text: 'Rückzug, Ironie und spitze Bemerkungen, Dienst nach Vorschrift, Cliquenbildung – und Kommunikation, die nur noch schriftlich mit CC an Vorgesetzte läuft.',
+              correct: true,
+              explanation:
+                'Genau: Konflikte beginnen selten mit einem Knall, sondern mit solchen leisen Verhaltensänderungen. Wer sie ernst nimmt und früh anspricht, kann noch in der Win-win-Phase klären – dort lösen die Beteiligten selbst.',
+            },
+            {
+              text: 'Lautstarke Diskussionen in Meetings – solange niemand schreit, ist alles in Ordnung.',
+              correct: false,
+              explanation:
+                'Fast umgekehrt: Offene, auch hitzige Sachdiskussion ist oft gesund. Gefährlicher ist das Verstummen – wenn nicht mehr miteinander, sondern nur noch übereinander geredet wird.',
+            },
+            {
+              text: 'Häufige Krankmeldungen einzelner Mitarbeiter – das ist das einzige verlässliche Signal.',
+              correct: false,
+              explanation:
+                'Krankenstand kann eine Spätfolge sein, hat aber viele Ursachen. Die typischen frühen Zeichen sind Verhaltensänderungen in der Kommunikation: Rückzug, Ironie, Formalisierung, Lagerbildung.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'conflict-escalation-s1',
           situation:
@@ -252,6 +304,58 @@ export const conflictCommunication: Module = {
               correct: false,
               explanation:
                 'Das wäre überzogen: In der Win-win-Phase lösen die Beteiligten Konflikte am besten selbst – das stärkt auch die Beziehung. Ein Dritter ist das Mittel für festgefahrene oder weit eskalierte Konflikte.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'conflict-deescalation-q3',
+          question:
+            '„Mir fällt auf, dass wir uns gerade gegenseitig unterbrechen. Können wir vereinbaren, dass jeder ausreden darf?" – Welche Technik ist das, und warum wirkt sie?',
+          options: [
+            {
+              text: 'Metakommunikation: das Sprechen über das Gespräch selbst – es holt beide aus dem Schlagabtausch auf eine gemeinsame Beobachterposition.',
+              correct: true,
+              explanation:
+                'Richtig: Statt den nächsten inhaltlichen Treffer zu landen, machst du den Prozess zum Thema. Das unterbricht die Eskalationsspirale, ohne dass jemand inhaltlich nachgeben muss.',
+            },
+            {
+              text: 'Eine Ich-Botschaft: Die Beobachtung ersetzt den Vorwurf und beschreibt nur das eigene Gefühl.',
+              correct: false,
+              explanation:
+                'Verwandt, aber nicht dasselbe: Die Ich-Botschaft adressiert ein Verhalten des anderen aus eigener Sicht. Hier wird das Gespräch selbst zum Gegenstand gemacht – das ist Metakommunikation.',
+            },
+            {
+              text: 'Ein rhetorischer Trick, um die Redezeit des Gegenübers zu verkürzen und selbst öfter dranzukommen.',
+              correct: false,
+              explanation:
+                'Als Trick eingesetzt verliert die Technik ihre Wirkung sofort. Metakommunikation funktioniert, weil sie ein faires Angebot an beide Seiten ist – eine neue Gesprächsregel, die auch dich bindet.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'conflict-deescalation-q4',
+          question:
+            'Worauf kommt es an, wenn du in einem hitzigen Gespräch eine Pause vorschlägst?',
+          options: [
+            {
+              text: 'Einen konkreten neuen Zeitpunkt nennen und das Klärungsinteresse bekräftigen – sonst wirkt das Vertagen wie Ausweichen.',
+              correct: true,
+              explanation:
+                'Genau: „Lass uns in einer halben Stunde weiterreden – ich will das wirklich klären" ist Professionalität, kein Rückzug. Bei starker Erregung ist rationales Denken physiologisch eingeschränkt; die Pause macht Lösung erst wieder möglich.',
+            },
+            {
+              text: 'Die Pause unauffällig herbeiführen, etwa durch einen vorgetäuschten Termin – ein offener Pausenwunsch wäre ein Eingeständnis von Schwäche.',
+              correct: false,
+              explanation:
+                'Vorwände fliegen auf und beschädigen Vertrauen. Der offene Pausenvorschlag ist das Gegenteil von Schwäche: Er zeigt, dass du Verantwortung für die Gesprächsqualität übernimmst.',
+            },
+            {
+              text: 'Die Pause nutzen, um in Ruhe die besten Gegenargumente für die nächste Runde zu sammeln.',
+              correct: false,
+              explanation:
+                'Dann wäre die Pause nur eine Aufrüstungsphase – und die nächste Runde eskaliert weiter. Sinn der Pause ist das Abkühlen auf beiden Seiten, damit wieder Zuhören und Lösungsdenken möglich werden.',
             },
           ],
         },
@@ -420,6 +524,58 @@ export const conflictCommunication: Module = {
               correct: false,
               explanation:
                 'Ernst genommen fühlen ist ein netter Nebeneffekt, aber nicht der Kern – und Gesprächslänge ist kein Wert an sich. Der eigentliche Nutzen: Interessen eröffnen Lösungsräume, die auf Positionsebene unsichtbar bleiben.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'conflict-talk-q3',
+          question:
+            'Warum solltest du Wörter wie „immer", „nie" und „ständig" im Konfliktgespräch vermeiden?',
+          options: [
+            {
+              text: 'Sie sind Verallgemeinerungen statt Beobachtungen – und laden zum Widerspruch über die Ausnahme ein, statt über das eigentliche Problem zu sprechen.',
+              correct: true,
+              explanation:
+                'Richtig: Auf „Du kommst ständig zu spät" folgt fast reflexhaft „Stimmt nicht, letzten Montag war ich pünktlich!" – und das Gespräch streitet über die Statistik. Konkrete Beispiele mit Zeitpunkt sind unbestreitbar.',
+            },
+            {
+              text: 'Sie sind grammatikalisch zu umgangssprachlich für ein professionelles Gespräch.',
+              correct: false,
+              explanation:
+                'Mit Stilfragen hat das nichts zu tun: Das Problem ist inhaltlich – Verallgemeinerungen sind angreifbar und wirken wie Urteile über die Person statt wie Beschreibungen von Situationen.',
+            },
+            {
+              text: 'Man darf sie verwenden, solange sie der Wahrheit entsprechen – bei echten Wiederholungstätern sind sie sogar nötig.',
+              correct: false,
+              explanation:
+                'Auch bei häufigem Verhalten wirken drei konkrete, datierte Beispiele stärker als jedes „immer": Sie belegen das Muster, ohne die Tür für Ausnahme-Debatten zu öffnen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'conflict-talk-q4',
+          question:
+            'Woran erkennst du eine tragfähige Vereinbarung am Ende eines Konfliktgesprächs?',
+          options: [
+            {
+              text: 'Sie ist konkret (wer macht was bis wann), beide Seiten tragen etwas bei, und es gibt einen vereinbarten Termin zum Nachfassen.',
+              correct: true,
+              explanation:
+                'Genau: „Du meldest Verzögerungen bis Donnerstag, ich verschiebe meine Deadline auf Mittwoch – in vier Wochen schauen wir drauf" ist überprüfbar und beidseitig. Der Nachfass-Termin macht das Nachsteuern legitim statt vorwurfsvoll.',
+            },
+            {
+              text: 'Beide versichern sich, dass ab jetzt wieder alles gut ist und man besser miteinander umgehen will.',
+              correct: false,
+              explanation:
+                '„Wir gehen besser miteinander um" ist ein frommer Wunsch, keine Vereinbarung: Nichts daran ist überprüfbar, und beim nächsten Vorfall beginnt der Streit von vorn – nur frustrierter.',
+            },
+            {
+              text: 'Die unterlegene Seite akzeptiert schriftlich die Forderungen der anderen.',
+              correct: false,
+              explanation:
+                'Ein Diktat ist keine Vereinbarung: Wer sich als Verlierer fühlt, hält Zusagen selten lange. Tragfähig wird es, wenn die Interessen beider Seiten eingeflossen sind und beide etwas beitragen.',
             },
           ],
         },

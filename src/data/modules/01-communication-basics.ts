@@ -101,6 +101,58 @@ export const communicationBasics: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'basics-communication-model-q3',
+          question:
+            'Im Meeting haben alle dem neuen Prozess zugestimmt – drei Wochen später arbeitet trotzdem niemand danach. Auf welcher Stufe der Übertragungskette ist die Kommunikation gescheitert?',
+          options: [
+            {
+              text: 'Auf der Stufe „Einverstanden → Umgesetzt": Zustimmung garantiert keine Umsetzung – es fehlen Priorität, Erinnerung oder klare Verantwortung.',
+              correct: true,
+              explanation:
+                'Richtig. Die Kette endet nicht beim Einverständnis: Ohne klare Verantwortlichkeiten, Termine und Nachhalten versandet auch eine beschlossene Änderung.',
+            },
+            {
+              text: 'Auf der Stufe „Gesagt → Gehört": Die Teilnehmer haben im Meeting offenbar nicht zugehört.',
+              correct: false,
+              explanation:
+                'Gehört und sogar verstanden wurde die Botschaft – sonst hätte niemand zustimmen können. Das Problem liegt eine Stufe weiter hinten: zwischen Einverständnis und Umsetzung.',
+            },
+            {
+              text: 'Gar nicht – wenn alle zugestimmt haben, war die Kommunikation erfolgreich. Die Umsetzung ist ein reines Disziplinproblem.',
+              correct: false,
+              explanation:
+                'Die Übertragungskette reicht bewusst bis zur Umsetzung: Kommunikation hat ihr Ziel erst erreicht, wenn das Vereinbarte auch passiert. Wer dort Verantwortung und Nachhalten einplant, kommuniziert vollständig.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'basics-communication-model-q4',
+          question:
+            'Du musst eine heikle Projektverzögerung an einen wichtigen Stakeholder kommunizieren. Welcher Kanal ist nach der Faustregel der Lektion am besten geeignet?',
+          options: [
+            {
+              text: 'Das persönliche Gespräch oder ein Call – je wichtiger die Botschaft, desto reicher sollte der Kanal sein.',
+              correct: true,
+              explanation:
+                'Richtig. Im Gespräch wirken Tonfall und Nachfragen sofort mit, Missverständnisse lassen sich direkt klären. Eine schriftliche Zusammenfassung kann danach ergänzen – aber nicht ersetzen.',
+            },
+            {
+              text: 'Eine ausführliche E-Mail – dann ist alles dokumentiert und der Stakeholder kann in Ruhe reagieren.',
+              correct: false,
+              explanation:
+                'Dokumentation ist wertvoll, aber bei heiklen Botschaften fehlen der E-Mail Tonfall und direkte Rückfragen – das Risiko der Fehlinterpretation ist am größten, wenn die Botschaft am wichtigsten ist.',
+            },
+            {
+              text: 'Eine kurze Chat-Nachricht – schnell gesendet heißt schnell informiert.',
+              correct: false,
+              explanation:
+                'Der ärmste Kanal für die wichtigste Botschaft: Eine Projektverzögerung per Chat wirkt beiläufig bis respektlos und provoziert Rückfragen-Pingpong statt Klärung.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'basics-communication-model-s1',
           situation:
@@ -243,6 +295,58 @@ export const communicationBasics: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'basics-four-sides-q3',
+          question:
+            'Du musst eine Kollegin an einen Termin erinnern und willst vermeiden, dass sie die Nachricht als Kritik auf dem Beziehungsohr hört. Was empfiehlt das Modell für den Sender?',
+          options: [
+            {
+              text: 'Die heikle Seite explizit machen: „Mir geht es nur um den Termin, nicht um deine Arbeit – kriegen wir das bis Freitag hin?"',
+              correct: true,
+              explanation:
+                'Richtig. Wer die Beziehungsseite ausdrücklich klärt, nimmt der Nachricht die Mehrdeutigkeit – das Gegenüber muss nicht raten, wie etwas gemeint ist.',
+            },
+            {
+              text: 'Die Erinnerung möglichst knapp halten („Freitag!") – je weniger Worte, desto weniger kann falsch ankommen.',
+              correct: false,
+              explanation:
+                'Das Gegenteil stimmt: Je knapper die Nachricht, desto mehr Interpretationsspielraum bleibt – und desto eher füllt das Beziehungsohr die Lücken mit einem vermuteten Vorwurf.',
+            },
+            {
+              text: 'Die Erinnerung über eine dritte Person ausrichten lassen, damit sie neutraler wirkt.',
+              correct: false,
+              explanation:
+                'Der Umweg über Dritte wirkt selten neutral – eher nach „Er traut sich nicht" oder „Sie beschwert sich hintenrum" und belastet damit genau die Beziehungsebene, die du schonen wolltest.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'basics-four-sides-q4',
+          question:
+            'Deine Teamleiterin sagt im Vorbeigehen: „Das Kundenmeeting morgen wird anspruchsvoll." Du räumst daraufhin sofort deinen Nachmittag frei, um dich vorzubereiten. Auf welchem Ohr hast du gehört?',
+          options: [
+            {
+              text: 'Auf dem Appellohr: Du hast aus der Bemerkung eine Handlungsaufforderung herausgehört („Bereite dich gut vor!").',
+              correct: true,
+              explanation:
+                'Genau. Die Reaktion – sofort handeln – zeigt das Appellohr. Gemeint sein kann aber auch reine Selbstkundgabe („Ich bin angespannt") – im Zweifel klärt eine kurze Rückfrage, was erwartet wird.',
+            },
+            {
+              text: 'Auf dem Sachohr: Du hast nur die Information über das Meeting aufgenommen.',
+              correct: false,
+              explanation:
+                'Auf dem Sachohr hättest du die Aussage schlicht zur Kenntnis genommen („Aha, anspruchsvoll"). Dass du sofort in Aktion gehst, zeigt: Du hast einen Appell gehört.',
+            },
+            {
+              text: 'Auf dem Beziehungsohr: Die Aussage sagt vor allem etwas über euer Verhältnis.',
+              correct: false,
+              explanation:
+                'Auf dem Beziehungsohr hättest du etwas über dich gehört („Sie traut mir das nicht zu"). Deine Reaktion – vorbereiten statt grübeln – ist die klassische Appellohr-Antwort.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'basics-four-sides-s1',
           situation:
@@ -364,6 +468,58 @@ export const communicationBasics: Module = {
               correct: false,
               explanation:
                 'Das Axiom beschreibt, wie Kommunikation wirkt – es ist keine Verhaltensregel oder Frist.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'basics-iceberg-axioms-q3',
+          question:
+            'Zwei Teams schieben sich gegenseitig die Schuld zu: „Wir liefern spät, WEIL ihr unklare Anforderungen schickt" – „Wir fragen ständig nach, WEIL ihr spät liefert." Welches Phänomen beschreibt Watzlawick damit?',
+          options: [
+            {
+              text: 'Unterschiedliche Interpunktion: Jede Seite sieht ihr Verhalten nur als Reaktion auf die andere – der Kreislauf hat aus beiden Sichten einen anderen „Anfang".',
+              correct: true,
+              explanation:
+                'Richtig. Die Schuldfrage ist in solchen Kreisläufen unlösbar, weil beide Sichtweisen in sich stimmig sind. Raus kommt man nicht über „Wer hat angefangen?", sondern indem eine Seite das Muster durchbricht.',
+            },
+            {
+              text: 'Das Eisbergmodell: Beide Teams kommunizieren zu wenig auf der Sachebene.',
+              correct: false,
+              explanation:
+                'Die Beziehungsebene spielt mit, aber das beschriebene Muster – jeder sieht sich als Reagierenden – ist die unterschiedliche Interpunktion des Geschehens.',
+            },
+            {
+              text: 'Einen Enkodierungsfehler: Die Anforderungen wurden sprachlich schlecht formuliert.',
+              correct: false,
+              explanation:
+                'Formulierungen mögen eine Rolle spielen, aber der Kern des Phänomens ist der gegenseitige Reaktions-Kreislauf: Beide begründen ihr Verhalten mit dem Verhalten der anderen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'basics-iceberg-axioms-q4',
+          question:
+            'Derselbe Sparvorschlag wird vom einen Kollegen begeistert aufgenommen, vom anderen sofort zerpflückt – obwohl Inhalt und Folien identisch waren. Welches Axiom erklärt das am besten?',
+          options: [
+            {
+              text: 'Jede Kommunikation hat einen Inhalts- und einen Beziehungsaspekt – und die Beziehung bestimmt, wie der Inhalt verstanden wird.',
+              correct: true,
+              explanation:
+                'Genau. Vertrauen und Beziehung färben die Bewertung des Inhalts: Vom geschätzten Kollegen wirkt derselbe Vorschlag konstruktiv, vom Rivalen wie ein Angriff. Deshalb gilt: zuerst Vertrauen, dann Argumente.',
+            },
+            {
+              text: 'Man kann nicht nicht kommunizieren – auch der Vorschlag selbst war schon Kommunikation.',
+              correct: false,
+              explanation:
+                'Das Axiom stimmt, erklärt hier aber nichts: Die Frage ist ja, warum identischer Inhalt unterschiedlich ankommt – und das liegt am Beziehungsaspekt, der den Inhalt färbt.',
+            },
+            {
+              text: 'Der Vorschlag wurde beim zweiten Kollegen akustisch schlechter übertragen.',
+              correct: false,
+              explanation:
+                'Es geht nicht um Übertragungsqualität: Beide haben denselben Inhalt verstanden – aber auf unterschiedlichem Beziehungsfundament völlig anders bewertet.',
             },
           ],
         },

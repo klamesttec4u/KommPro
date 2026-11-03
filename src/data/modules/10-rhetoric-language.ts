@@ -127,6 +127,57 @@ export const rhetoricLanguage: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'rhetoric-devices-q3',
+          question: 'Wie dosierst du rhetorische Mittel in einer Business-Präsentation richtig?',
+          options: [
+            {
+              text: 'An den zwei, drei entscheidenden Stellen einsetzen – Einstieg, Kernbotschaft, Schluss – und den Rest bewusst sachlich halten.',
+              correct: true,
+              explanation:
+                'Richtig. Rhetorische Mittel sind Gewürze, keine Hauptzutat: Gerade der Wechsel zwischen sachlichem Ton und verdichteten Momenten erzeugt die Wirkung – und lässt die Schlüsselsätze hängen bleiben.',
+            },
+            {
+              text: 'In möglichst jedem Satz mindestens ein Mittel unterbringen – wenn die Technik wirkt, dann umso mehr davon.',
+              correct: false,
+              explanation:
+                'Überdosierte Rhetorik kippt ins Theatralische: Das Publikum spürt die Technik, fragt sich, was überspielt werden soll, und misstraut dem Inhalt. Die Dosis macht die Wirkung.',
+            },
+            {
+              text: 'Nur im Schlusssatz – während des Vortrags lenken rhetorische Mittel vom Inhalt ab.',
+              correct: false,
+              explanation:
+                'Zu sparsam: Gerade der Einstieg und die Kernbotschaft sind die Stellen, an denen ein Mittel über Aufmerksamkeit und Merkfähigkeit entscheidet. Zwei, drei bewusste Stellen sind das Maß.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'rhetoric-devices-q4',
+          question:
+            '„Es geht nicht darum, mehr zu arbeiten – sondern am Richtigen." Welches rhetorische Mittel trägt diesen Satz?',
+          options: [
+            {
+              text: 'Ein Kontrast (Antithese): Zwei Pole werden gegenübergestellt, wodurch sich die Botschaft schärft.',
+              correct: true,
+              explanation:
+                'Genau. Das „nicht X, sondern Y"-Muster ist die klassische Antithese – die Gegenüberstellung gibt der Aussage Kante und macht sie zitierfähig.',
+            },
+            {
+              text: 'Eine Anapher: Der gleiche Satzanfang wiederholt sich.',
+              correct: false,
+              explanation:
+                'Hier wiederholt sich kein Satzanfang – eine Anapher wäre „Das spart Zeit. Das spart Geld. Das spart Nerven." Das prägende Muster ist die Gegenüberstellung zweier Pole: der Kontrast.',
+            },
+            {
+              text: 'Eine Metapher: Ein Bild wird auf einen abstrakten Sachverhalt übertragen.',
+              correct: false,
+              explanation:
+                'Im Satz steckt kein Bild und keine Übertragung – eine Metapher wäre „Dieses Projekt ist unser Leuchtturm". Hier wirkt das Entgegensetzen von „mehr" und „am Richtigen": die Antithese.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'rhetoric-devices-s1',
           situation:
@@ -276,6 +327,57 @@ export const rhetoricLanguage: Module = {
               correct: false,
               explanation:
                 'Vorschläge machen ist ausdrücklich erwünscht und ein Zeichen von Initiative – es geht nur darum, sie klar zu formulieren statt im Konjunktiv zu verstecken.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'rhetoric-fillers-q3',
+          question: 'Was ist der erste Schritt, um die eigenen Füllwörter loszuwerden?',
+          options: [
+            {
+              text: 'Bewusstheit herstellen: eine kurze Audioaufnahme anhören oder einen Kollegen mitzählen lassen – die eigenen Muster kennt man selbst nicht.',
+              correct: true,
+              explanation:
+                'Richtig. Füllwörter sind Automatismen unterhalb der Selbstwahrnehmung: Die meisten Menschen schätzen ihre „ähm"-Frequenz dramatisch zu niedrig ein. Ohne ehrliche Bestandsaufnahme trainierst du am falschen Muster.',
+            },
+            {
+              text: 'Sofort in der nächsten wichtigen Präsentation auf alle Füllwörter verzichten – der feste Wille reicht.',
+              correct: false,
+              explanation:
+                'Unter Druck fallen Automatismen zurück in alte Muster – reiner Wille ohne Bestandsaufnahme und Üben in stressfreien Situationen scheitert fast immer und frustriert doppelt.',
+            },
+            {
+              text: 'Ein Rhetorikseminar buchen – ohne professionelle Begleitung lassen sich Sprechmuster nicht verändern.',
+              correct: false,
+              explanation:
+                'Ein Seminar kann helfen, ist aber nicht der erste Schritt und auch nicht nötig: Smartphone-Aufnahme plus gezieltes Üben im Alltag kostet nichts und wirkt schneller als ein Seminartag pro Jahr.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'rhetoric-fillers-q4',
+          question:
+            'Warum sind Weichmacher wie „eigentlich", „nur" oder „ein bisschen" mehr als ein Schönheitsfehler?',
+          options: [
+            {
+              text: 'Sie verwässern die Botschaft und signalisieren Unsicherheit – „Eigentlich bin ich überzeugt" heißt beim Zuhörer: so richtig nicht.',
+              correct: true,
+              explanation:
+                'Richtig. Weichmacher sind ein Wirkungsproblem: Sie laden das Gegenüber ein, die Aussage nicht ernst zu nehmen – und machen den Sprecher kleiner, als er ist („Ich habe da nur eine kleine Anmerkung").',
+            },
+            {
+              text: 'Sie sind grammatikalisch falsch und gehören deshalb nicht in professionelle Sprache.',
+              correct: false,
+              explanation:
+                'Grammatikalisch ist an „eigentlich" nichts auszusetzen – das Problem ist die Wirkung: Das Wort sät Zweifel an der eigenen Aussage, genau dort, wo Klarheit gefragt wäre.',
+            },
+            {
+              text: 'Sie sind unhöflich – wer abschwächt, wirkt herablassend gegenüber dem Gesprächspartner.',
+              correct: false,
+              explanation:
+                'Eher umgekehrt: Viele nutzen Weichmacher aus falsch verstandener Höflichkeit. Doch Höflichkeit liegt im Ton und im Respekt – nicht im Weichspülen der eigenen Position.',
             },
           ],
         },

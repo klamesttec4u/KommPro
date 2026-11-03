@@ -95,6 +95,57 @@ export const storytelling: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'story-why-q3',
+          question: 'In welcher Situation ist Storytelling das falsche Werkzeug?',
+          options: [
+            {
+              text: 'Im Statusmeeting, in dem die Geschäftsführung schnelle Entscheidungen auf Faktenbasis erwartet – dort zählen Ampelfarbe und kritische Punkte.',
+              correct: true,
+              explanation:
+                'Richtig. Storytelling passt zum Überzeugen, Motivieren und Verändern – nicht dorthin, wo ein ergebnisorientiertes Publikum kompakte Fakten für eine schnelle Entscheidung braucht. Die Faustregel: Geschichten öffnen Türen, Fakten schließen den Deal.',
+            },
+            {
+              text: 'Im Pitch vor potenziellen Kunden – dort wirken nur harte Zahlen.',
+              correct: false,
+              explanation:
+                'Gerade der Pitch ist ein Heimspiel für Storytelling: Die Geschichte schafft Relevanz und Emotion, bevor die Zahlen den Verstand absichern. Die stärkste Wirkung entsteht aus der Kombination von beidem.',
+            },
+            {
+              text: 'Beim Projekt-Kickoff – zu Beginn eines Projekts gibt es noch nichts zu erzählen.',
+              correct: false,
+              explanation:
+                'Im Gegenteil: Der Kickoff lebt von der Geschichte – dem Zukunftsbild, dem Warum des Projekts, dem Problem, das gelöst werden soll. Genau hier soll ein Team motiviert und auf ein Ziel eingeschworen werden.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'story-why-q4',
+          question:
+            '„Wir haben die Software eingeführt und alles lief gut." Warum ist das keine Geschichte?',
+          options: [
+            {
+              text: 'Es fehlt der Konflikt – ohne ein Hindernis, bei dem etwas auf dem Spiel steht, entsteht keine Spannung, sondern ein Statusbericht.',
+              correct: true,
+              explanation:
+                'Genau. Erst der Moment, in dem etwas schiefgehen kann („Drei Wochen vor Go-live fiel der Datenimport aus …"), erzeugt die Spannung, die das Publikum mitfiebern lässt. Reibungslose Abläufe informieren – sie bewegen nicht.',
+            },
+            {
+              text: 'Der Satz ist zu kurz – eine Geschichte braucht mindestens fünf Minuten Erzählzeit.',
+              correct: false,
+              explanation:
+                'Länge ist kein Kriterium: Eine wirksame Business-Geschichte kann in drei Sätzen erzählt sein. Was fehlt, ist kein Umfang, sondern der Konflikt – das Element, das aus Information Spannung macht.',
+            },
+            {
+              text: 'Es fehlt die Jahreszahl – ohne genaue Zeitangabe kann das Publikum die Aussage nicht einordnen.',
+              correct: false,
+              explanation:
+                'Zeitangaben können eine Geschichte konkreter machen, sind aber nicht ihr Kern. Entscheidend sind Held, Konflikt und Auflösung – und hier fehlt vor allem der Konflikt.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'story-why-s1',
           situation:
@@ -251,6 +302,57 @@ export const storytelling: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'story-patterns-q3',
+          question: 'Wofür steht STAR, und wofür eignet sich die Struktur besonders?',
+          options: [
+            {
+              text: 'Situation, Task, Action, Result – sie macht eigene Beispiele konkret und belegbar, etwa im Bewerbungsgespräch oder als Kompetenznachweis.',
+              correct: true,
+              explanation:
+                'Richtig. STAR zwingt zum Punkt: Kontext in zwei Sätzen, die eigene Aufgabe, das konkrete eigene Handeln und ein messbares Ergebnis – so versandet kein Beispiel mehr im Ungefähren.',
+            },
+            {
+              text: 'Strategy, Tactics, Analysis, Review – sie strukturiert Projektabschlussberichte für das Management.',
+              correct: false,
+              explanation:
+                'Diese Auflösung ist erfunden. STAR steht für Situation, Task, Action, Result – und ist keine Berichts-, sondern eine Erzählstruktur für eigene Erfahrungsbeispiele.',
+            },
+            {
+              text: 'Situation, Task, Action, Result – sie ersetzt in Keynotes die Heldenreise, weil sie emotionaler wirkt.',
+              correct: false,
+              explanation:
+                'Die Auflösung stimmt, der Einsatzzweck nicht: STAR ist bewusst nüchtern und belegorientiert – ihre Stärke liegt bei Kompetenznachweisen und Interviews. Für emotionale Keynotes ist die Heldenreise das passendere Muster.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'story-patterns-q4',
+          question:
+            'Du willst einen Erfolgsbericht über ein Kundenprojekt erzählen – welches Story-Muster passt am natürlichsten?',
+          options: [
+            {
+              text: 'Vorher-Nachher: die Welt vor der Veränderung mit fühlbaren Schmerzpunkten zeichnen, dann die Welt danach – und den Kontrast wirken lassen.',
+              correct: true,
+              explanation:
+                'Genau. Für Referenzen und Erfolgsberichte ist Vorher-Nachher das einfachste und stärkste Muster: Der Kontrast erzählt den Wert der Lösung von selbst, ohne dass du behaupten musst.',
+            },
+            {
+              text: 'Die vollständige Heldenreise mit allen zwölf Stationen nach Campbell – alles andere wird dem Projekt nicht gerecht.',
+              correct: false,
+              explanation:
+                'Die volle Heldenreise ist für Hollywood, nicht fürs Meeting – im Business reicht die Kompaktversion, und für einen schlichten Erfolgsbericht ist selbst die oft zu viel Apparat. Vorher-Nachher liefert denselben Kontrast mit einem Bruchteil des Aufwands.',
+            },
+            {
+              text: 'Gar keins – Erfolgsberichte sollten als neutrale Faktenliste erzählt werden, sonst wirken sie wie Werbung.',
+              correct: false,
+              explanation:
+                'Eine Faktenliste verschenkt die Wirkung: Der Wert einer Lösung wird erst im Kontrast erlebbar. Werblich wirkt eine Geschichte nur, wenn sie übertreibt – ehrliches Vorher-Nachher mit echten Zahlen ist glaubwürdig UND merkfähig.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'story-patterns-s1',
           situation:
@@ -400,6 +502,57 @@ export const storytelling: Module = {
               correct: false,
               explanation:
                 'Jetzt hast du zu viel weggerundet: „Deutlich" ist eine Behauptung, „knapp 40 %" ein Beleg. Die Zahl weglassen schwächt deine Botschaft unnötig.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'story-data-q3',
+          question: 'Welche Regeln gelten für einen guten Zahlenvergleich?',
+          options: [
+            {
+              text: 'Er passt zur Zielgruppe (Controller denken in Personalkosten, Techniker in Serverkapazität) und ist fair – manipulative Vergleiche kosten dauerhaft Glaubwürdigkeit.',
+              correct: true,
+              explanation:
+                'Richtig. Der Vergleich muss an der Alltagserfahrung des Publikums andocken, sonst übersetzt er nichts – und er muss ehrlich sein: Wer einmal bei einem schiefen Vergleich erwischt wird, dem glaubt man auch die korrekten Zahlen nicht mehr.',
+            },
+            {
+              text: 'Er sollte möglichst spektakulär sein – je dramatischer der Vergleich, desto besser die Wirkung.',
+              correct: false,
+              explanation:
+                'Spektakel ohne Fairness fällt auf dich zurück: Ein aufgebauschter Vergleich wirkt kurz – bis jemand nachrechnet. Die Wirkung kommt aus der Treffsicherheit für die Zielgruppe, nicht aus der Dramatik.',
+            },
+            {
+              text: 'Er sollte immer Fußballfelder verwenden, weil die jeder kennt.',
+              correct: false,
+              explanation:
+                'Fußballfelder funktionieren für Flächen – aber eben nur dort, und nicht für jedes Publikum. Die Regel ist nicht ein bestimmtes Bild, sondern: das Bild wählen, in dem DIESE Zielgruppe denkt.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'story-data-q4',
+          question:
+            'Du präsentierst: „Der Umsatz ist um 12 % gestiegen." Was fehlt dieser Zahl noch zur Botschaft?',
+          options: [
+            {
+              text: 'Der Kontext: Ist das mehr als der Markt, mehr als geplant, was ermöglicht es uns? Ohne die Antwort auf „Was bedeutet das für uns?" bleibt die Interpretation dem Zufall überlassen.',
+              correct: true,
+              explanation:
+                'Genau. 12 % können ein Triumph sein (Markt schrumpft) oder ein Alarmsignal (Markt wächst um 30 %). Erst die Einordnung und die Konsequenz machen aus dem Messwert eine Botschaft.',
+            },
+            {
+              text: 'Die Nachkommastellen – erst „12,37 %" macht die Aussage glaubwürdig.',
+              correct: false,
+              explanation:
+                'Mehr Präzision ist nicht mehr Bedeutung: Die Nachkommastellen gehören ins Backup. Was fehlt, ist die Einordnung – im Vergleich zu Plan, Markt und Vorjahr – und die Konsequenz für das Publikum.',
+            },
+            {
+              text: 'Nichts – eine positive Prozentzahl spricht für sich selbst.',
+              correct: false,
+              explanation:
+                'Gerade das tut sie nicht: Ob 12 % gut oder schlecht sind, hängt vollständig vom Maßstab ab. Wer die Einordnung weglässt, überlässt dem Publikum die Interpretation – und die fällt nicht immer zu deinen Gunsten aus.',
             },
           ],
         },

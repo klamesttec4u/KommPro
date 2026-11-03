@@ -101,6 +101,56 @@ export const speechDelivery: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'rhetoric-voice-q3',
+          question: 'Wie setzt du Betonung in einem Satz richtig ein?',
+          options: [
+            {
+              text: 'Bewusst entscheiden, welches EINE Wort die Bedeutung trägt – denn je nachdem, ob du „WIR schaffen das", „Wir SCHAFFEN das" oder „Wir schaffen DAS" sagst, ändert sich die Botschaft.',
+              correct: true,
+              explanation:
+                'Richtig. Betonung lenkt Bedeutung, und meist trägt genau ein Wort pro Satz die Last. Wer mehrere Wörter betont, betont am Ende keines – und überlässt die Deutung dem Zufall.',
+            },
+            {
+              text: 'Möglichst viele Wörter betonen, damit der ganze Satz wichtig klingt.',
+              correct: false,
+              explanation:
+                'Wenn alles betont ist, ist nichts betont – Dauerbetonung ist nur eine andere Form von Monotonie. Die Wirkung entsteht durch den Kontrast zwischen dem einen betonten Wort und dem Rest.',
+            },
+            {
+              text: 'Betonung dem Zufall überlassen – sie ergibt sich beim freien Sprechen von selbst richtig.',
+              correct: false,
+              explanation:
+                'Beim Alltagssprechen oft ja – unter Vortragsdruck verflacht die Betonung aber zum Einheitston. Gerade Kernbotschaften brauchen die bewusste Entscheidung, welches Wort die Last trägt.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'rhetoric-voice-q4',
+          question: 'Welche Regel gilt für das Sprechtempo im Vortrag?',
+          options: [
+            {
+              text: 'Variation schlägt Geschwindigkeit: schneller bei Beispielen und Bekanntem, langsamer bei Kernbotschaften, Zahlen und allem Neuen.',
+              correct: true,
+              explanation:
+                'Richtig. Der Wechsel hält wach und gibt dem Wichtigen Gewicht. Dauerhaft schnell wirkt gehetzt, dauerhaft langsam wirkt zäh – beides ist Monotonie, nur in verschiedene Richtungen.',
+            },
+            {
+              text: 'Grundsätzlich so langsam wie möglich sprechen – dann kommt garantiert jeder mit.',
+              correct: false,
+              explanation:
+                'Durchgehend langsames Sprechen wirkt zäh und einschläfernd – das Publikum denkt schneller, als du redest, und schweift ab. Nicht das Tempo an sich wirkt, sondern sein Wechsel.',
+            },
+            {
+              text: 'Ein konstantes, mittleres Tempo halten – Schwankungen verwirren das Publikum.',
+              correct: false,
+              explanation:
+                'Das konstante Tempo ist genau das Problem: Gleichmaß wird vom Gehirn ausgeblendet wie das Ticken einer Uhr. Tempowechsel verwirren nicht – sie strukturieren und halten wach.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'rhetoric-voice-s1',
           situation:
@@ -268,6 +318,57 @@ export const speechDelivery: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'delivery-melody-q3',
+          question:
+            'Ein Redner reiht seine Sätze endlos aneinander: „… und dann … wobei … und außerdem …" – die Stimme bleibt am Satzende oben. Was bewirkt das?',
+          options: [
+            {
+              text: 'Kein Gedanke wird hörbar abgeschlossen – das Publikum wartet vergeblich auf den Punkt und schaltet ab. Gegenmittel: kurze Sätze, Stimme runter, Pause.',
+              correct: true,
+              explanation:
+                'Richtig. Hängende Satzenden sind das akustische Endlosband: Ohne hörbaren Punkt gibt es keine Verarbeitungsmomente. Der Schlusspunkt nach unten plus kurze Pause gibt jedem Gedanken ein Ende – und dem Publikum Halt.',
+            },
+            {
+              text: 'Es wirkt besonders flüssig und eloquent, weil keine Unterbrechungen den Redefluss stören.',
+              correct: false,
+              explanation:
+                'Was sich für den Redner flüssig anfühlt, ist für das Ohr anstrengend: Ohne Satzenden fehlen die Ankerpunkte, an denen das Gehirn Gedanken abschließt und ablegt. Flüssig ist nicht gleich verständlich.',
+            },
+            {
+              text: 'Es erzeugt Spannung, weil das Publikum immer wissen will, wie es weitergeht.',
+              correct: false,
+              explanation:
+                'Spannung entsteht durch bewusste Pausen vor Kernbotschaften – nicht durch Endlosigkeit. Die Dauer-Verkettung erzeugt das Gegenteil: Ermüdung, weil nie ein Gedanke fertig wird.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'delivery-melody-q4',
+          question: 'Welches Energie-Level brauchst du beim Sprechen vor Publikum?',
+          options: [
+            {
+              text: 'Etwa zwanzig Prozent mehr als im normalen Gespräch – was sich für dich leicht übertrieben anfühlt, kommt vorne als normal und präsent an.',
+              correct: true,
+              explanation:
+                'Richtig. Distanz, Raumgröße und Nervosität schlucken Energie – das normale Gesprächslevel wirkt auf der Bühne flach. Die leichte Übersteuerung gleicht das aus. Und: Lächeln ist hörbar, selbst am Telefon.',
+            },
+            {
+              text: 'Exakt das gleiche wie im Alltagsgespräch – alles andere wirkt unauthentisch.',
+              correct: false,
+              explanation:
+                'Verständlicher Gedanke, aber die Wirkung kehrt sich um: Normales Gesprächslevel kommt über Distanz gedämpft und müde an. Die 20 Prozent extra wirken beim Publikum nicht übertrieben, sondern einfach präsent.',
+            },
+            {
+              text: 'So viel wie irgend möglich – maximale Lautstärke und Dauer-Enthusiasmus reißen jedes Publikum mit.',
+              correct: false,
+              explanation:
+                'Dauer-Vollgas ist anstrengend und wirkt schnell aufgesetzt – außerdem fehlt dir dann der Spielraum nach oben für die wirklich wichtigen Momente. Leicht erhöhtes Grundlevel plus bewusste Spitzen ist die Formel.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'delivery-melody-s1',
           situation:
@@ -426,6 +527,57 @@ export const speechDelivery: Module = {
               correct: false,
               explanation:
                 'Langsames Vorlesen macht einen Schachtelsatz nicht verständlicher, nur länger quälend. Die Lösung ist, den Satz zu zerlegen: ein Gedanke, ein Satz, ein Punkt.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'delivery-liveliness-q3',
+          question: 'Was besagt das Prinzip Wechsel für die Vortragsplanung?',
+          options: [
+            {
+              text: 'Etwa alle drei bis fünf Minuten einen bewussten Aufmerksamkeits-Anker einplanen: Formatwechsel (Geschichte, Frage, Demo), Stimmwechsel oder Perspektivwechsel.',
+              correct: true,
+              explanation:
+                'Richtig. Lebendigkeit ist planbar: Die Anker gehören beim Vorbereiten in den Ablauf wie die Inhalte selbst. Faustregel: Wer fünf Minuten am Stück dasselbe tut, ist mit dem nächsten Wechsel überfällig.',
+            },
+            {
+              text: 'Aufmerksamkeit muss nur am Anfang gewonnen werden – wer stark einsteigt, hat das Publikum für den Rest des Vortrags sicher.',
+              correct: false,
+              explanation:
+                'Die Aufmerksamkeit sinkt nach wenigen Minuten wieder – bei jedem Publikum, egal wie stark der Einstieg war. Sie muss im Verlauf immer wieder aktiv zurückgeholt werden, genau dafür sind die Anker da.',
+            },
+            {
+              text: 'Wechsel wirken unruhig – ein professioneller Vortrag hält Ton, Tempo und Format konstant durch.',
+              correct: false,
+              explanation:
+                'Genau dieses Gleichmaß erzeugt die Langeweile: Das Gehirn blendet Konstantes aus wie das Ticken einer Uhr. Geplante Wechsel sind kein Stilbruch, sondern das wirksamste Mittel dagegen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'delivery-liveliness-q4',
+          question:
+            'Warum ist die direkte Ansprache („Sie kennen das aus Ihren Projekten …") so wirksam gegen das Abschalten?',
+          options: [
+            {
+              text: 'Sie holt jeden Zuhörer persönlich ab – niemand schaltet ab, während er selbst gemeint ist und sein eigener Alltag angesprochen wird.',
+              correct: true,
+              explanation:
+                'Richtig. Die direkte Ansprache verwandelt Zuhörer von Zuschauern in Beteiligte: Das Gehirn reagiert auf persönliche Relevanz stärker als auf jede noch so gute Sachinformation.',
+            },
+            {
+              text: 'Sie füllt elegant die Zeit, wenn einem der nächste inhaltliche Punkt nicht sofort einfällt.',
+              correct: false,
+              explanation:
+                'Als Lückenfüller verschenkt du das Mittel: Die Ansprache wirkt, weil sie die Inhalte mit dem Alltag des Publikums verbindet – beiläufig eingestreut ohne Bezug wird sie zur Floskel.',
+            },
+            {
+              text: 'Sie ist riskant und sollte vermieden werden – direkte Ansprache wirkt im Business-Kontext schnell anbiedernd.',
+              correct: false,
+              explanation:
+                'Anbiedernd wird es nur bei gespielter Vertrautheit. Die sachliche Ansprache („Sie kennen das: Montagmorgen, das System ist langsam …") ist eines der legitimsten und wirksamsten Mittel gesprochener Sprache.',
             },
           ],
         },

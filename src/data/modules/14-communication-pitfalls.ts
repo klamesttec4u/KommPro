@@ -133,6 +133,57 @@ export const communicationPitfalls: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'mistakes-content-q3',
+          question: 'Wie gehst du am besten mit Lücken oder Wechseln in deinem Projektprofil um?',
+          options: [
+            {
+              text: 'Vor dem Gespräch das eigene Profil wie ein Prüfer durchgehen und zu jeder Zeile eine Frage erwarten – Lücken sind fast nie das Problem, unerklärte Lücken schon.',
+              correct: true,
+              explanation:
+                'Richtig. Wer bei den eigenen Profilangaben ins Schwimmen gerät, löst das Alarmsignal „Wenn das geschönt ist, was dann noch?" aus. Eine souverän erklärte Lücke dagegen interessiert nach zwei Sätzen niemanden mehr.',
+            },
+            {
+              text: 'Lücken im Profil kaschieren, etwa durch gedehnte Projektzeiträume – was nicht auffällt, muss man nicht erklären.',
+              correct: false,
+              explanation:
+                'Hochriskant: Projektzeiträume werden oft wörtlich geprüft, und ein ertappter Widerspruch zum Profil entwertet alle übrigen Angaben. Erklären ist immer billiger als vertuschen.',
+            },
+            {
+              text: 'Das Profil spielt im Gespräch kaum eine Rolle – entscheidend ist nur, wie man live auftritt.',
+              correct: false,
+              explanation:
+                'Das Profil ist die Gesprächsgrundlage und wird häufig Zeile für Zeile abgeklopft. Wer es selbst nicht parat hat oder ihm widerspricht, wirkt unvorbereitet – egal wie gut der Auftritt sonst ist.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'mistakes-content-q4',
+          question:
+            'Warum ist das Kleinreden eigener Leistungen („da habe ich nur zugearbeitet") genauso schädlich wie Übertreiben?',
+          options: [
+            {
+              text: 'Der Prüfer kann deine tatsächliche Leistung nicht mehr einordnen – die professionelle Mitte sind belegte Fakten: Ergebnis, Zahlen, Nutzungsdauer sprechen lassen.',
+              correct: true,
+              explanation:
+                'Richtig. „Das war nichts Besonderes" nimmt deinen Leistungen die Beweiskraft. „Die App ist seit zwei Jahren produktiv, 800 Nutzer" wirkt selbstbewusst, ohne arrogant zu sein – Fakten statt Eigenlob oder Selbstverzwergung.',
+            },
+            {
+              text: 'Ist es nicht – Bescheidenheit kommt in Deutschland immer gut an und hebt dich von Angebern ab.',
+              correct: false,
+              explanation:
+                'Sympathisch vielleicht – aber eingekauft wird Lieferfähigkeit. Wer seine Leistungen unsichtbar macht, zwingt den Prüfer zum Raten, und bezahlt wird am Ende der Kandidat, dessen Können belegt ist.',
+            },
+            {
+              text: 'Weil man stattdessen Superlative verwenden sollte: „herausragend", „exzellent", „einzigartig" bleiben besser hängen.',
+              correct: false,
+              explanation:
+                'Superlative ohne Beleg sind die andere Hälfte desselben Problems – sie klingen nach Übertreibung und fallen bei der ersten Nachfrage in sich zusammen. Hängen bleiben belegte Ergebnisse, nicht Adjektive.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'mistakes-content-s1',
           situation:
@@ -287,6 +338,57 @@ export const communicationPitfalls: Module = {
               correct: false,
               explanation:
                 'Fast richtig – aber die Flughöhe muss WECHSELN können: Wenn danach der Architekt fragt, braucht er die technische Tiefe. Die Kunst ist der Wechsel je nach Gegenüber, nicht die Einfachheit an sich.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'mistakes-language-q3',
+          question:
+            'Welchen Test muss jeder Fachbegriff oder jedes Schlagwort bestehen, das du im Gespräch verwendest?',
+          options: [
+            {
+              text: 'Die Nachfrage „Was heißt das konkret bei Ihnen?" – wer sie nicht beantworten kann, streicht den Begriff besser vorher.',
+              correct: true,
+              explanation:
+                'Richtig. Erfahrene Prüfer stellen genau diese Nachfrage – und Buzzwords ohne Substanz („synergetisch", „End-to-End-Mindset") sind für sie ein Indikator für fehlende Tiefe, kein Kompetenzsignal.',
+            },
+            {
+              text: 'Er muss aktuell und branchenüblich klingen – wer die neuesten Schlagworte kennt, zeigt, dass er am Puls der Zeit ist.',
+              correct: false,
+              explanation:
+                'Genau umgekehrt: Je modischer das Schlagwort, desto wahrscheinlicher die Nachfrage – und desto härter der Absturz, wenn dahinter nichts Konkretes steht. Substanz schlägt Aktualität.',
+            },
+            {
+              text: 'Er muss im eigenen Profil ebenfalls vorkommen, damit kein Widerspruch entsteht.',
+              correct: false,
+              explanation:
+                'Konsistenz mit dem Profil ist ein anderes Thema. Der Buzzword-Test ist inhaltlich: Kannst du den Begriff konkret machen – mit einem Beispiel, einer Zahl, einem Vorgehen?',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'mistakes-language-q4',
+          question: 'Was gilt für Stimme und Blick im Remote-Qualifizierungsgespräch?',
+          options: [
+            {
+              text: 'Der Bildschirm schluckt Energie – deshalb bewusst eine Stufe lebendiger sprechen, in die Kamera (nicht auf die Gesichter) schauen und wegen der Latenz nach Antworten kurz warten.',
+              correct: true,
+              explanation:
+                'Richtig. Remote wirken dieselben Worte flacher – die bewusst lebendigere Stimme gleicht das aus. Und Blickkontakt entsteht am Bildschirm nur über die Kameralinse, so kontraintuitiv sich das anfühlt.',
+            },
+            {
+              text: 'Remote gelten exakt dieselben Regeln wie im Raum – wer etwas anpasst, wirkt unnatürlich.',
+              correct: false,
+              explanation:
+                'Das Medium verändert die Wirkung: Energie kommt gedämpfter an, Blick auf die Bildschirmmitte wirkt wie Vorbeischauen, Latenz erzeugt Unterbrechungen. Wer nicht anpasst, wirkt müder und fahriger, als er ist.',
+            },
+            {
+              text: 'Man schaut auf die Gesichter in der Bildschirmmitte – nur so sieht man die Reaktionen und hält echten Blickkontakt.',
+              correct: false,
+              explanation:
+                'Die Reaktionen sehen ja – aber für dein Gegenüber schaust du dabei sichtbar nach unten oder zur Seite. Echter Blickkontakt entsteht remote nur durch den Blick in die Kameralinse, besonders bei deinen Kernaussagen.',
             },
           ],
         },
@@ -483,6 +585,57 @@ export const communicationPitfalls: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'mistakes-behavior-q3',
+          question: 'Wie fasst du nach einem Qualifizierungsgespräch professionell nach?',
+          options: [
+            {
+              text: 'Eine kurze Dank-Nachricht am selben oder nächsten Tag mit einem inhaltlichen Bezug zum Gespräch – danach Geduld bis zum genannten Entscheidungstermin.',
+              correct: true,
+              explanation:
+                'Richtig. Der inhaltliche Bezug („Ihr Punkt zur Teameinarbeitung ist mir nachgegangen …") zeigt echtes Interesse statt Floskel – und die Geduld danach unterscheidet Souveränität von Verzweiflung.',
+            },
+            {
+              text: 'Gar nicht nachfassen – wer nachfragt, wirkt bedürftig. Der Kunde meldet sich schon, wenn er will.',
+              correct: false,
+              explanation:
+                'Schwankt der Kunde zwischen zwei Kandidaten, kann fehlendes Nachfassen als Desinteresse gelesen werden – und das Zünglein an der Waage sein. Einmal kurz und professionell ist kein Betteln.',
+            },
+            {
+              text: 'Alle ein, zwei Tage freundlich an die Entscheidung erinnern, damit du im Gedächtnis bleibst.',
+              correct: false,
+              explanation:
+                'Tägliches Nachbohren wirkt verzweifelt und nervt genau die Person, die über dich entscheidet. Im Gedächtnis bleibst du durch das Gespräch und EINE gute Nachricht – nicht durch Frequenz.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'mistakes-behavior-q4',
+          question:
+            'Im Gespräch sitzen Projektleiterin, HR-Referentin und Einkäufer. Die Projektleiterin stellt fast alle Fragen. An wen richtest du deine Antworten?',
+          options: [
+            {
+              text: 'An alle: Die Antwort beginnt beim Fragesteller, aber Blickkontakt und Erklärungen verteilen sich auf den ganzen Tisch – auch auf die Stillen, denn jeder dort hat ein Veto.',
+              correct: true,
+              explanation:
+                'Richtig. HR und Einkauf merken sofort, wenn sie wie Luft behandelt werden – und ihr Eindruck fließt in die Entscheidung ein. Wer nur die ranghöchste oder aktivste Person adressiert, verliert die anderen als Fürsprecher.',
+            },
+            {
+              text: 'Konsequent an die Projektleiterin – sie stellt die Fragen und trifft fachlich die Entscheidung, alles andere verwässert den Fokus.',
+              correct: false,
+              explanation:
+                'Fachlich entscheidet sie vielleicht – aber HR prüft den Umgang und der Einkauf die Konditionen, und beide können dich blockieren. Das Ausblenden der anderen ist zudem genau das Verhalten, das man einem Berater im Stakeholder-Termin nicht durchgehen ließe.',
+            },
+            {
+              text: 'An die Person mit dem freundlichsten Gesichtsausdruck – positive Resonanz gibt Sicherheit.',
+              correct: false,
+              explanation:
+                'Verständlicher Reflex, aber damit tappst du in die Lieblingsgesichter-Falle: Die kritischeren Teilnehmer fühlen sich übergangen – und gerade sie musst du erreichen.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'mistakes-behavior-s1',
           situation:
@@ -647,6 +800,57 @@ export const communicationPitfalls: Module = {
               correct: false,
               explanation:
                 'Bei einem längerfristigen Vertrag ist die Vorgeschichte der Rolle eine legitime und wichtige Information. Nicht zu fragen heißt, ein vermeidbares Risiko einzugehen – es kommt nur auf die Formulierung an.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'mistakes-questions-q3',
+          question:
+            'Du bist nur vier Tage pro Woche verfügbar – eine Rahmenbedingung, die dem Kunden wichtig sein dürfte. Wie gehst du damit um?',
+          options: [
+            {
+              text: 'Offen ansprechen, aber als Rahmenbedingung mit Lösungsangebot: „Ich bin vier Tage verfügbar und würde den Freitag als festen Fokus-Tag für Doku und Reviews vorschlagen."',
+              correct: true,
+              explanation:
+                'Richtig. Ehrlichkeit zu Rahmenbedingungen ist professionell – entscheidend ist die Verpackung: nicht als Beichte oder Forderung, sondern als geklärte Bedingung mit einem Vorschlag, wie es für das Projekt funktioniert.',
+            },
+            {
+              text: 'Bis zum Vertragsentwurf verschweigen – im Gespräch würde es nur unnötig Zweifel säen.',
+              correct: false,
+              explanation:
+                'Verstecken rächt sich immer: Kommt die Bedingung erst beim Vertrag auf den Tisch, fühlt sich der Kunde getäuscht – und das Vertrauen aus dem Gespräch ist dahin. Rahmenbedingungen gehören früh und sachlich geklärt.',
+            },
+            {
+              text: 'Ganz am Ende beiläufig erwähnen und hoffen, dass es im positiven Gesamteindruck untergeht.',
+              correct: false,
+              explanation:
+                'Die Beiläufigkeit macht es schlimmer: Es wirkt, als wüsstest du selbst, dass etwas nicht passt. Dieselbe Information, früh und mit Lösungsvorschlag präsentiert, wirkt dagegen souverän.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'mistakes-questions-q4',
+          question: '„Warum haben Sie aktuell Kapazität frei?" – Welche Antwort-Linie ist richtig?',
+          options: [
+            {
+              text: 'Neutral-positiv: „Das Projekt ist planmäßig ausgelaufen; ich suche gezielt ein längerfristiges Engagement – deshalb bin ich hier."',
+              correct: true,
+              explanation:
+                'Richtig. Die Frage prüft, ob hinter der freien Kapazität ein Problem steckt. Die sachliche Erklärung plus die bewusste Suche nach genau dieser Art Projekt dreht sie ins Positive – ohne Klage, ohne Rechtfertigung.',
+            },
+            {
+              text: 'Ehrlich klagen, wenn es so war: „Der letzte Kunde hat aus Kostengründen alle Externen rausgeworfen – das war ein ziemliches Chaos."',
+              correct: false,
+              explanation:
+                'Auch wenn es stimmt: Die Klage macht dich zum Opfer der Umstände und redet schlecht über einen früheren Kunden – doppelt schädlich. Dieselbe Tatsache geht neutral: „Das Programm wurde kundenseitig beendet; mein Teil war abgeschlossen."',
+            },
+            {
+              text: 'Ausweichen und schnell das Thema wechseln – die Frage ist eine Falle, auf die man gar nicht eingeht.',
+              correct: false,
+              explanation:
+                'Das Ausweichen bestätigt den Verdacht, den die Frage prüft. Sie ist Standard in fast jedem Gespräch mit Externen – bereite die neutrale Zwei-Satz-Antwort einfach vor, dann verliert sie jeden Schrecken.',
             },
           ],
         },

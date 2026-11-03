@@ -96,6 +96,56 @@ export const meetingsModeration: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'meetings-prep-q3',
+          question: 'Nach welchem Prinzip stellst du den Teilnehmerkreis eines Meetings zusammen?',
+          options: [
+            {
+              text: 'So klein wie möglich: Wer nur informiert werden muss, bekommt das Protokoll statt der Einladung – jede zusätzliche Person verlängert Diskussionen und verdünnt Verantwortung.',
+              correct: true,
+              explanation:
+                'Richtig: Die Leitfragen sind „Wer entscheidet, wer trägt bei, wer muss nur Bescheid wissen?" Nur die ersten beiden Gruppen gehören in den Termin – die dritte wird mit dem Ergebnis versorgt.',
+            },
+            {
+              text: 'Lieber großzügig einladen: Wer dabei war, fühlt sich einbezogen und kann sich später nicht beschweren.',
+              correct: false,
+              explanation:
+                'Das „Alle-ins-Boot"-Prinzip ist teuer: Acht passive Zuhörer kosten einen Arbeitstag an Kapazität, und große Runden entscheiden schlechter. Einbezogen fühlt man sich auch durch ein gutes Ergebnis-Update.',
+            },
+            {
+              text: 'Immer die komplette Hierarchiekette einladen, damit Entscheidungen sofort abgesegnet werden können.',
+              correct: false,
+              explanation:
+                'Entscheidend ist, dass die tatsächlich Entscheidungsbefugten für die konkrete Frage anwesend sind – nicht die ganze Leiter. Unnötige Hierarchie im Raum verändert zudem die Diskussionskultur.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'meetings-prep-q4',
+          question: 'Wann und in welcher Form sollte die Agenda bei den Teilnehmenden ankommen?',
+          options: [
+            {
+              text: 'Mit der Einladung – pro Punkt mit Leitfrage, Zieltyp, Zeitansatz und Verantwortlichem; Lesematerial hängt mit klarer Ansage an.',
+              correct: true,
+              explanation:
+                'Genau: Nur wer die Agenda vorab kennt, kann sich vorbereiten – und ein Punkt wie „Entscheidung: Release verschieben – ja oder nein?" sagt deutlich mehr als das Schlagwort „Thema Release".',
+            },
+            {
+              text: 'Zu Beginn des Meetings gemeinsam erstellen – dann ist sie demokratisch legitimiert und aktuell.',
+              correct: false,
+              explanation:
+                'Das kostet die wertvollsten Minuten des Termins und macht Vorbereitung unmöglich: Niemand konnte Material lesen oder Optionen durchdenken. Die Agenda ist Vorbereitung, kein Tagesordnungspunkt.',
+            },
+            {
+              text: 'Eine Agenda ist bei eingespielten Teams verzichtbar – man kennt die Themen ja.',
+              correct: false,
+              explanation:
+                'Gerade Regeltermine ohne Agenda verkommen zu Plauderrunden. Die Agenda mit Leitfragen und Zieltypen ist das Werkzeug, das aus einem Treffen eine Arbeitssitzung macht – auch im besten Team.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'meetings-prep-s1',
           situation:
@@ -234,6 +284,56 @@ export const meetingsModeration: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'meetings-facilitation-q3',
+          question: 'Wie bremst du einen Vielredner wirksam, ohne ihn bloßzustellen?',
+          options: [
+            {
+              text: 'Zusammenfassen und weitergeben: den Kernpunkt würdigend verdichten („Dein Punkt ist also die Datenqualität – danke!") und gezielt andere Stimmen einladen.',
+              correct: true,
+              explanation:
+                'Richtig: Struktur schlägt Konfrontation. Die Zusammenfassung signalisiert „gehört und verstanden", das Weitergeben schützt die Redezeit der anderen – ganz ohne Gesichtsverlust für den Vielredner.',
+            },
+            {
+              text: 'Ihn konsequent ignorieren und nicht mehr drannehmen, bis er es von selbst merkt.',
+              correct: false,
+              explanation:
+                'Ignorieren ist passiv-aggressiv und funktioniert selten – Vielredner nehmen sich das Wort auch ungefragt. Aktives, freundliches Strukturieren wirkt schneller und hält die Beziehung intakt.',
+            },
+            {
+              text: 'Vor der Gruppe deutlich werden: „Du redest schon wieder viel zu lange – jetzt sind mal andere dran."',
+              correct: false,
+              explanation:
+                'Die öffentliche Zurechtweisung erreicht das Ziel auf Kosten der Person – und oft ihrer Mitarbeit für den Rest des Termins. Erst zusammenfassen und weitergeben; die klare Unterbrechung gibt es auch in freundlich.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'meetings-facilitation-q4',
+          question: 'Wozu dient der Themenspeicher (auch „Parkplatz" genannt) in der Moderation?',
+          options: [
+            {
+              text: 'Wichtige, aber nicht hierher gehörende Themen sichtbar festzuhalten – so fühlt sich niemand abgewürgt, und das Meeting bleibt auf Kurs.',
+              correct: true,
+              explanation:
+                'Genau: Der Themenspeicher ist ein Versprechen, kein Mülleimer – die Moderation klärt danach transparent, wann und wo das geparkte Thema behandelt wird. Nur dann funktioniert er dauerhaft.',
+            },
+            {
+              text: 'Unbequeme Themen dauerhaft loszuwerden, ohne offen Nein sagen zu müssen.',
+              correct: false,
+              explanation:
+                'Wird der Parkplatz zur Endlagerstätte, durchschaut das jede Gruppe nach zwei Terminen – und bringt Themen dann erst recht mitten im Meeting unter. Geparkte Themen brauchen einen echten Folgeort.',
+            },
+            {
+              text: 'Die Diskussionsbeiträge aller Teilnehmenden wörtlich zu protokollieren.',
+              correct: false,
+              explanation:
+                'Das wäre ein Verlaufsprotokoll. Der Themenspeicher sammelt nur Themen, die wichtig sind, aber nicht auf die heutige Agenda gehören – als sichtbare Liste für die spätere Klärung.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'meetings-facilitation-s1',
           situation:
@@ -365,6 +465,58 @@ export const meetingsModeration: Module = {
               correct: false,
               explanation:
                 'Auch Diskussionsrunden produzieren Festhaltenswertes: Zwischenstände, offene Fragen, nächste Schritte. Ohne Notiz beginnt die nächste Runde wieder bei null.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'meetings-results-q3',
+          question:
+            'Warum soll das Protokoll binnen 24 Stunden verschickt werden – und mit Einwandsfrist?',
+          options: [
+            {
+              text: 'Je später es kommt, desto weiter weichen die Erinnerungen voneinander ab – und die Einwandsfrist („gilt danach als bestätigt") macht aus der Mail ein verbindliches Dokument.',
+              correct: true,
+              explanation:
+                'Richtig: Frische Erinnerung plus klare Frist ergeben Verbindlichkeit. Ohne Einwand-Mechanismus bleibt das Protokoll eine unverbindliche Gedächtnisstütze, die später jeder anders auslegen kann.',
+            },
+            {
+              text: 'Aus Compliance-Gründen: Protokolle müssen gesetzlich innerhalb eines Werktags archiviert werden.',
+              correct: false,
+              explanation:
+                'Eine solche allgemeine Vorschrift gibt es nicht. Die 24-Stunden-Regel ist eine Wirksamkeitsregel: schnelle Zustellung, solange die Erinnerung frisch ist und die Aufgaben starten können.',
+            },
+            {
+              text: 'Damit die Protokollantin die Aufgabe schnell los ist und sich wieder ihrer eigentlichen Arbeit widmen kann.',
+              correct: false,
+              explanation:
+                'Angenehmer Nebeneffekt, aber nicht der Grund: Es geht um übereinstimmende Erinnerung, frühen Aufgabenstart und die Verbindlichkeit durch die Einwandsfrist.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'meetings-results-q4',
+          question:
+            'Im Meeting wird beschlossen: „Das übernimmt dann am besten Frau Weber" – Frau Weber ist heute nicht dabei. Was gilt für dieses „Action Item"?',
+          options: [
+            {
+              text: 'Es ist noch keines: Eine Aufgabe, die niemand aktiv angenommen hat, ist ein Wunsch – jemand muss sie Frau Weber antragen und ihre Zusage einholen.',
+              correct: true,
+              explanation:
+                'Genau: Action Items brauchen die aktive Annahme durch die verantwortliche Person. Sauber ist ein Zwischenschritt im Protokoll: „Tom fragt Frau Weber bis morgen an und meldet die Übernahme zurück."',
+            },
+            {
+              text: 'Es ist gültig, sobald es im Protokoll steht – das Protokoll ist schließlich verbindlich.',
+              correct: false,
+              explanation:
+                'Das Protokoll bindet die Anwesenden an das Vereinbarte – es kann aber niemanden verpflichten, der nie zugesagt hat. Solche Zuweisungen in Abwesenheit sind die klassische Quelle von „Das war mir nicht klar".',
+            },
+            {
+              text: 'Abwesende dürfen grundsätzlich keine Aufgaben aus Meetings erhalten.',
+              correct: false,
+              explanation:
+                'Doch, natürlich – nur eben über den Umweg der Anfrage: Eine anwesende Person übernimmt es, die Aufgabe anzutragen. Erst mit der Zusage von Frau Weber wird daraus ein echtes Action Item.',
             },
           ],
         },

@@ -100,6 +100,58 @@ export const feedbackConversations: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'feedback-rules-q3',
+          question:
+            'Du bekommst kritisches Feedback, das dir unfair vorkommt. Wie reagierst du nach den Regeln der Lektion am besten – direkt in der Situation?',
+          options: [
+            {
+              text: 'Ausreden lassen, konkret nachfragen („Hast du ein Beispiel?") und dich für die Offenheit bedanken – was du damit machst, entscheidest du später in Ruhe.',
+              correct: true,
+              explanation:
+                'Richtig. Danken heißt nicht zustimmen: Du würdigst das Risiko des Feedbackgebers. Wer sich sofort rechtfertigt, bekommt künftig nur noch Weichgespültes – und verliert die ehrlichste Informationsquelle.',
+            },
+            {
+              text: 'Sofort die Punkte richtigstellen, die sachlich falsch sind – sonst bleibt ein falscher Eindruck stehen.',
+              correct: false,
+              explanation:
+                'Der Rechtfertigungsreflex beendet jedes ehrliche Feedback. Erst vollständig verstehen; richtigstellen kannst du später immer noch – mit kühlem Kopf und besseren Argumenten.',
+            },
+            {
+              text: 'Das Feedback kommentarlos abnicken und innerlich verwerfen – wer unfair kritisiert, verdient keine Auseinandersetzung.',
+              correct: false,
+              explanation:
+                'Damit verschenkst du beides: die mögliche Wahrheit im Feedback (ein zweiter Blick am nächsten Tag lohnt fast immer) und die Beziehung zum Feedbackgeber, der dein Abblocken sehr wohl bemerkt.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'feedback-rules-q4',
+          question:
+            'Dir ist im Teammeeting ein gravierender Fehler in der Präsentation eines Kollegen aufgefallen. Wann und wo sprichst du ihn darauf an?',
+          options: [
+            {
+              text: 'Zeitnah nach dem Meeting unter vier Augen – Kritik vor Publikum ist Bloßstellung, aber wochenlanges Warten entwertet das Feedback.',
+              correct: true,
+              explanation:
+                'Richtig. Beide Regeln zählen: unter vier Augen (Respekt) und zeitnah (solange sich beide an Details erinnern). So kann der Kollege das Feedback annehmen, statt sein Gesicht verteidigen zu müssen.',
+            },
+            {
+              text: 'Direkt im Meeting vor allen – dann lernen gleich alle etwas daraus.',
+              correct: false,
+              explanation:
+                'Öffentliche Kritik erzeugt Verteidigung statt Lernen – der Kollege ist mit Gesichtswahrung beschäftigt, nicht mit dem Inhalt. Der „Lerneffekt" für die anderen ist vor allem: Vorsicht vor dir.',
+            },
+            {
+              text: 'Beim nächsten offiziellen Feedbackgespräch in ein paar Monaten – dafür sind solche Termine schließlich da.',
+              correct: false,
+              explanation:
+                'Monate später erinnert sich niemand mehr an Details, und der Fehler hat sich womöglich wiederholt. Jahresgespräche ersetzen kein zeitnahes Feedback – sie ergänzen es.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'feedback-rules-s1',
           situation:
@@ -246,6 +298,56 @@ export const feedbackConversations: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'feedback-nvc-q3',
+          question: 'Warum ist „Ich fühle mich übergangen" im Sinne der GFK kein echtes Gefühl?',
+          options: [
+            {
+              text: 'Es ist ein Pseudo-Gefühl mit verstecktem Vorwurf: Es behauptet eine Handlung des anderen („Du übergehst mich") statt ein eigenes Gefühl zu benennen.',
+              correct: true,
+              explanation:
+                'Richtig. Echte Gefühle wie „enttäuscht" oder „verunsichert" beschreiben nur dich – „übergangen", „hintergangen", „ignoriert" enthalten dagegen ein Urteil über den anderen und lösen prompt Verteidigung aus.',
+            },
+            {
+              text: 'Weil Gefühle im Business grundsätzlich nichts verloren haben und man nur Fakten nennen sollte.',
+              correct: false,
+              explanation:
+                'Die GFK setzt ausdrücklich auf das Benennen echter Gefühle – sie machen die Situation verständlich und menschlich. Problematisch sind nur die als Gefühl getarnten Vorwürfe.',
+            },
+            {
+              text: 'Weil der Satz zu kurz ist – Gefühle müssen immer ausführlich beschrieben werden.',
+              correct: false,
+              explanation:
+                'Die Länge ist egal: „Ich bin frustriert" ist kurz und ein echtes Gefühl. Entscheidend ist, ob der Satz dich beschreibt oder verdeckt den anderen anklagt.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'feedback-nvc-q4',
+          question: 'Warum ist der Bedürfnis-Schritt (Schritt 3) der entscheidende Hebel der GFK?',
+          options: [
+            {
+              text: 'Bedürfnisse wie Verlässlichkeit oder Wertschätzung sind universell – jeder kennt sie, deshalb verbinden sie, wo Vorwürfe trennen.',
+              correct: true,
+              explanation:
+                'Genau. Gegen den Vorwurf „Du bist unzuverlässig" verteidigt man sich – das Bedürfnis „Ich brauche Planbarkeit" kann dagegen jeder nachvollziehen. So wird aus der Konfrontation eine gemeinsame Problemlösung.',
+            },
+            {
+              text: 'Weil das Nennen des Bedürfnisses das Gegenüber moralisch verpflichtet, es zu erfüllen.',
+              correct: false,
+              explanation:
+                'Das wäre eine Forderung durch die Hintertür. Das Bedürfnis schafft Verständnis – ob und wie es erfüllt wird, klärt erst die Bitte, und die darf abgelehnt werden.',
+            },
+            {
+              text: 'Weil man mit dem Bedürfnis-Schritt die Beobachtung und das Gefühl weglassen kann.',
+              correct: false,
+              explanation:
+                'Die vier Schritte bauen aufeinander auf: Ohne konkrete Beobachtung weiß das Gegenüber nicht, worum es geht, ohne Gefühl fehlt die Dringlichkeit. Das Bedürfnis ersetzt die anderen Schritte nicht – es gibt ihnen die Richtung.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'feedback-nvc-s1',
           situation:
@@ -372,6 +474,58 @@ export const feedbackConversations: Module = {
               correct: false,
               explanation:
                 'Ein kommentarloser Abgang wirkt als Beziehungsabbruch. Vertagen ist legitim – aber angekündigt und mit konkretem neuen Termin: „Wir kommen so nicht weiter, lass uns morgen um 10 fortsetzen."',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'feedback-difficult-q3',
+          question:
+            'Welches der folgenden Gesprächsziele ist für ein schwieriges Gespräch tauglich formuliert?',
+          options: [
+            {
+              text: '„Am Ende haben wir eine Vereinbarung, wie Terminverschiebungen künftig mindestens 48 Stunden vorher kommuniziert werden."',
+              correct: true,
+              explanation:
+                'Richtig: konkret, überprüfbar und auf die Zukunft gerichtet. Mit so einem Ziel kannst du das Gespräch steuern und am Ende feststellen, ob es erreicht ist – idealerweise ergänzt um ein Minimalziel als Rückfalllinie.',
+            },
+            {
+              text: '„Ich will ihm endlich mal ungeschönt die Meinung sagen."',
+              correct: false,
+              explanation:
+                'Das ist ein Ventil, kein Ziel: Nach dem Dampfablassen ist nichts vereinbart und die Beziehung beschädigt. Frage dich vorher: Was soll am Ende konkret anders sein?',
+            },
+            {
+              text: '„Das Gespräch soll möglichst harmonisch verlaufen und niemanden verletzen."',
+              correct: false,
+              explanation:
+                'Ein angenehmer Verlauf ist ein Wunsch an die Form, kein inhaltliches Ziel. Wer nur Harmonie anstrebt, weicht dem eigentlichen Thema aus – und muss das Gespräch bald wiederholen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'feedback-difficult-q4',
+          question:
+            'Warum ist ausgedehnter Smalltalk („Na, wie war der Urlaub?") direkt vor einem Kritikgespräch problematisch?',
+          options: [
+            {
+              text: 'Er wirkt im Nachhinein wie ein Hinterhalt: Die freundliche Eröffnung passt nicht zur Botschaft, und das Gegenüber fühlt sich in Sicherheit gewiegt.',
+              correct: true,
+              explanation:
+                'Richtig. Besser ist der direkte, respektvolle Einstieg: Thema, Anlass und Gesprächsziel in den ersten zwei Minuten transparent machen. Das ist nicht kalt – es ist ehrlich und gibt dem Gegenüber Orientierung.',
+            },
+            {
+              text: 'Smalltalk ist grundsätzlich unprofessionell und gehört in kein Business-Gespräch.',
+              correct: false,
+              explanation:
+                'Smalltalk hat seinen Platz – beim Beziehungsaufbau, im Kundenkontakt, nach gelösten Konflikten. Nur als Vorspann einer Kritik wirkt er unaufrichtig, weil er einen anderen Gesprächscharakter vortäuscht.',
+            },
+            {
+              text: 'Weil Smalltalk das Gespräch verlängert und Zeit Geld ist.',
+              correct: false,
+              explanation:
+                'Es geht nicht um die zwei Minuten: Das Problem ist die Fallhöhe zwischen freundlichem Geplänkel und harter Botschaft – sie beschädigt das Vertrauen in deine Aufrichtigkeit.',
             },
           ],
         },

@@ -89,6 +89,14 @@ export interface InterviewQuestionSet {
   questions: InterviewQuestion[]
 }
 
+/** One glossary term with its definition and the lesson that teaches it. */
+export interface GlossaryEntry {
+  term: string
+  definition: string
+  /** Lesson where the concept is covered; resolved to a deep link if present. */
+  lessonId?: string
+}
+
 /** Presentation drill: free-speech prompt practiced against a timer. */
 export interface PitchDrill {
   id: string

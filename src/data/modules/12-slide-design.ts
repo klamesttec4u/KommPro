@@ -95,6 +95,58 @@ export const slideDesign: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'slides-less-q3',
+          question:
+            'Mit welchem Test prüfst du, ob eine Folie die Regel „eine Botschaft pro Folie" erfüllt?',
+          options: [
+            {
+              text: 'Du sagst in einem Satz, was das Publikum von dieser Folie mitnehmen soll – geht das nicht, ist die Folie nicht fertig gedacht und wird geteilt.',
+              correct: true,
+              explanation:
+                'Richtig. Der Ein-Satz-Test entlarvt überladene Folien sofort: Wer zwei Sätze braucht, hat zwei Botschaften – und Folien kosten nichts, also lieber zwei klare als eine volle.',
+            },
+            {
+              text: 'Du zählst die Bullet-Points: Bis zu sieben Punkte gelten als eine Botschaft.',
+              correct: false,
+              explanation:
+                'Die Anzahl der Bullets ist kein Botschafts-Maß – sieben Punkte sind fast sicher mehrere Botschaften. Der Test ist inhaltlich: Was soll hängen bleiben, in einem Satz?',
+            },
+            {
+              text: 'Du prüfst, ob die Folie auch ohne deinen Vortrag vollständig verständlich ist.',
+              correct: false,
+              explanation:
+                'Vorsicht – das ist der Test für ein Dokument, nicht für eine Folie: Eine Folie, die ohne dich funktioniert, ist ein Handout. Die Vortragsfolie verstärkt dich, sie ersetzt dich nicht.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'slides-less-q4',
+          question:
+            'Wozu dienen Faustregeln wie „maximal 6 Zeilen à 6 Wörter, Schrift nie unter 24 Punkt"?',
+          options: [
+            {
+              text: 'Als harte Warnsignale: Wer sie reißt, baut gerade ein Lesedokument statt einer Folie – auch wenn die Regeln keine Dogmen sind.',
+              correct: true,
+              explanation:
+                'Richtig. Die Zahlen sind Richtwerte, keine Gesetze – aber ihr Überschreiten zeigt zuverlässig an, dass zu viel Text auf die Fläche will. Und unter 24 Punkt kann die letzte Reihe schlicht nicht mehr lesen.',
+            },
+            {
+              text: 'Als verbindliche Norm, die in professionellen Präsentationen exakt eingehalten werden muss.',
+              correct: false,
+              explanation:
+                'So starr ist es nicht gemeint – eine Folie mit sieben kurzen Wörtern in einer Zeile ist kein Regelverstoß. Die Faustregeln sind Alarmglocken für Textlawinen, keine Prüfnorm.',
+            },
+            {
+              text: 'Als Gestaltungsempfehlung nur für Präsentationen in sehr großen Räumen.',
+              correct: false,
+              explanation:
+                'Die Regeln gelten überall: Auch im kleinen Meetingraum liest das Publikum schneller, als du sprichst – und hört währenddessen nicht mehr zu. Textmenge ist ein Aufmerksamkeits-, kein Raumproblem.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'slides-less-s1',
           situation:
@@ -253,6 +305,57 @@ export const slideDesign: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'slides-data-q3',
+          question:
+            'Deine gesamte Botschaft ist eine einzige Zahl: „Wir haben 40 % der Lizenzkosten gespart." Wie visualisierst du das am wirksamsten?',
+          options: [
+            {
+              text: 'Die Zahl selbst groß auf die Folie – ein Diagramm drumherum macht sie nicht klarer.',
+              correct: true,
+              explanation:
+                'Richtig. Manchmal ist das beste Diagramm gar keins: Eine große, prominente Zahl ist in einer Sekunde erfasst. Ein Zwei-Balken-Diagramm als Deko würde nur Blickzeit kosten.',
+            },
+            {
+              text: 'Ein Balkendiagramm mit Vorher- und Nachher-Balken – Diagramme wirken immer professioneller als nackte Zahlen.',
+              correct: false,
+              explanation:
+                'Professionell ist, was die Botschaft am schnellsten transportiert – und das ist hier die Zahl selbst. Das Diagramm fügt keine Information hinzu, sondern verpackt sie nur umständlicher.',
+            },
+            {
+              text: 'Eine Tabelle mit allen Kostenpositionen, damit die 40 % nachvollziehbar belegt sind.',
+              correct: false,
+              explanation:
+                'Der Beleg gehört ins Handout oder in den Backup-Teil – auf der Vortragsfolie begräbt die Tabelle deine Kernbotschaft unter Details, die mündlich oder auf Nachfrage besser aufgehoben sind.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'slides-data-q4',
+          question: 'Warum gehören 3D-Effekte in Diagrammen ausnahmslos entfernt?',
+          options: [
+            {
+              text: 'Die Perspektive verzerrt die dargestellten Werte – Längen und Winkel lassen sich nicht mehr ehrlich vergleichen, und genau der Vergleich ist der Zweck des Diagramms.',
+              correct: true,
+              explanation:
+                'Richtig. 3D ist der schlimmste „Chart Junk": Es zeigt keine Daten, sondern verfälscht sie – vordere Segmente wirken größer, Höhen sind nicht mehr ablesbar. Flach gewinnt immer.',
+            },
+            {
+              text: 'Sie sind technisch veraltet und werden von aktuellen Präsentationsprogrammen nicht mehr unterstützt.',
+              correct: false,
+              explanation:
+                'Leider doch – die Programme bieten 3D nach wie vor prominent an. Das Problem ist nicht technisch, sondern visuell: Die Verzerrung macht Werte unvergleichbar.',
+            },
+            {
+              text: 'Sie lenken nur bei Kreisdiagrammen ab – 3D-Balken sind unkritisch.',
+              correct: false,
+              explanation:
+                'Auch 3D-Balken verzerren: Die Perspektive macht es unmöglich, Balkenhöhen exakt an der Achse abzulesen. Die Regel kennt keine Ausnahme – 3D fliegt immer raus.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'slides-data-s1',
           situation:
@@ -382,6 +485,56 @@ export const slideDesign: Module = {
               correct: false,
               explanation:
                 'Das Ausweichen sieht der ganze Raum – es wirkt unsicherer als jedes ehrliche „Das muss ich klären". Der Fragende fühlt sich zudem übergangen und wird zum Gegner deiner Vorlage.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'slides-questions-q3',
+          question: 'Wie bereitest du dich am wirksamsten auf die Fragerunde vor?',
+          options: [
+            {
+              text: 'Die zehn wahrscheinlichsten Fragen notieren – inklusive der drei unangenehmsten – Kernantworten vorbereiten und für erwartbare Detailfragen Backup-Folien hinter dem letzten Slide anlegen.',
+              correct: true,
+              explanation:
+                'Richtig. Fragen lassen sich erstaunlich gut antizipieren. Und der Moment „Gute Frage – dazu habe ich etwas vorbereitet" mit einer Backup-Folie gehört zu den stärksten, die eine Fragerunde bieten kann.',
+            },
+            {
+              text: 'Gar nicht – Fragerunden sind unvorhersehbar, Spontaneität wirkt authentischer als vorbereitete Antworten.',
+              correct: false,
+              explanation:
+                'Ein teurer Irrtum: Die meisten Fragen sind absehbar, gerade die kritischen. Vorbereitung nimmt dir nicht die Spontaneität – sie gibt dir die Ruhe, auch auf Überraschungen souverän zu reagieren.',
+            },
+            {
+              text: 'Alle denkbaren Detailinformationen vorsorglich in den Hauptfoliensatz aufnehmen, damit keine Frage offenbleibt.',
+              correct: false,
+              explanation:
+                'Damit ruinierst du den Vortrag, um die Fragerunde zu vermeiden – und erstickst die Diskussion, die du eigentlich willst. Details gehören in Backup-Folien und Handout, nicht in den Hauptteil.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'slides-questions-q4',
+          question: 'Was besagt die „Brücken-Technik" in der Fragerunde?',
+          options: [
+            {
+              text: 'Antworten dürfen bei deiner Kernbotschaft enden („… und genau deshalb schlagen wir die schrittweise Einführung vor") – und die gesamte Fragerunde schließt mit einem vorbereiteten Schlusssatz.',
+              correct: true,
+              explanation:
+                'Richtig. Jede Antwort ist eine Chance, deine Botschaft zu verankern – und der letzte Eindruck gehört dir: nicht die zufällige letzte Frage beschließt den Termin, sondern dein vorbereiteter Schlusssatz.',
+            },
+            {
+              text: 'Bei unangenehmen Fragen elegant zu einem anderen Thema überleiten, ohne die Frage zu beantworten.',
+              correct: false,
+              explanation:
+                'Das wäre Ausweichen, kein Brückenbau – und der Raum merkt es. Die Brücke kommt NACH einer ehrlichen Antwort: erst den Kern der Frage bedienen, dann zur Botschaft zurückführen.',
+            },
+            {
+              text: 'Zwischen zwei Fragestellern eine Verbindung herstellen („Das knüpft an die Frage von eben an").',
+              correct: false,
+              explanation:
+                'Das kann rhetorisch nett sein, ist aber nicht die Technik: Die Brücke führt von der Antwort zurück zu deiner Kernbotschaft – dorthin, wo du den Termin enden lassen willst.',
             },
           ],
         },

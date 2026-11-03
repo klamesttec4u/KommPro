@@ -122,6 +122,58 @@ export const presentationStructure: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'structure-audience-q3',
+          question:
+            'Warum ist von den drei Zieldimensionen (wissen, fühlen, tun) die Tun-Frage die wichtigste?',
+          options: [
+            {
+              text: 'Weil erst eine beobachtbare Handlung des Publikums aus der Präsentation ein Ergebnis macht – „informieren" ist eine Beschäftigung, kein Ziel.',
+              correct: true,
+              explanation:
+                'Richtig. „Der Lenkungsausschuss soll die Ressourcen für Phase 2 freigeben" gibt der Präsentation Richtung: Alles, was dieser Handlung dient, bleibt drin – alles andere fliegt raus. Ohne Tun-Ziel bleibt es eine Faktensammlung, nach der nichts passiert.',
+            },
+            {
+              text: 'Weil Wissen und Gefühle in Business-Präsentationen keine Rolle spielen dürfen.',
+              correct: false,
+              explanation:
+                'Doch – beide Dimensionen gehören zum Ziel: Ohne die nötige Information und ohne Vertrauen oder Dringlichkeit handelt niemand. Die Tun-Frage ist die wichtigste, weil sie am häufigsten vergessen wird und über den Erfolg entscheidet – nicht weil die anderen unwichtig wären.',
+            },
+            {
+              text: 'Weil das Publikum während der Präsentation aktiv mitarbeiten soll, etwa in Gruppenübungen.',
+              correct: false,
+              explanation:
+                'Das Tun-Ziel meint nicht Interaktion während des Vortrags, sondern die Handlung danach: zustimmen, freigeben, ausprobieren, benennen. Es beantwortet die Frage, was sich durch die Präsentation real ändern soll.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'structure-audience-q4',
+          question:
+            'Im Publikum sitzen Entscheider und Fachleute gemischt. Wie gehst du mit den unterschiedlichen Informationsbedürfnissen um?',
+          options: [
+            {
+              text: 'Die Präsentation an den Entscheidern ausrichten – und die Detailtiefe für Rückfragen der Fachleute im Anhang bereithalten.',
+              correct: true,
+              explanation:
+                'Genau. Die Präsentation muss die erreichen, die entscheiden; die Fachtiefe beweist du bei Bedarf über einen gut vorbereiteten Anhang. So verlierst du weder die einen durch Details noch die anderen durch fehlende Substanz.',
+            },
+            {
+              text: 'Beide Bedürfnisse abwechselnd bedienen: eine Folie Management-Sicht, eine Folie Fachdetails, im Wechsel durch die ganze Präsentation.',
+              correct: false,
+              explanation:
+                'Der Wechsel klingt fair, strapaziert aber beide Gruppen: Jeder sitzt die Hälfte der Zeit vor Folien, die nicht für ihn gemacht sind, und der rote Faden zerreißt. Flughöhe halten und Details auslagern funktioniert besser.',
+            },
+            {
+              text: 'Auf dem Niveau der Fachleute präsentieren – die Entscheider können ja nachfragen, wenn sie etwas nicht verstehen.',
+              correct: false,
+              explanation:
+                'Riskant: Entscheider fragen selten nach, wenn sie aussteigen – sie schalten ab oder brechen den Termin ab. Wer die Entscheidung will, muss auf der Flughöhe der Entscheider präsentieren.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'structure-audience-s1',
           situation:
@@ -278,6 +330,58 @@ export const presentationStructure: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'structure-pyramid-q3',
+          question:
+            'Welche zwei Regeln gelten für die Argumente auf derselben Ebene einer Minto-Pyramide?',
+          options: [
+            {
+              text: 'Sie müssen überschneidungsfrei sein und zusammen die Begründung der Ebene darüber vollständig abdecken.',
+              correct: true,
+              explanation:
+                'Richtig. Jedes Argument steht für sich (keine Doppelungen), und gemeinsam beantworten sie das „Warum?" der Aussage darüber lückenlos. Überlappende oder lückenhafte Argumente machen die Pyramide angreifbar.',
+            },
+            {
+              text: 'Sie müssen chronologisch geordnet sein und jeweils mit einer Jahreszahl beginnen.',
+              correct: false,
+              explanation:
+                'Chronologie ist gerade nicht das Ordnungsprinzip der Pyramide – sie entspricht dem Arbeitsprozess des Erstellers. Die Argumente ordnen sich nach ihrer Stützfunktion für die Hauptaussage, meist nach Gewicht.',
+            },
+            {
+              text: 'Es müssen immer exakt drei sein, und jedes braucht mindestens fünf Belege.',
+              correct: false,
+              explanation:
+                'Drei bis fünf Schlüsselargumente sind der Richtwert, keine starre Zahl – und die Beleganzahl richtet sich nach der Sache. Die eigentlichen Regeln betreffen Überschneidungsfreiheit und Vollständigkeit.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'structure-pyramid-q4',
+          question:
+            'Der Lenkungsausschuss bricht deinen 20-Minuten-Termin nach fünf Minuten ab. Warum übersteht eine Pyramiden-Präsentation diesen Fall besser als eine chronologische?',
+          options: [
+            {
+              text: 'Weil Kernbotschaft und Schlüsselargumente ganz am Anfang stehen – das Entscheidbare ist nach fünf Minuten bereits gesagt.',
+              correct: true,
+              explanation:
+                'Genau – das ist der Fünf-Minuten-Test der Pyramide: Empfehlung und die drei Gründe kommen zuerst, Details folgen nur bei Bedarf. Die chronologische Struktur hätte nach fünf Minuten erst die Projekthistorie erzählt.',
+            },
+            {
+              text: 'Weil die Pyramide so kompakt ist, dass jede Präsentation ohnehin nur fünf Minuten dauert.',
+              correct: false,
+              explanation:
+                'Die Pyramide begrenzt nicht die Dauer, sondern ordnet die Reihenfolge: Wichtiges zuerst, Tiefe nach Bedarf. Eine Pyramiden-Präsentation kann durchaus 20 Minuten füllen – sie überlebt nur den Abbruch besser.',
+            },
+            {
+              text: 'Weil Entscheider bei Pyramiden-Präsentationen grundsätzlich nicht abbrechen.',
+              correct: false,
+              explanation:
+                'Abbrüche und Verkürzungen passieren unabhängig von der Struktur – volle Kalender kennen keine Rücksicht. Der Unterschied liegt darin, was bis dahin gesagt wurde: bei der Pyramide das Wichtigste, bei der Chronologie der Vorspann.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'structure-pyramid-s1',
           situation:
@@ -412,6 +516,58 @@ export const presentationStructure: Module = {
               correct: false,
               explanation:
                 'Eine Komplettwiederholung verwässert die Wirkung – niemand behält zwölf zusammengefasste Folien. Der Schluss verdichtet auf die Kernbotschaft plus zwei, drei Hauptpunkte und mündet in die Handlungsaufforderung.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'structure-dramaturgy-q3',
+          question:
+            'Warum sind Entschuldigungen („Ich hatte leider wenig Zeit zur Vorbereitung") als Einstieg tabu?',
+          options: [
+            {
+              text: 'Sie senken die Erwartung des Publikums, ohne irgendetwas zu gewinnen – die ersten Sekunden gehören der Aufmerksamkeit, nicht der Selbstverkleinerung.',
+              correct: true,
+              explanation:
+                'Richtig. Das Publikum hört: „Was jetzt kommt, ist nicht gut geworden" – und genau mit dieser Brille schaut es auf den Rest. Wer wirklich wenig Zeit hatte, zeigt es besser nicht an; wer sie hatte, verschenkt grundlos Autorität.',
+            },
+            {
+              text: 'Sie sind unhöflich gegenüber den Organisatoren des Termins.',
+              correct: false,
+              explanation:
+                'Um Höflichkeit geht es dabei nicht – eine Entschuldigung ist ja formal höflich. Das Problem ist die Wirkung: Sie programmiert das Publikum auf niedrige Erwartungen und untergräbt die eigene Glaubwürdigkeit von der ersten Sekunde an.',
+            },
+            {
+              text: 'Sie verlängern die Präsentation unnötig um mehrere Minuten.',
+              correct: false,
+              explanation:
+                'Die paar Sekunden sind nicht das Problem – verlorene Zeit wäre verschmerzbar. Teuer ist der Erwartungsschaden: Der wertvollste Moment der Präsentation (die ersten 30 Sekunden) wird für eine Botschaft genutzt, die aktiv gegen dich arbeitet.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'structure-dramaturgy-q4',
+          question:
+            'Welche Aufgabe erfüllen Überleitungen zwischen den Abschnitten einer Präsentation?',
+          options: [
+            {
+              text: 'Sie blicken kurz zurück und weisen voraus – so weiß das Publikum jederzeit, wo es sich befindet, denn beim Zuhören kann niemand zurückblättern.',
+              correct: true,
+              explanation:
+                'Genau. „So viel zu den Kosten – die zweite Frage ist die Technik" ist unscheinbar, aber das Rückgrat der Verständlichkeit: Ohne solche Wegweiser reißt der rote Faden, und das Publikum weiß nicht mehr, warum die aktuelle Folie wichtig ist.',
+            },
+            {
+              text: 'Sie füllen die Pausen, während die nächste Folie lädt.',
+              correct: false,
+              explanation:
+                'Überleitungen sind keine Verlegenheitsfüller, sondern geplante Orientierungssätze. Wer sie dem Zufall überlässt, produziert genau die „Ja, äh, dann kommen wir mal zu …"-Momente, die den Faden reißen lassen.',
+            },
+            {
+              text: 'Sie wiederholen jede vorherige Folie vollständig, damit Zuspätkommende den Anschluss finden.',
+              correct: false,
+              explanation:
+                'Komplette Wiederholungen würden die Präsentation aufblähen und alle anderen langweilen. Eine Überleitung verdichtet das Vorherige auf einen Halbsatz und spannt den Bogen zum Nächsten – mehr braucht es nicht.',
             },
           ],
         },

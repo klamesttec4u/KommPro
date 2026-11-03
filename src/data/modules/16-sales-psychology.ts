@@ -133,6 +133,57 @@ export const salesPsychology: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'sales-principles-q3',
+          question: 'Wie zeigen Profis Autorität im Kundengespräch?',
+          options: [
+            {
+              text: 'Durch Präzision statt Behauptung: „Bei der letzten OData-Anbindung sind wir über drei typische Fallstricke gestolpert – die prüfe ich bei Ihnen zuerst."',
+              correct: true,
+              explanation:
+                'Richtig. Autorität wird gezeigt, nicht behauptet: Konkrete Details und Erfahrungsmuster belegen Expertise nebenbei – glaubwürdiger als jedes „Ich bin Experte für …".',
+            },
+            {
+              text: 'Durch das Aufzählen aller Titel, Zertifikate und Berufsjahre gleich zu Gesprächsbeginn.',
+              correct: false,
+              explanation:
+                'Formale Nachweise haben ihren Platz im Profil – im Gespräch wirken sie aufgesagt. Was wirklich überzeugt, ist gezeigte Expertise: präzise Beobachtungen, typische Fallstricke, konkrete Erfahrungswerte.',
+            },
+            {
+              text: 'Durch dominantes Auftreten: lauter sprechen, Einwände schnell abbügeln, keine Unsicherheit zeigen.',
+              correct: false,
+              explanation:
+                'Dominanz ist keine Autorität – sie erzeugt Widerstand statt Vertrauen. Echte Autorität darf sogar Grenzen zugeben („da bin ich nicht der Richtige") und wird dadurch glaubwürdiger.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'sales-principles-q4',
+          question:
+            'Ein Verkäufer fragt: „Sehen Sie das Problem auch bei sich?" – „Wäre es wertvoll, das zu lösen?" Welches Prinzip nutzt er, und warum wirkt es?',
+          options: [
+            {
+              text: 'Konsistenz: Er sammelt kleine Jas – wer dem Problem und dem Wert der Lösung zugestimmt hat, trägt die große Entscheidung am Ende eher mit.',
+              correct: true,
+              explanation:
+                'Richtig. Menschen wollen zu ihren eigenen Aussagen stehen. Die Zwischen-Bestätigungen bauen eine Linie auf, zu der die Abschlussentscheidung konsistent ist – seriös, solange die Fragen ehrlich gemeint sind.',
+            },
+            {
+              text: 'Knappheit: Die Fragen setzen den Kunden unter Zeitdruck.',
+              correct: false,
+              explanation:
+                'Hier gibt es keinerlei Verknappung – keine Frist, kein begrenztes Angebot. Der Mechanismus ist die Selbstverpflichtung durch eigene Zustimmung: das Konsistenz-Prinzip.',
+            },
+            {
+              text: 'Reziprozität: Der Verkäufer schenkt dem Kunden Aufmerksamkeit und erwartet dafür Zustimmung.',
+              correct: false,
+              explanation:
+                'Zuhören allein löst noch keine Gegenleistungspflicht aus. Die Wirkung entsteht daraus, dass der Kunde selbst Ja gesagt hat – und Menschen zu ihren Aussagen stehen wollen: Konsistenz.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'sales-principles-s1',
           situation:
@@ -285,6 +336,57 @@ export const salesPsychology: Module = {
               correct: false,
               explanation:
                 'Länge ist kein Qualitätsmerkmal – im Gegenteil: Eine fokussierte Demo auf die zwei, drei benannten Schmerzpunkte wirkt stärker als jeder Rundumschlag und lässt Zeit für das wichtigere Gespräch danach.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'sales-discovery-q3',
+          question:
+            'Warum sollen Situationsfragen („Wie läuft der Prozess heute?") sparsam eingesetzt werden?',
+          options: [
+            {
+              text: 'Was sich vorab recherchieren lässt, fragt man nicht – zu viele Grundlagenfragen langweilen den Kunden und zeigen mangelnde Vorbereitung.',
+              correct: true,
+              explanation:
+                'Richtig. Situationsfragen liefern dir Kontext, dem Kunden aber nichts Neues. Je mehr davon du durch Recherche ersetzt, desto schneller bist du bei den wertvollen Problem- und Auswirkungsfragen.',
+            },
+            {
+              text: 'Weil Situationsfragen zu persönlich sind und als aufdringlich empfunden werden.',
+              correct: false,
+              explanation:
+                'Aufdringlich sind sie nicht – nur ermüdend in Masse: Der Kunde erzählt Dinge, die auf seiner Website stehen. Das Problem ist verschenkte Gesprächszeit, nicht Indiskretion.',
+            },
+            {
+              text: 'Weil die Antworten darauf meist gelogen sind und keine verwertbaren Informationen liefern.',
+              correct: false,
+              explanation:
+                'Die Antworten sind in der Regel ehrlich und durchaus nützlich. Sparsamkeit gilt, weil Recherche sie oft ersetzen kann – und die Gesprächszeit den wirkungsvolleren Frage-Typen gehört.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'sales-discovery-q4',
+          question: 'Wie verteilt sich der Redeanteil in erfolgreichen Verkaufsgesprächen?',
+          options: [
+            {
+              text: 'Der Kunde bestreitet den Großteil des Gesprächs – die besten Verkäufer reden deutlich weniger als der Durchschnitt und steuern über Fragen.',
+              correct: true,
+              explanation:
+                'Richtig. Niemand kauft, solange ihm das Problem nicht bewusst und wichtig ist – und das wird es durch eigenes Reden, nicht durch Zuhören. Wer fragt, führt; wer dauerredet, pitcht am Bedarf vorbei.',
+            },
+            {
+              text: 'Der Verkäufer muss den Großteil reden – wer überzeugen will, braucht Redezeit für seine Argumente.',
+              correct: false,
+              explanation:
+                'Das Gegenteil ist belegt: Hohe Verkäufer-Redeanteile korrelieren mit schlechteren Abschlussquoten. Die Überzeugung entsteht beim Kunden, wenn er Problem und Nutzen selbst ausspricht.',
+            },
+            {
+              text: 'Exakt 50:50 – ein ausgewogenes Gespräch ist das Ziel professioneller Verkäufer.',
+              correct: false,
+              explanation:
+                'Es gibt keine Gleichverteilungs-Regel: In der Bedarfsphase soll der Kunde klar überwiegen. Dein Anteil konzentriert sich auf gute Fragen und die gezielte Nutzenargumentation danach.',
             },
           ],
         },
@@ -456,6 +558,56 @@ export const salesPsychology: Module = {
               correct: false,
               explanation:
                 'Gespielte Gleichgültigkeit wird im Business selten als Coolness gelesen, sondern als Desinteresse – und bei zwei ähnlich starken Kandidaten gewinnt der, der das Projekt erkennbar will.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'sales-interview-q3',
+          question: 'Wie nutzt du die Stellen- oder Projektbeschreibung wie ein Verkäufer?',
+          options: [
+            {
+              text: 'Als Lastenheft: die drei Anforderungen markieren, die dem Kunden offensichtlich am wichtigsten sind, und zu jeder einen konkreten Beleg aus der eigenen Erfahrung vorbereiten.',
+              correct: true,
+              explanation:
+                'Richtig. Das ist Bedarfsanalyse vor dem Termin: Du antwortest auf das, was der Kunde sucht – mit STAR-tauglichen Belegen statt Selbstbeschreibung. Im Gespräch hörst du dann, welche Anforderung wirklich drückt.',
+            },
+            {
+              text: 'Gar nicht – die Beschreibung ist meist von HR formuliert und hat mit dem echten Projekt wenig zu tun.',
+              correct: false,
+              explanation:
+                'Auch eine unscharfe Beschreibung verrät Prioritäten (was zuerst steht, was mehrfach vorkommt). Und ihre Lücken liefern dir die besten Rückfragen – ignorieren verschenkt beides.',
+            },
+            {
+              text: 'Jede einzelne der fünfzehn Anforderungen im Gespräch aktiv abhaken, damit nichts unerwähnt bleibt.',
+              correct: false,
+              explanation:
+                'Der Vollständigkeits-Ansatz verwässert: Bei fünfzehn abgehakten Punkten bleibt keiner hängen. Verkäufer priorisieren – drei starke, belegte Treffer schlagen fünfzehn behauptete.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'sales-interview-q4',
+          question: 'Wie setzt du Social Proof im Vorstellungsgespräch ein, ohne anzugeben?',
+          options: [
+            {
+              text: 'Ergebnisse und Dritte sprechen lassen: „Der Fachbereich hat das Portal nach zwei Wochen ohne Support genutzt; der Kunde hat danach verlängert" – statt „Ich bin sehr kundenorientiert".',
+              correct: true,
+              explanation:
+                'Richtig. Die Reaktion Dritter und messbare Ergebnisse sind belegtes Fremdlob – sie transportieren dieselbe Aussage wie Eigenlob, aber glaubwürdig. Genau so funktionieren Referenzen im Vertrieb.',
+            },
+            {
+              text: 'Gar nicht – über eigene Erfolge zu sprechen wirkt immer arrogant, Bescheidenheit gewinnt.',
+              correct: false,
+              explanation:
+                'Wer seine Erfolge verschweigt, macht sie unsichtbar – der Kunde kann nicht einkaufen, was er nicht erfährt. Die Kunst ist die Form: Ergebnisse berichten statt Eigenschaften behaupten.',
+            },
+            {
+              text: 'Mit Superlativen arbeiten: „Alle meine Kunden waren restlos begeistert, so jemanden wie mich finden Sie nicht noch einmal."',
+              correct: false,
+              explanation:
+                'Unbelegte Superlative sind Eigenlob in Reinform – nicht nachprüfbar und deshalb wertlos. Social Proof lebt von Konkretem: welcher Kunde, welches Ergebnis, welche Reaktion.',
             },
           ],
         },

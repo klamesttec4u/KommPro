@@ -127,6 +127,58 @@ export const consultantQualification: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'quali-basics-q3',
+          question:
+            'Warum gilt bei einer Rolle mit Pre-Sales- und Workshop-Anteil das Gespräch selbst als Arbeitsprobe?',
+          options: [
+            {
+              text: 'Wer dich später vor Kunden und Stakeholder stellen will, beobachtet im Gespräch genau das: Struktur, Klarheit und den Umgang mit kritischen Nachfragen.',
+              correct: true,
+              explanation:
+                'Richtig. Deine Kommunikation im Interview IST der Beleg für deine Pre-Sales-Tauglichkeit – eine fahrige, unstrukturierte Vorstellung widerlegt jede behauptete Workshop-Erfahrung.',
+            },
+            {
+              text: 'Weil im Gespräch meist eine praktische Programmieraufgabe in Mendix gelöst werden muss.',
+              correct: false,
+              explanation:
+                'Live-Coding ist im Quali-Gespräch die Ausnahme. Die Arbeitsprobe liegt subtiler: in der Art, WIE du antwortest – strukturiert, nutzenorientiert, souverän bei Nachfragen.',
+            },
+            {
+              text: 'Weil der Kunde das Gespräch aufzeichnet und später als Schulungsmaterial verwendet.',
+              correct: false,
+              explanation:
+                'Darum geht es nicht. Gemeint ist: Die Prüfer schließen von deinem Auftreten im Gespräch direkt auf dein späteres Auftreten vor ihren Kunden und Fachbereichen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-basics-q4',
+          question:
+            'Was gehört zur Kundenrecherche vor einem Qualifizierungsgespräch unbedingt dazu?',
+          options: [
+            {
+              text: 'Branche und aktuelle Themen des Kunden – und vor allem: Warum setzt er auf Mendix/Low-Code, und gibt es schon eine bestehende Landschaft oder startet er neu?',
+              correct: true,
+              explanation:
+                'Richtig. Zwei, drei fundierte Bezüge („Ich habe gesehen, dass Sie …") heben dich sofort von Kandidaten ab, die nur ihr Profil runterbeten – und die Landschafts-Frage bestimmt, welche deiner Erfahrungen relevant sind.',
+            },
+            {
+              text: 'Die privaten Social-Media-Profile der Gesprächspartner studieren, um persönliche Gemeinsamkeiten einstreuen zu können.',
+              correct: false,
+              explanation:
+                'Das wirkt schnell übergriffig statt vorbereitet. Recherchiere das Unternehmen und seine fachlichen Themen – berufliche Profile der Gesprächspartner kurz einzuordnen ist ok, private Details sind tabu.',
+            },
+            {
+              text: 'Vor allem die üblichen Tagessätze der Branche, um in der Konditionsverhandlung nicht unter Wert zu verkaufen.',
+              correct: false,
+              explanation:
+                'Marktkenntnis schadet nicht, aber Konditionen laufen meist über den Vermittler. Im Fachgespräch zählt die inhaltliche Vorbereitung: Projekt, Landschaft, Anforderungen – daran scheitern Kandidaten, nicht am Tagessatz-Wissen.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'quali-basics-s1',
           situation:
@@ -260,6 +312,56 @@ export const consultantQualification: Module = {
               correct: false,
               explanation:
                 'Das weckt genau die falschen Assoziationen: Kontrollverlust, Qualitätsrisiko, austauschbare Leistung. Die KI ist dein Werkzeug und Hebel – verantwortlich für das Ergebnis bist du.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-pitch-q3',
+          question: 'Wie ist der 2-Minuten-Pitch auf „Erzählen Sie etwas über sich" aufgebaut?',
+          options: [
+            {
+              text: 'Wer ich bin (1 Satz) → was mich für DIESE Rolle qualifiziert → ein konkreter Beweis mit Ergebnis → warum mich die Aufgabe reizt. Danach den Ball zurückgeben.',
+              correct: true,
+              explanation:
+                'Richtig. Der rote Faden ist das Anforderungsprofil, nicht der Lebenslauf – und wer nach drei Minuten noch redet, verliert. Aufhören können ist Teil der Struktur.',
+            },
+            {
+              text: 'Chronologisch vom Berufseinstieg bis heute, damit der Kunde den kompletten Werdegang lückenlos nachvollziehen kann.',
+              correct: false,
+              explanation:
+                'Der chronologische Lebenslauf-Monolog ist der klassische Einstiegs-Fehler: Nach acht Minuten Stationen-Aufzählung weiß der Kunde immer noch nicht, warum du zu SEINER Rolle passt.',
+            },
+            {
+              text: 'Möglichst alle Skills und Technologien aufzählen, damit nichts Relevantes unerwähnt bleibt.',
+              correct: false,
+              explanation:
+                'Eine Skill-Liste bleibt nicht hängen und setzt keine Prioritäten. Zwei, drei Übereinstimmungen mit dem Profil plus ein Beweisprojekt wirken stärker als zwanzig Schlagworte.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-pitch-q4',
+          question: 'Wann sagst du in Projektgeschichten „ich" – und wann „wir"?',
+          options: [
+            {
+              text: '„Ich" für den eigenen Beitrag, „wir" für Teamleistungen – bewusst gemischt: Dauer-„wir" macht deinen Anteil unsichtbar, Dauer-„ich" wirkt unkollegial.',
+              correct: true,
+              explanation:
+                'Richtig. Der Prüfer will deinen konkreten Beitrag erkennen können, ohne dass du das Team wegwischst. Die bewusste Mischung zeigt beides: Verantwortung und Teamfähigkeit.',
+            },
+            {
+              text: 'Immer „wir" – Bescheidenheit kommt in Interviews grundsätzlich besser an als Selbstdarstellung.',
+              correct: false,
+              explanation:
+                'Dauer-„wir" ist falsch verstandene Bescheidenheit: Der Kunde kauft DICH, nicht dein früheres Team – und kann bei „wir haben gebaut" nicht beurteilen, was du davon tatsächlich kannst.',
+            },
+            {
+              text: 'Immer „ich" – schließlich geht es im Gespräch ausschließlich um deine Qualifikation.',
+              correct: false,
+              explanation:
+                'Wer ein Vier-Monats-Projekt komplett als Ein-Mann-Show erzählt, wirkt unglaubwürdig und unkollegial. Teamleistungen als solche zu benennen macht die „ich"-Anteile erst glaubhaft.',
             },
           ],
         },
@@ -427,6 +529,57 @@ export const consultantQualification: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'quali-projects-q3',
+          question: 'Womit überzeugst du im technischen Deep-Dive am stärksten?',
+          options: [
+            {
+              text: 'Mit Entscheidungen und Trade-offs: „Wir standen vor der Wahl X oder Y, ich habe X gewählt, weil …, der Preis dafür war …" – das lässt sich nicht vortäuschen.',
+              correct: true,
+              explanation:
+                'Richtig. Wer Alternativen, Gründe und Konsequenzen benennen kann, hat das Projekt wirklich verantwortet. Vollständige Feature-Aufzählungen dagegen kann auch jemand liefern, der nur dabeisaß.',
+            },
+            {
+              text: 'Mit maximaler Vollständigkeit: jedes verwendete Modul, jede Bibliothek und jede Einstellung des Projekts aufzählen können.',
+              correct: false,
+              explanation:
+                'Vollständigkeit beweist Gedächtnis, nicht Verantwortung. Der Architekt will erkennen, ob du Entscheidungen getroffen und ihre Konsequenzen getragen hast – genau da trennt sich Lead von Mitläufer.',
+            },
+            {
+              text: 'Mit dem Beharren darauf, dass im Projekt alles fehlerfrei lief und es nichts zu verbessern gab.',
+              correct: false,
+              explanation:
+                'Behauptete Fehlerlosigkeit wirkt unreflektiert oder unehrlich. Ein echtes Learning („heute würde ich früher gegen reale Daten testen") ist im Deep-Dive ein Stärke-Signal, kein Makel.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-projects-q4',
+          question:
+            'Wie gehst du in Projektgeschichten mit Kundennamen und vertraulichen Zahlen um?',
+          options: [
+            {
+              text: 'Namen nur, wenn öffentlich bekannt oder freigegeben; Zahlen notfalls als Größenordnung – Diskretion ist ein Qualitätssignal, denn der Kunde sieht daran, wie du über IHN sprechen wirst.',
+              correct: true,
+              explanation:
+                'Richtig. Vertraulichkeit ist kein Hindernis beim Erzählen, sondern eine Arbeitsprobe: „Ein Maschinenbauer, dreistelliger Nutzerkreis" transportiert alles Nötige – ohne Projektgeheimnisse preiszugeben.',
+            },
+            {
+              text: 'Möglichst viele bekannte Kundennamen nennen – Name-Dropping belegt die Qualität deiner Referenzen am besten.',
+              correct: false,
+              explanation:
+                'Unfreigegebenes Name-Dropping beeindruckt kurz und schadet dauerhaft: Der Zuhörer denkt unweigerlich „so redet der später auch über uns". Ergebnisse überzeugen, nicht Logos.',
+            },
+            {
+              text: 'Interna früherer Kunden gezielt teilen, wenn danach gefragt wird – schließlich zeigt das Insiderwissen und Marktkenntnis.',
+              correct: false,
+              explanation:
+                'Genau das ist die Falle der Wettbewerber-Frage: Wer Interna ausplaudert, disqualifiziert sich sofort. Die souveräne Antwort: Interna bleiben vertraulich – geteilt wird allgemeine Branchenerfahrung.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'quali-projects-s1',
           situation:
@@ -581,6 +734,57 @@ export const consultantQualification: Module = {
               correct: false,
               explanation:
                 'Keine Fragen zu haben wirkt nicht vorbereitet oder desinteressiert. Ein Consultant, der später Anforderungen erheben soll, beweist genau hier, dass er gute Fragen stellen kann.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-questions-q3',
+          question:
+            'Die Fragen im Quali-Gespräch lassen sich vier Typen zuordnen. Warum hilft es, den Typ zu erkennen?',
+          options: [
+            {
+              text: 'Jeder Typ verlangt etwas anderes: fachlich → Präzision, methodisch → Vorgehen, situativ → dein Handeln im Szenario, kritisch → Souveränität. Wer den Typ erkennt, antwortet passend.',
+              correct: true,
+              explanation:
+                'Richtig. Eine fachliche Frage mit einem Vorgehens-Monolog zu beantworten wirkt ausweichend, eine kritische Frage mit Fachdetails zu kontern verfehlt den Punkt – der erkannte Typ steuert die Antwortform.',
+            },
+            {
+              text: 'Weil man auf als „kritisch" erkannte Fragen grundsätzlich nicht antworten muss.',
+              correct: false,
+              explanation:
+                'Kritische Fragen (Lücken, Verfügbarkeit, Wechselhistorie) sind legitim und kommen fast sicher. Der Typ hilft dir, ruhig und kurz zu antworten – nicht, die Antwort zu verweigern.',
+            },
+            {
+              text: 'Weil pro Fragetyp eine auswendig gelernte Standardantwort existiert, die man nur abspielen muss.',
+              correct: false,
+              explanation:
+                'Standardantworten wirken mechanisch und passen selten zur konkreten Rolle. Der Typ gibt dir die FORM der Antwort vor – der Inhalt kommt aus deiner echten Erfahrung.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-questions-q4',
+          question: 'Welche Grundregel gilt für die Antwortlänge im Qualifizierungsgespräch?',
+          options: [
+            {
+              text: 'Erst kurz und klar antworten (zwei, drei Sätze), dann vertiefen, wenn Interesse besteht – Tiefe anbieten statt aufdrängen.',
+              correct: true,
+              explanation:
+                'Richtig. Prüfer schätzen Kandidaten, die eine Frage auf den Punkt beantworten können – und misstrauen Dauer-Monologen. Das Vertiefungsangebot („gern mehr dazu") lässt dem Gegenüber die Steuerung.',
+            },
+            {
+              text: 'Jede Antwort möglichst ausführlich gestalten – wer viel redet, demonstriert Kompetenz und füllt die Gesprächszeit sinnvoll.',
+              correct: false,
+              explanation:
+                'Monologe wirken unsicher und nehmen dem Gespräch den Dialogcharakter. Außerdem verhinderst du damit die Nachfragen, über die der Prüfer dort vertiefen will, wo es IHN interessiert.',
+            },
+            {
+              text: 'So einsilbig wie möglich bleiben – im Quali-Gespräch zählt nur, dass die Fakten stimmen.',
+              correct: false,
+              explanation:
+                'Reine Ein-Satz-Antworten ohne Beleg und Kontext wirken desinteressiert und lassen deine Erfahrung unsichtbar. Kurz heißt: Kernaussage plus Beleg – nicht: wortkarg.',
             },
           ],
         },
@@ -813,6 +1017,57 @@ export const consultantQualification: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'quali-classic-q3',
+          question:
+            'Welche verdeckte Frage steckt hinter „Wo sehen Sie sich in fünf Jahren?" – und wie antwortest du als externer Consultant am besten?',
+          options: [
+            {
+              text: 'Verdeckt gefragt ist: „Wie hoch ist das Risiko, dass Sie uns mitten im Projekt abspringen?" – also fachliche Richtung skizzieren UND Verlässlichkeit für die Vertragslaufzeit zusichern.',
+              correct: true,
+              explanation:
+                'Richtig. Der Kunde will kein Karriere-Horoskop, sondern Planungssicherheit. Die starke Antwort verbindet beides: ein glaubwürdiges fachliches Ziel, das zum Engagement passt, plus die belastbare Zusage für die Laufzeit.',
+            },
+            {
+              text: 'Der Kunde will Ambition sehen – am besten antwortet man mit einem möglichst steilen Karriereplan, etwa der eigenen Beratungsfirma mit zwanzig Mitarbeitern.',
+              correct: false,
+              explanation:
+                'Genau das erhöht in den Ohren des Kunden das Abspringrisiko: Wer in zwei Jahren skalieren will, ist für ein längerfristiges Engagement eine Wette. Die verdeckte Frage zielt auf Verlässlichkeit, nicht auf Ehrgeiz.',
+            },
+            {
+              text: 'Die Frage ist eine Höflichkeitsfloskel ohne Prüfabsicht – ein lockeres „Mal sehen, was kommt" reicht völlig.',
+              correct: false,
+              explanation:
+                '„Mal sehen, was kommt" bestätigt die Sorge, die hinter der Frage steckt: Beliebigkeit und Wechselbereitschaft. Kaum eine Klassiker-Frage wird so unterschätzt wie diese.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-classic-q4',
+          question: 'Wie beantwortest du „Erzählen Sie von einem Konflikt im Projekt" richtig?',
+          options: [
+            {
+              text: 'Einen echten Konflikt als Prozess erzählen: Ausgangslage, wie du ihn auf die Sachebene zurückgeführt hast, die Lösung – und ein Learning. Ohne über Beteiligte zu lästern.',
+              correct: true,
+              explanation:
+                'Richtig. Geprüft wird, wie du dich verhältst, wenn es kracht: sachlich oder nachtragend. Die Struktur Konflikt → Sachfrage → Lösung → Learning zeigt genau die Souveränität, die der Kunde im Projekt braucht.',
+            },
+            {
+              text: '„Konflikte habe ich eigentlich nie – ich komme mit allen Menschen gut klar."',
+              correct: false,
+              explanation:
+                'Konfliktfreiheit glaubt dir niemand, der je in Projekten gearbeitet hat – die Antwort wirkt ausweichend oder naiv. Und sie verschenkt die Chance, deine Konfliktkompetenz mit einem Beispiel zu belegen.',
+            },
+            {
+              text: 'Einen Konflikt wählen, bei dem die Gegenseite klar im Unrecht war, und detailliert schildern, wie unmöglich sich der andere verhalten hat.',
+              correct: false,
+              explanation:
+                'Damit beantwortest du die verdeckte Frage („sachlich oder nachtragend?") in die falsche Richtung: Wer über frühere Konfliktpartner herzieht, wird das – so die Annahme des Prüfers – später auch hier tun.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'quali-classic-s1',
           situation:
@@ -1012,6 +1267,58 @@ export const consultantQualification: Module = {
               correct: false,
               explanation:
                 'Nein – gleich zweimal (OData, Native Mobile) ordnet der ideale Kandidat Lücken ehrlich ein. Genau das macht die restlichen Aussagen glaubwürdig.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-reference-call-q2',
+          question:
+            'Min. 37: Herr Costa fragt nach Interna deines früheren Kunden (seines Wettbewerbers). Was zeigt die ideale Antwort?',
+          options: [
+            {
+              text: 'Freundlich, aber klar ablehnen – und die Vertraulichkeit explizit als Versprechen an IHN wenden: „Genauso vertraulich behandle ich später auch Ihre Informationen."',
+              correct: true,
+              explanation:
+                'Richtig. Die Frage ist oft ein bewusster Test: Wer Interna ausplaudert, plaudert später auch über diesen Kunden. Diskretion plus das Angebot allgemeiner Branchenerfahrung ist die souveräne Lösung.',
+            },
+            {
+              text: 'Ein paar unverfängliche Details nennen – komplette Verweigerung würde unkooperativ wirken und das Gespräch belasten.',
+              correct: false,
+              explanation:
+                'Es gibt bei Projektinterna kein „ein bisschen vertraulich": Schon kleine Details zeigen, dass du die Grenze verschieben lässt. Das Nein wird respektiert – es ist die erwartete, professionelle Antwort.',
+            },
+            {
+              text: 'Ausführlich antworten – Marktkenntnis ist ein Verkaufsargument, und der frühere Kunde erfährt ja nichts davon.',
+              correct: false,
+              explanation:
+                'Fatal: Der Prüfer hört nicht „Marktkenntnis", sondern „so redet der in einem Jahr über uns". Diese eine Antwort kann ein ansonsten starkes Gespräch komplett entwerten.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-reference-call-q3',
+          question:
+            'Warum platzieren erfahrene Interviewer kritische Fragen (Grenzen, Lücken, Wettbewerber) oft erst gegen Ende des Gesprächs?',
+          options: [
+            {
+              text: 'Weil die Anspannung des Kandidaten dann nachlässt – unvorbereitete Kandidaten werden unvorsichtig und zeigen ihr echtes Verhalten.',
+              correct: true,
+              explanation:
+                'Richtig. Nach 35 guten Minuten fühlt sich das Gespräch gewonnen an – genau dann rutschen Lästern, Bluffs oder Plaudereien heraus. Die Konsequenz: bis zur Verabschiedung konzentriert und souverän bleiben.',
+            },
+            {
+              text: 'Weil diese Fragen unwichtig sind und nur gestellt werden, wenn am Ende noch Zeit übrig ist.',
+              correct: false,
+              explanation:
+                'Das Gegenteil: Für viele Prüfer sind die kritischen Fragen die aufschlussreichsten des Gesprächs – die Platzierung am Ende ist Methode, nicht Restzeit-Verwertung.',
+            },
+            {
+              text: 'Aus Höflichkeit: Unangenehmes gehört nach deutscher Gesprächskultur grundsätzlich ans Ende.',
+              correct: false,
+              explanation:
+                'Mit Etikette hat das wenig zu tun – es ist Interviewtechnik: Die nachlassende Wachsamkeit des Kandidaten macht die Antworten am Ende ehrlicher und damit aussagekräftiger.',
             },
           ],
         },

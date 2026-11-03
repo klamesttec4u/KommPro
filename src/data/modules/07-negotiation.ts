@@ -122,6 +122,58 @@ export const negotiation: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'negotiation-harvard-q3',
+          question:
+            'Was bedeutet das Harvard-Prinzip „Menschen und Probleme getrennt behandeln" in der Praxis?',
+          options: [
+            {
+              text: 'In der Sache darf man hartnäckig bleiben, der Person gegenüber bleibt man respektvoll – Sachkonflikt und Beziehung werden nie vermischt.',
+              correct: true,
+              explanation:
+                'Richtig. „Hart in der Sache, weich zu den Menschen": Eine klare Forderung ist kein persönlicher Angriff, und Wertschätzung ist kein Zugeständnis. Wer beides trennt, kann konsequent verhandeln, ohne die Beziehung zu beschädigen.',
+            },
+            {
+              text: 'Man verhandelt Sachthemen grundsätzlich schriftlich, damit keine persönliche Ebene entsteht.',
+              correct: false,
+              explanation:
+                'Das Prinzip verlangt keine Distanz über Kanäle – im Gegenteil, die Beziehungsebene wird aktiv gepflegt („Ich schätze unsere Zusammenarbeit sehr …"). Getrennt werden die Ebenen im Kopf und in der Sprache, nicht durch Vermeidung des Gesprächs.',
+            },
+            {
+              text: 'Man gibt in der Sache lieber nach, um die persönliche Beziehung nicht zu gefährden.',
+              correct: false,
+              explanation:
+                'Das wäre der weiche Verhandlungsstil, den das Harvard-Konzept gerade überwinden will: Er schont kurzfristig die Beziehung, führt aber zu schlechten Ergebnissen und wachsendem Frust. Die Trennung erlaubt beides – gute Beziehung UND hartes Verhandeln in der Sache.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'negotiation-harvard-q4',
+          question:
+            'Warum fordert das Harvard-Konzept eine eigene Kreativphase, in der Optionen gesammelt, aber noch nicht bewertet werden?',
+          options: [
+            {
+              text: 'Weil Verhandlungen sonst um eine einzige Stellschraube (meist den Preis) kreisen und zum Nullsummenspiel werden – mehr Variablen ermöglichen Pakete, die beiden Seiten mehr bringen.',
+              correct: true,
+              explanation:
+                'Genau. Wer früh bewertet, verwirft Ideen zu schnell und landet beim Feilschen um die Mitte. Liegen erst Laufzeit, Umfang, Zahlungsziele oder Pilotphasen mit auf dem Tisch, findet sich oft ein Paket, das für beide besser ist als der simple Kompromiss.',
+            },
+            {
+              text: 'Weil die Kreativphase die Verhandlung verlängert und man so Zeit gewinnt, die Gegenseite zu ermüden.',
+              correct: false,
+              explanation:
+                'Zermürbung ist die Logik des harten Feilschens, nicht des Harvard-Konzepts. Die Kreativphase dient der Qualität der Lösung – sie vergrößert den Lösungsraum, statt die Gegenseite kleinzukriegen.',
+            },
+            {
+              text: 'Weil man in dieser Phase herausfindet, welche Optionen die Gegenseite bevorzugt, um sie später gezielt zu blockieren.',
+              correct: false,
+              explanation:
+                'Das würde das gemeinsame Sammeln sofort vergiften – niemand bringt mehr ehrliche Ideen ein. Die Phase lebt davon, dass beide Seiten ohne Taktik Optionen zum beiderseitigen Vorteil entwickeln.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'negotiation-harvard-s1',
           situation:
@@ -278,6 +330,57 @@ export const negotiation: Module = {
           ],
         },
         {
+          kind: 'quiz',
+          id: 'negotiation-batna-q3',
+          question:
+            'Die Gegenseite eröffnet mit einer überraschend hohen Forderung. Wie gehst du mit diesem Anker professionell um?',
+          options: [
+            {
+              text: 'Den Anker benennen und neu rahmen („Die Zahl überrascht mich – klären wir erst den Leistungsumfang"), dann einen eigenen, begründeten Gegenanker setzen.',
+              correct: true,
+              explanation:
+                'Richtig. Wer entlang des fremden Ankers verhandelt, bestätigt dessen Rahmen – jedes Gegenangebot in seiner Nähe arbeitet für die Gegenseite. Benennen, neu rahmen, begründet gegenankern holt die Verhandlung in deinen Bereich zurück.',
+            },
+            {
+              text: 'Den Anker ignorieren und einfach weiterreden, als wäre keine Zahl genannt worden.',
+              correct: false,
+              explanation:
+                'Der Ankereffekt wirkt leider auch dann, wenn man die Zahl nicht kommentiert – sie steht im Raum und zieht das Ergebnis in ihre Richtung. Deshalb muss der Anker aktiv entkräftet und durch einen Gegenanker ersetzt werden.',
+            },
+            {
+              text: 'Sofort in der Mitte zwischen der Forderung und der eigenen Vorstellung abschließen – das ist fair für beide.',
+              correct: false,
+              explanation:
+                'Die „Mitte" ist nur scheinbar fair: Sie hängt vollständig davon ab, wo der erste Anker lag. Wer extrem ankert, bekommt bei dieser Logik automatisch mehr – genau deshalb ist das Entlangverhandeln am fremden Anker so teuer.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'negotiation-batna-q4',
+          question: 'Woraus entsteht Verhandlungsmacht nach dem BATNA-Konzept?',
+          options: [
+            {
+              text: 'Aus dem Vergleich der Alternativen beider Seiten: Wer die bessere BATNA hat und die der Gegenseite realistisch einschätzt, verhandelt aus der stärkeren Position.',
+              correct: true,
+              explanation:
+                'Genau. Macht am Verhandlungstisch ist keine Frage von Lautstärke oder Titel, sondern von Alternativen: Wie gut stehe ich ohne diesen Abschluss da – und wie dringend braucht ihn die Gegenseite? Deshalb lohnt es sich, die eigene BATNA vor der Verhandlung aktiv zu verbessern.',
+            },
+            {
+              text: 'Aus dem souveränen Auftreten: Wer selbstbewusster wirkt, hat automatisch die stärkere Position.',
+              correct: false,
+              explanation:
+                'Auftreten kann Wirkung unterstützen, ersetzt aber keine Alternativen. Wer selbstbewusst auftritt, aber keinen Plan B hat, muss am Ende doch jedes Angebot akzeptieren – die reale Macht liegt in den BATNAs, nicht in der Körperhaltung.',
+            },
+            {
+              text: 'Aus der Hierarchie: Die ranghöhere Partei hat immer die größere Verhandlungsmacht.',
+              correct: false,
+              explanation:
+                'Rang schafft keine Verhandlungsmacht, Alternativen tun es. Ein kleiner Lieferant mit vollen Auftragsbüchern verhandelt stärker als ein Konzern, der kurzfristig keinen Ersatz findet – entscheidend ist, wer den Abschluss dringender braucht.',
+            },
+          ],
+        },
+        {
           kind: 'scenario',
           id: 'negotiation-batna-s1',
           situation:
@@ -410,6 +513,58 @@ export const negotiation: Module = {
               correct: false,
               explanation:
                 'Nein – das Merkmal (der Fakt) bleibt die Basis jedes Arguments. Die Nutzenargumentation ersetzt Fakten nicht, sie macht ihre Bedeutung für den konkreten Gesprächspartner sichtbar.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'negotiation-objections-q3',
+          question:
+            'Warum sollte die bedingte Zustimmung mit „und" oder „gerade deshalb" fortgesetzt werden statt mit „aber"?',
+          options: [
+            {
+              text: 'Ein „aber" entwertet die vorausgegangene Zustimmung – das Gegenüber hört nur noch den Widerspruch und fühlt sich nicht ernst genommen.',
+              correct: true,
+              explanation:
+                'Richtig. „Da haben Sie recht, ABER …" durchschaut jeder als rhetorisches Manöver: Die Zustimmung wirkt gespielt. „Gerade deshalb" oder „und" bauen dagegen auf dem anerkannten Kern auf, statt ihn wieder einzureißen.',
+            },
+            {
+              text: 'Weil „aber" grammatikalisch nach einer Zustimmung nicht erlaubt ist.',
+              correct: false,
+              explanation:
+                'Grammatikalisch ist das „aber" völlig korrekt – das Problem ist die Wirkung: Es signalisiert, dass die Zustimmung nur Taktik war, und erzeugt genau den Gegendruck, den die Technik vermeiden soll.',
+            },
+            {
+              text: 'Damit das Gegenüber nicht merkt, dass man anderer Meinung ist.',
+              correct: false,
+              explanation:
+                'Verschleierung ist nicht das Ziel – du ergänzt deine Sicht ja ausdrücklich. Es geht darum, den berechtigten Kern des Einwands ehrlich stehen zu lassen und die eigene Perspektive daran anzuschließen statt dagegenzusetzen.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'negotiation-objections-q4',
+          question:
+            'Was leistet die Rückfragetechnik bei einem Einwand wie „Das ist zu aufwendig"?',
+          options: [
+            {
+              text: 'Sie lässt den Einwand präzisieren („Zu aufwendig – die Einführung oder der Betrieb?"), gewinnt Zeit, zwingt Pauschalkritik zur Konkretisierung und signalisiert echtes Interesse.',
+              correct: true,
+              explanation:
+                'Genau – drei Effekte in einem Zug. Und oft entkräftet sich der Einwand beim Präzisieren von selbst, weil hinter der Pauschale nur ein einzelner, lösbarer Punkt steckt.',
+            },
+            {
+              text: 'Sie bringt das Gegenüber durch gezielte Gegenfragen in Erklärungsnot, bis es den Einwand zurückzieht.',
+              correct: false,
+              explanation:
+                'Das wäre ein Verhör, keine Rückfrage – und erzeugt Abwehr statt Gesprächsbereitschaft. Die Rückfrage dient dem Verstehen des Einwands, nicht dem Vorführen des Gegenübers.',
+            },
+            {
+              text: 'Sie verschiebt die Antwort auf später, damit der Einwand im Gesprächsverlauf in Vergessenheit gerät.',
+              correct: false,
+              explanation:
+                'Unbeantwortete Einwände verschwinden nicht – sie arbeiten im Hintergrund weiter und verhindern die Zustimmung. Die Rückfrage holt den Einwand gerade ins Zentrum, um ihn passgenau beantworten zu können.',
             },
           ],
         },

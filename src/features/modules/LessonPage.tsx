@@ -11,6 +11,7 @@ import { StepIndicator } from '@/components/ui/StepIndicator'
 import { ClockIcon, ArrowRightIcon, CheckCircleIcon, RotateCcwIcon } from '@/components/ui/icons'
 import { findLesson, findModule, findNextLesson, trackLabel, type LessonRef } from '@/data/modules'
 import { ExerciseRunner } from '@/features/exercises/ExerciseRunner'
+import { drawExerciseRun, hasQuizPool } from '@/lib/exercisePool'
 import { summarizeResults } from '@/features/progress/selectors'
 import { useProgressStore, type ExerciseResult } from '@/features/progress/store'
 import { lessonReadingMinutes } from '@/lib/readingTime'
@@ -48,6 +49,8 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
   const lessonIndex = module.lessons.findIndex((candidate) => candidate.id === lesson.id)
   // Reading order continues into the next module after the last lesson
   const next = findNextLesson(lesson.id)
+  // Each run shows a sample from the quiz pool; repeating draws a fresh one
+  const [exercisesForRun, setExercisesForRun] = useState(() => drawExerciseRun(lesson.exercises))
 
   const steps =
     lesson.exercises.length > 0 ? ['Lesen', 'Üben', 'Abschluss'] : ['Lesen', 'Abschluss']
@@ -68,6 +71,7 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
   }
 
   const repeatExercises = () => {
+    setExercisesForRun(drawExerciseRun(lesson.exercises))
     setRunId((id) => id + 1)
     goTo('exercises')
   }
@@ -105,7 +109,7 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               {lesson.exercises.length > 0 ? (
                 <Button onClick={() => goTo('exercises')} className="w-full sm:w-auto">
-                  Weiter zu den Übungen ({lesson.exercises.length})
+                  Weiter zu den Übungen ({exercisesForRun.length})
                   <ArrowRightIcon className="h-4 w-4" />
                 </Button>
               ) : (
@@ -133,7 +137,7 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
       )}
 
       {phase === 'exercises' && (
-        <ExerciseRunner key={runId} exercises={lesson.exercises} onFinished={handleFinished} />
+        <ExerciseRunner key={runId} exercises={exercisesForRun} onFinished={handleFinished} />
       )}
 
       {phase === 'summary' && (
@@ -141,6 +145,7 @@ function LessonView({ module, lesson }: { module: Module; lesson: Lesson }) {
           results={results}
           moduleId={module.id}
           next={next}
+          hasMoreQuestions={hasQuizPool(lesson.exercises)}
           onRepeat={repeatExercises}
         />
       )}
@@ -152,11 +157,14 @@ function LessonSummary({
   results,
   moduleId,
   next,
+  hasMoreQuestions,
   onRepeat,
 }: {
   results: ExerciseResult[]
   moduleId: string
   next?: LessonRef
+  /** The lesson's quiz pool holds more questions than one run shows. */
+  hasMoreQuestions: boolean
   onRepeat: () => void
 }) {
   const summary = summarizeResults(results)
@@ -195,6 +203,11 @@ function LessonSummary({
           </Button>
         )}
       </div>
+      {results.length > 0 && hasMoreQuestions && (
+        <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
+          Beim Wiederholen werden neue Fragen aus dem Fragenpool dieser Lektion gezogen.
+        </p>
+      )}
     </Card>
   )
 }

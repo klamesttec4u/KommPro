@@ -64,6 +64,11 @@ export function findNextLesson(lessonId: string): LessonRef | undefined {
   return index === -1 ? undefined : lessonSequence[index + 1]
 }
 
+/** Resolves a lesson id to its lesson and owning module, e.g. for glossary links. */
+export function findLessonRef(lessonId: string): LessonRef | undefined {
+  return lessonSequence.find((ref) => ref.lesson.id === lessonId)
+}
+
 /** The lesson before the given one in reading order. */
 export function findPreviousLesson(lessonId: string): LessonRef | undefined {
   const index = lessonSequence.findIndex((ref) => ref.lesson.id === lessonId)
