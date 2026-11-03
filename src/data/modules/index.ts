@@ -15,6 +15,7 @@ import { slideDesign } from './12-slide-design'
 import { consultantQualification } from './13-consultant-qualification'
 import { communicationPitfalls } from './14-communication-pitfalls'
 import { speechDelivery } from './15-speech-delivery'
+import { salesPsychology } from './16-sales-psychology'
 
 /** All learning modules in display order. */
 export const modules: Module[] = [
@@ -32,6 +33,7 @@ export const modules: Module[] = [
   bodyLanguage,
   slideDesign,
   consultantQualification,
+  salesPsychology,
   communicationPitfalls,
 ]
 

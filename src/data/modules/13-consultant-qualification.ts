@@ -648,12 +648,24 @@ export const consultantQualification: Module = {
               'Geht er ehrlich und souverän mit Defiziten um – oder blufft er?',
             ],
             [
+              '„Warum sollten wir uns für Sie entscheiden?"',
+              'Kann er seinen Nutzen für UNSER Problem auf den Punkt bringen?',
+            ],
+            [
               '„Warum arbeiten Sie freiberuflich?"',
               'Ist er aus Überzeugung Consultant – oder nur, bis etwas Festes kommt?',
             ],
             [
               '„Wo sehen Sie sich in fünf Jahren?"',
               'Wie hoch ist das Risiko, dass er uns mitten im Projekt abspringt?',
+            ],
+            [
+              '„Die Lücke in Ihrem Profil – was war da?"',
+              'Geht er offen mit Brüchen um – oder vertuscht er unangenehme Wahrheiten?',
+            ],
+            [
+              '„Wie gehen Sie mit Druck und Deadlines um?"',
+              'Bleibt er im Projektstress handlungsfähig – oder wird er zum Risiko?',
             ],
             [
               '„Ihr Tagessatz liegt über dem Budget."',
