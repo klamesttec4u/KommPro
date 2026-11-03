@@ -14,6 +14,7 @@ import { bodyLanguage } from './11-body-language'
 import { slideDesign } from './12-slide-design'
 import { consultantQualification } from './13-consultant-qualification'
 import { communicationPitfalls } from './14-communication-pitfalls'
+import { speechDelivery } from './15-speech-delivery'
 
 /** All learning modules in display order. */
 export const modules: Module[] = [
@@ -27,6 +28,7 @@ export const modules: Module[] = [
   presentationStructure,
   storytelling,
   rhetoricLanguage,
+  speechDelivery,
   bodyLanguage,
   slideDesign,
   consultantQualification,
