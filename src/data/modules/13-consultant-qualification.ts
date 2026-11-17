@@ -415,12 +415,12 @@ export const consultantQualification: Module = {
       theory: [
         {
           kind: 'text',
-          body: 'Unter Druck fällt jeder auf seine Struktur zurück – oder auf das Fehlen einer. In der vorigen Lektion hast du gelernt, WAS in deinen Pitch gehört. Diese Lektion gibt dir zwei Gerüste an die Hand, mit denen du Inhalte jederzeit abrufbar machst: SEAT für deine Selbstpräsentation als Ganzes und STAR für jede einzelne Projektgeschichte.\n\nDer Unterschied: SEAT ist ein Vollständigkeits-Check – bevor du ins Gespräch gehst, prüfst du, ob deine Vorstellung alle vier Bausteine abdeckt. STAR ist ein Erzählmuster – es gibt jeder Projektantwort live im Gespräch einen Anfang, eine Mitte und ein Ende.',
+          body: 'Unter Druck fällt jeder auf seine Struktur zurück – oder auf das Fehlen einer. In der vorigen Lektion hast du gelernt, WAS in deinen Pitch gehört. Diese Lektion gibt dir zwei Gerüste an die Hand, mit denen du Inhalte jederzeit abrufbar machst: SEAT für deine Selbstpräsentation als Ganzes und STAR für jede einzelne Projektgeschichte.\n\nDer Unterschied: SEAT ist dein Gerüst für die Antwort auf „Erzählen Sie etwas über sich" – und in der Vorbereitung zugleich ein Vollständigkeits-Check. STAR ist ein Erzählmuster – es gibt jeder Projektantwort live im Gespräch einen Anfang, eine Mitte und ein Ende.',
         },
         {
           kind: 'text',
-          heading: 'Die SEAT-Methode: dein Vollständigkeits-Check',
-          body: 'SEAT steht für Skills, Experience, Achievements und Training. Die Methode stammt aus dem Interview-Coaching und beantwortet die Frage: „Habe ich in meiner Selbstpräsentation alles untergebracht, was der Kunde braucht, um mich einzuordnen?"\n\nWichtig: SEAT ist keine starre Reihenfolge, die du im Gespräch Punkt für Punkt abarbeitest – das würde mechanisch klingen. Nutze es in der Vorbereitung als Checkliste: Geh deinen Pitch durch und prüfe, ob alle vier Bausteine vorkommen. Fehlt einer, wirkt die Vorstellung unvollständig – meist fehlen Achievements (konkrete Ergebnisse) oder Training (der Beleg, dass du aktuell bleibst).',
+          heading: 'Die SEAT-Methode nach Richard McMunn',
+          body: 'SEAT stammt vom britischen Interview-Coach Richard McMunn (How2Become), der die Methode auf seinem YouTube-Kanal für die häufigste Einstiegsfrage überhaupt lehrt: „Tell me about yourself". SEAT steht für Skills, Experience, Achievements und Type of Person:\n\nS – Skills: Steig mit den zwei, drei Fähigkeiten und Qualitäten ein, die DIESE Rolle laut Ausschreibung braucht.\nE – Experience: Wo hast du das angewendet? Hierher gehören auch Ausbildung, Zertifizierungen und aktuelle Weiterbildungen.\nA – Achievements: Ein konkreter Erfolg, möglichst mit Zahl – Zahlen bleiben hängen und zeigen das Ausmaß deines Einflusses.\nT – Type of Person: Was für ein Mensch bist du bei der Arbeit – passend zu dem, was der Kunde sucht – und was bekommt er konkret, wenn er dich einsetzt? Das ist dein Schlusssatz.\n\nDie Reihenfolge S-E-A-T ist ein guter roter Faden, weil sie mit dem Nutzen für den Kunden endet. Lerne aber keinen Text auswendig, sondern die vier Bausteine – dann klingt es frei statt abgelesen. In der Vorbereitung dient SEAT zugleich als Check: Fehlt ein Baustein, wirkt die Vorstellung unvollständig. Am häufigsten fehlen das Achievement (ein messbares Ergebnis) und der T-Abschluss – viele hören einfach auf zu reden, statt zu sagen, was der Kunde von ihnen hat.\n\nWichtig beim T: „Type of Person" heißt nicht, Adjektive aufzuzählen. „Teamfähig und belastbar" behauptet jeder. Stark wird der T-Satz erst, wenn er sich auf das stützt, was du bei S, E und A gerade belegt hast.',
         },
         {
           kind: 'table',
@@ -432,21 +432,32 @@ export const consultantQualification: Module = {
               'Mendix-Entwicklung (Domain Model, Microflows, Integrationen), Anforderungs-Workshops moderieren, Pre-Sales-Demos, KI-gestütztes Arbeiten mit Claude',
             ],
             [
-              'Experience (Erfahrung)',
-              'Wo und wie lange habe ich es angewendet?',
-              'Sechs Jahre IT-Consulting, davon drei Jahre Mendix in Fertigung und Handel – als Lead Developer und im direkten Kundenkontakt',
+              'Experience (Erfahrung & Ausbildung)',
+              'Wo und wie lange habe ich es angewendet – und was belegt meine Qualifikation?',
+              'Sechs Jahre IT-Consulting, davon drei Jahre Mendix in Fertigung und Handel – als Lead Developer und im direkten Kundenkontakt; Mendix-Advanced-Zertifizierung, laufende Weiterbildung zu KI-gestützter Entwicklung',
             ],
             [
-              'Achievements (Erfolge)',
-              'Was kam messbar dabei heraus?',
+              'Achievements (Erfolg)',
+              'Welcher eine Erfolg kam messbar dabei heraus?',
               'Lieferantenportal live nach vier Monaten, 800 Nutzer, Durchlaufzeit von zwei Wochen auf zwei Tage; zwei Folgeaufträge aus Pre-Sales-Demos',
             ],
             [
-              'Training (Weiterbildung)',
-              'Was belegt, dass ich fachlich aktuell bleibe?',
-              'Mendix-Zertifizierungen (z.B. Intermediate/Advanced), laufende Weiterbildung zu KI-gestützter Entwicklung, Community und Release-Notes im Blick',
+              'Type of Person (Typ & Nutzen)',
+              'Wie arbeite ich – und was bekommt der Kunde, wenn er mich einsetzt?',
+              '„Ich bin jemand, der Technik und Fachbereich zusammenbringt und Anforderungen schnell in lauffähige Prototypen übersetzt. Für Ihr Projekt heißt das: früh sichtbare Ergebnisse und ein Fachbereich, der mitzieht."',
             ],
           ],
+        },
+        {
+          kind: 'text',
+          heading: 'Richards Regeln für die Selbstvorstellung',
+          body: 'Neben dem SEAT-Gerüst gibt Richard McMunn eine Handvoll Regeln mit, an denen die meisten Vorstellungen scheitern:\n\n1. Maßschneidern statt Standardtext: Lies die Ausschreibung, markiere die wichtigsten Anforderungen und wähle Skills und Achievement genau danach aus. Dieselbe Vorstellung für jeden Kunden ist eine schwache Vorstellung.\n2. Kurz bleiben: rund zwei Minuten, als Kurzfassung 60 Sekunden. Danach aufhören und den Ball zurückgeben.\n3. Kein Lebenslauf-Vortrag: „Das meiste steht ja in meinem Lebenslauf" plus ein paar unbelegte Adjektive wie „fleißig" und „teamfähig" bringt laut Richard null Punkte. Der Interviewer hat den Lebenslauf gelesen – er will hören, was du daraus machst.\n4. Keine Lebensgeschichte: Chronologisch von der Schule bis heute zu erzählen, versteckt die relevanten Punkte in der Masse.\n5. Privates nur am Rand: Hobbys höchstens in einem Satz und nur, wenn sie etwas über dich in der Rolle aussagen (etwa Weiterbildung oder Teamsport).\n6. Mit dem Nutzen enden: Der letzte Satz sagt, was der Kunde bekommt, wenn er dich einsetzt – das ist der T-Baustein.\n7. Laut üben: mehrmals, vor dem Spiegel, mit einer vertrauten Person oder mit der Aufnahme-Funktion im Trainingsbereich. Was du nie laut gesagt hast, klingt im Gespräch holprig.',
+        },
+        {
+          kind: 'example',
+          title: 'Frage: „Erzählen Sie doch etwas über sich" – SEAT statt Lebenslauf',
+          good: '„Gern. [S] Ich bin IT-Consultant mit Schwerpunkt Mendix – meine Stärken sind die Entwicklung selbst und die Arbeit direkt mit dem Fachbereich, also Workshops und Demos. [E] Das mache ich seit sechs Jahren, die letzten drei fast ausschließlich mit Mendix in Fertigung und Handel, zuletzt als Lead Developer; die Advanced-Zertifizierung habe ich letztes Jahr abgelegt. [A] Mein letztes Projekt war ein Lieferantenportal mit SAP-Anbindung: live nach vier Monaten, heute rund 800 Nutzer, und die Durchlaufzeit für Bestellanfragen ist von zwei Wochen auf zwei Tage gesunken. [T] Ich bin jemand, der Technik und Fachbereich zusammenbringt – für Ihr Projekt heißt das: früh sichtbare Ergebnisse und Anwender, die mitziehen. Genau deshalb reizt mich die Rolle."',
+          bad: '„Also, das meiste steht ja schon in meinem Lebenslauf. Ich habe nach dem Abi Informatik studiert, war dann drei Jahre bei einem Systemhaus, danach bei einer Beratung, und seit 2023 mache ich eben Mendix. Ich bin fleißig, teamfähig und belastbar. In meiner Freizeit fahre ich gern Rennrad und koche viel. Ja, das wär\'s eigentlich."',
         },
         {
           kind: 'text',
@@ -462,7 +473,9 @@ export const consultantQualification: Module = {
           kind: 'keypoints',
           title: 'Das Wichtigste in Kürze',
           points: [
-            'SEAT (Skills, Experience, Achievements, Training) als Vollständigkeits-Check der Selbstpräsentation – in der Vorbereitung, nicht als starres Skript.',
+            'SEAT nach Richard McMunn (Skills, Experience, Achievements, Type of Person) als Gerüst für „Erzählen Sie etwas über sich" – Bausteine lernen, keinen Text.',
+            'Der T-Baustein ist dein Schlusssatz: wie du arbeitest und was der Kunde davon hat – belegt durch S, E und A statt durch Adjektive.',
+            'Maßgeschneidert auf die Ausschreibung, rund zwei Minuten, kein Lebenslauf-Vortrag, keine Lebensgeschichte – und vorher laut üben.',
             'Drei bis vier Projekte als Portfolio, die zusammen alle Kernanforderungen abdecken – je als 60-Sekunden- und als Deep-Dive-Version.',
             'Jede Projektgeschichte nach STAR, mit messbarem Ergebnis und einem Learning.',
             'Im Deep-Dive Entscheidungen und Trade-offs erzählen – das unterscheidet Verantwortung von Mitgelaufen-Sein.',
@@ -483,22 +496,47 @@ export const consultantQualification: Module = {
           question: 'Wofür steht SEAT – und wie setzt du die Methode am wirksamsten ein?',
           options: [
             {
-              text: 'Skills, Experience, Achievements, Training – als Vollständigkeits-Check in der Vorbereitung: Deckt mein Pitch alle vier Bausteine ab?',
+              text: 'Skills, Experience, Achievements, Type of Person – als roter Faden für „Erzählen Sie etwas über sich", der mit dem Nutzen für den Kunden endet. Gelernt werden die Bausteine, nicht ein Wortlaut.',
               correct: true,
               explanation:
-                'Richtig. SEAT ist eine Checkliste für die Vorbereitung, kein Skript fürs Gespräch. Am häufigsten fehlen Achievements (messbare Ergebnisse) und Training (der Beleg für Aktualität).',
+                'Richtig. SEAT gibt deiner Vorstellung eine Struktur und dient in der Vorbereitung als Check. Am häufigsten fehlen das Achievement (ein messbares Ergebnis) und der T-Abschluss (was der Kunde von dir hat).',
             },
             {
               text: 'Situation, Evidence, Action, Transfer – ein Erzählmuster, mit dem man jede Interviewfrage live strukturiert.',
               correct: false,
               explanation:
-                'Nein – das Erzählmuster für Geschichten ist STAR (Situation, Task, Action, Result). SEAT steht für Skills, Experience, Achievements, Training und prüft die Vollständigkeit deiner Selbstpräsentation.',
+                'Nein – das Erzählmuster für Geschichten ist STAR (Situation, Task, Action, Result). SEAT steht für Skills, Experience, Achievements, Type of Person und strukturiert deine Selbstvorstellung.',
             },
             {
-              text: 'Eine feste Reihenfolge, in der man die Selbstpräsentation Punkt für Punkt vorträgt – erst alle Skills, dann die komplette Erfahrung und so weiter.',
+              text: 'Ein Text, den man Wort für Wort auswendig lernt und in jedem Gespräch identisch vorträgt.',
               correct: false,
               explanation:
-                'Genau das macht Vorstellungen mechanisch und auswendig gelernt. SEAT gehört in die Vorbereitung als Check – im Gespräch webst du die Bausteine natürlich in deine Erzählung ein.',
+                'Auswendig gelernte Texte klingen abgelesen und passen nie genau auf die Rolle. Lerne die vier Bausteine und schneide Skills und Achievement jedes Mal auf die Ausschreibung zu.',
+            },
+          ],
+        },
+        {
+          kind: 'quiz',
+          id: 'quali-projects-q5',
+          question: 'Was gehört in den T-Baustein („Type of Person") deiner Selbstvorstellung?',
+          options: [
+            {
+              text: 'Wie du arbeitest – passend zu dem, was der Kunde sucht – und was er konkret bekommt, wenn er dich einsetzt. Gestützt auf das, was du bei S, E und A belegt hast.',
+              correct: true,
+              explanation:
+                'Richtig. Der T-Satz ist dein Abschluss und beantwortet die unausgesprochene Frage „Was haben wir davon?". Glaubwürdig wird er, weil du ihn vorher mit Erfahrung und Erfolg belegt hast.',
+            },
+            {
+              text: 'Eine Liste positiver Eigenschaften: fleißig, teamfähig, belastbar, lernbereit.',
+              correct: false,
+              explanation:
+                'Unbelegte Adjektive sagt jeder – laut Richard McMunn bringen sie null Punkte. Der Interviewer will einen Typ sehen, der zur Rolle passt, und einen Nutzen, keinen Selbstlob-Katalog.',
+            },
+            {
+              text: 'Deine Hobbys und dein Privatleben, damit der Interviewer dich als Mensch kennenlernt.',
+              correct: false,
+              explanation:
+                'Privates gehört höchstens in einen Nebensatz und nur, wenn es etwas über dich in der Rolle aussagt. Der T-Baustein beschreibt dich bei der Arbeit und deinen Nutzen für den Kunden.',
             },
           ],
         },
@@ -619,6 +657,22 @@ export const consultantQualification: Module = {
             'Das Ergebnis enthält mindestens eine Zahl oder einen messbaren Effekt.',
             'Ein echtes Learning ist enthalten – mit Bezug, was ich seitdem anders mache.',
             'Laut erzählt dauert die Geschichte etwa eine Minute.',
+          ],
+        },
+        {
+          kind: 'freetext',
+          id: 'quali-projects-f2',
+          task: 'Schreib DEINE Antwort auf „Erzählen Sie etwas über sich" nach SEAT – zugeschnitten auf eine konkrete Ausschreibung (eine echte oder die aus dem Referenzgespräch). Pro Baustein ein bis drei Sätze, der T-Baustein ist dein Schlusssatz. Lies sie danach einmal laut und stopp die Zeit.',
+          placeholder:
+            'S – Skills (passend zur Ausschreibung): …\nE – Experience (inkl. Ausbildung/Zertifizierung): …\nA – Achievement (mit Zahl): …\nT – Type of Person + Nutzen für den Kunden: …',
+          sampleSolution:
+            'S: „Ich bin IT-Consultant mit Schwerpunkt Mendix – meine Stärken sind die Entwicklung selbst und die Arbeit direkt mit dem Fachbereich, also Workshops und Demos."\nE: „Das mache ich seit sechs Jahren, die letzten drei fast ausschließlich mit Mendix in Fertigung und Handel, zuletzt als Lead Developer. Die Advanced-Zertifizierung habe ich letztes Jahr abgelegt."\nA: „Zuletzt habe ich ein Lieferantenportal mit SAP-Anbindung verantwortet: live nach vier Monaten, heute rund 800 Nutzer, Durchlaufzeit von zwei Wochen auf zwei Tage."\nT: „Ich bin jemand, der Technik und Fachbereich zusammenbringt – für Ihr Projekt heißt das: früh sichtbare Ergebnisse und Anwender, die mitziehen."',
+          checklist: [
+            'Die Skills stammen aus der Ausschreibung, nicht aus meinem Standard-Profil.',
+            'Das Achievement enthält mindestens eine Zahl oder einen messbaren Effekt.',
+            'Der T-Satz sagt, was der Kunde von mir hat – und kommt ohne unbelegte Adjektive aus.',
+            'Kein Lebenslauf-Vortrag, keine Chronologie, Privates höchstens in einem Satz.',
+            'Laut gesprochen bleibe ich bei rund zwei Minuten oder darunter.',
           ],
         },
       ],

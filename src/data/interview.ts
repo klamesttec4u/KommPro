@@ -12,10 +12,11 @@ export const interviewQuestions: InterviewQuestion[] = [
     interviewer: 'Projektleitung',
     question: 'Erzählen Sie doch zum Einstieg etwas über sich und Ihren Werdegang.',
     idealAnswer:
-      '„Gern, in zwei Minuten: Ich bin IT-Consultant mit Schwerpunkt Low-Code und entwickle seit drei Jahren hauptsächlich mit Mendix – davor klassisch Java. Zuletzt habe ich ein Lieferantenportal mit SAP-Anbindung als Lead Developer verantwortet: Go-live nach vier Monaten, heute rund 800 Nutzer. Daneben übernehme ich regelmäßig Anforderungs-Workshops und unterstütze im Pre-Sales mit Demos – diese Kombination aus Bauen und Beraten ist genau das, was Sie ausgeschrieben haben. In der Entwicklung arbeite ich KI-gestützt, unter anderem mit Claude für Reviews und Doku. Deshalb bin ich heute hier: Die Rolle passt ziemlich genau auf mein Profil."',
+      '„Gern, in zwei Minuten: Ich bin IT-Consultant mit Schwerpunkt Low-Code und entwickle seit drei Jahren hauptsächlich mit Mendix – davor klassisch Java. Zuletzt habe ich ein Lieferantenportal mit SAP-Anbindung als Lead Developer verantwortet: Go-live nach vier Monaten, heute rund 800 Nutzer. Daneben übernehme ich regelmäßig Anforderungs-Workshops und unterstütze im Pre-Sales mit Demos – diese Kombination aus Bauen und Beraten ist genau das, was Sie ausgeschrieben haben. In der Entwicklung arbeite ich KI-gestützt, unter anderem mit Claude für Reviews und Doku. Ich bin jemand, der Technik und Fachbereich zusammenbringt – für Ihr Projekt heißt das: früh sichtbare Ergebnisse und Anwender, die mitziehen."',
     checklist: [
       'Ich bin unter zwei Minuten geblieben.',
-      'Struktur war erkennbar: Wer – was passt zur Rolle – ein Beweis – warum diese Rolle.',
+      'SEAT war erkennbar: Skills – Experience – ein Achievement mit Zahl – Type of Person mit Nutzen-Satz am Ende.',
+      'Kein Lebenslauf-Vortrag und keine unbelegten Adjektive wie „teamfähig" oder „belastbar".',
       'Ich habe ein konkretes Projekt mit Ergebnis genannt.',
       'Die Kombination Entwicklung + Pre-Sales/Workshops kam vor.',
     ],

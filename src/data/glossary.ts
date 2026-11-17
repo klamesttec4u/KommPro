@@ -298,7 +298,7 @@ export const glossaryEntries: GlossaryEntry[] = [
   {
     term: 'SEAT-Methode',
     definition:
-      'Vollständigkeits-Check für die Selbstpräsentation: Skills, Experience, Achievements, Training – deckt auf, welche Belege für die Zielrolle noch fehlen.',
+      'Gerüst für „Erzählen Sie etwas über sich" nach Interview-Coach Richard McMunn: Skills, Experience, Achievements, Type of Person – endet mit dem Nutzen für den Kunden und dient in der Vorbereitung als Vollständigkeits-Check.',
     lessonId: 'quali-projects',
   },
   {
