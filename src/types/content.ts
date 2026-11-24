@@ -76,6 +76,8 @@ export interface InterviewQuestion {
   /** Who asks, e.g. "Projektleitung" or "Architekt" */
   interviewer: string
   question: string
+  /** Probing follow-up the interviewer fires right after the answer; has no model answer */
+  followUp?: string
   idealAnswer: string
   /** Self-assessment criteria shown after answering */
   checklist: string[]
@@ -96,6 +98,35 @@ export interface GlossaryEntry {
   /** Lesson where the concept is covered; resolved to a deep link if present. */
   lessonId?: string
 }
+
+/** One fill-in field of the interview dossier. The learner's text lives in the dossier store. */
+export interface DossierField {
+  id: string
+  label: string
+  hint?: string
+  placeholder?: string
+  /** Render a one-line input instead of a textarea */
+  singleLine?: boolean
+  /** Textarea height in rows (default 4) */
+  rows?: number
+}
+
+interface DossierSectionBase {
+  id: string
+  title: string
+  description: string
+  /** Lesson that teaches the method behind this section */
+  lessonId?: string
+}
+
+/** A block of the interview dossier; the kind decides which editor is rendered. */
+export type DossierSection =
+  | (DossierSectionBase & { kind: 'fields'; fields: DossierField[] })
+  /** Repeatable STAR project stories */
+  | (DossierSectionBase & { kind: 'stories' })
+  /** Requirement-to-evidence matrix for one job posting */
+  | (DossierSectionBase & { kind: 'requirements' })
+  | (DossierSectionBase & { kind: 'checklist'; items: { id: string; label: string }[] })
 
 /** Presentation drill: free-speech prompt practiced against a timer. */
 export interface PitchDrill {

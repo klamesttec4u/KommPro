@@ -10,6 +10,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar'
 import {
   ArrowRightIcon,
   CheckCircleIcon,
+  ClipboardListIcon,
   ClockIcon,
   MicIcon,
   RotateCcwIcon,
@@ -73,6 +74,32 @@ function ContinuePanel() {
         </span>
       </div>
     </section>
+  )
+}
+
+interface ShortcutLinkProps {
+  to: string
+  icon: React.ReactNode
+  title: string
+  description: string
+}
+
+/** Prominent jump to one of the hands-on areas outside the lesson tracks. */
+function ShortcutLink({ to, icon, title, description }: ShortcutLinkProps) {
+  return (
+    <Link
+      to={to}
+      className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white px-5 py-4 outline-brand-500 transition-colors hover:border-brand-300 focus-visible:outline-2 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700"
+    >
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300">
+        {icon}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block font-semibold">{title}</span>
+        <span className="block text-sm text-slate-600 dark:text-slate-400">{description}</span>
+      </span>
+      <ArrowRightIcon className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-brand-600" />
+    </Link>
   )
 }
 
@@ -173,21 +200,20 @@ export function DashboardPage() {
 
       <ContinuePanel />
 
-      <Link
-        to={routes.training()}
-        className="group mt-4 flex items-center gap-4 rounded-xl border border-slate-200 bg-white px-5 py-4 outline-brand-500 transition-colors hover:border-brand-300 focus-visible:outline-2 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700"
-      >
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300">
-          <MicIcon className="h-5 w-5" />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block font-semibold">Trainingscenter</span>
-          <span className="block text-sm text-slate-600 dark:text-slate-400">
-            Frei sprechen üben: Interview-Simulation, Pitch-Timer, Impulswörter
-          </span>
-        </span>
-        <ArrowRightIcon className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-brand-600" />
-      </Link>
+      <div className="mt-4 space-y-3">
+        <ShortcutLink
+          to={routes.training()}
+          icon={<MicIcon className="h-5 w-5" />}
+          title="Trainingscenter"
+          description="Frei sprechen üben: Interview-Simulation, Pitch-Timer, Impulswörter"
+        />
+        <ShortcutLink
+          to={routes.dossier()}
+          icon={<ClipboardListIcon className="h-5 w-5" />}
+          title="Gesprächsmappe"
+          description="Dein Profil und pro Kunde ein Vorbereitungsblatt – zum Ausfüllen und Drucken"
+        />
+      </div>
 
       {tracks.map((track) => (
         <TrackSection key={track.category} category={track.category} label={track.label} />

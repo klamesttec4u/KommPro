@@ -4,11 +4,12 @@ A learning app for business communication and presentation skills (German conten
 
 ## Features
 
-- **14 learning modules** in three tracks: communication (basics, listening, feedback, written communication, meetings, conflict, negotiation), presentation (structure, storytelling, rhetoric, body language, slide design), and IT consulting (qualification-interview preparation for a consultant/Mendix-developer role with pre-sales and workshop duties, plus the biggest interview pitfalls in content, language, and questions)
+- **17 learning modules** in three tracks: communication (basics, listening, feedback, written communication, meetings, conflict, negotiation), presentation (structure, storytelling, rhetoric, speech delivery, body language, slide design), and IT consulting (qualification-interview preparation for a consultant/Mendix-developer role with pre-sales and workshop duties, sales psychology, the biggest interview pitfalls in content, language, and behavior, plus an interview-mindset module on inner stance, nerves, pressure, and routines)
 - **Guided lessons**: readable theory (key-point boxes, good/bad examples, tables) followed by a guided exercise run
 - **Three exercise types**: quizzes with explanations, scenario exercises with rated choices, and free-text tasks with sample solutions and self-assessment checklists
-- **Training center**: pitch timer with reflection checklists and an impulse-word drill for spontaneous speaking
-- **Progress tracking** per exercise, lesson, and module — persisted in `localStorage`, no backend required
+- **Training center**: interview trainer (four question sets incl. technical Mendix and pressure questions, a mixed random interview, probing follow-ups, optional local recording, and a "weak spots" round driven by remembered self-assessments), pitch timer with reflection checklists, and an impulse-word drill for spontaneous speaking
+- **Interview dossier**: empty fill-in pages for the learner's own material — a reusable profile (SEAT pitch, STAR stories, evidence list, standard answers, if-then plans) and one prep sheet per interview (research, requirement-to-evidence matrix, questions, terms, checklist, debrief), printable
+- **Progress tracking** per exercise, lesson, and module — persisted in `localStorage`, no backend required; the dossier and the trainer self-assessments live in separate stores, so resetting progress never deletes personal content
 
 ## Tech stack
 
@@ -41,7 +42,7 @@ src/
   app/        Router and central route builders
   types/      Domain types (modules, lessons, exercises)
   data/       Learning content (pure typed data) and drills
-  features/   Feature slices: dashboard, modules, exercises, training, progress
+  features/   Feature slices: dashboard, modules, exercises, training, dossier, progress
   components/ Shared layout and UI primitives
   lib/        Small utilities
 ```

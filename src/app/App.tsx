@@ -4,6 +4,8 @@ import { AppLayout } from '@/components/layout/AppLayout'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { MyAnswersPage } from '@/features/answers/MyAnswersPage'
 import { DashboardPage } from '@/features/dashboard/DashboardPage'
+import { DossierPage } from '@/features/dossier/DossierPage'
+import { InterviewSheetPage } from '@/features/dossier/InterviewSheetPage'
 import { GlossaryPage } from '@/features/glossary/GlossaryPage'
 import { LessonPage } from '@/features/modules/LessonPage'
 import { ModulePage } from '@/features/modules/ModulePage'
@@ -24,6 +26,8 @@ export function App() {
           <Route path={routePatterns.module} element={<ModulePage />} />
           <Route path={routePatterns.lesson} element={<LessonPage />} />
           <Route path={routePatterns.training} element={<TrainingPage />} />
+          <Route path={routePatterns.dossier} element={<DossierPage />} />
+          <Route path={routePatterns.interviewSheet} element={<InterviewSheetPage />} />
           <Route path={routePatterns.myAnswers} element={<MyAnswersPage />} />
           <Route path={routePatterns.glossary} element={<GlossaryPage />} />
           <Route path="*" element={<NotFoundPage />} />

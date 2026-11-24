@@ -8,6 +8,7 @@ import {
   ChatIcon,
   CheckCircleIcon,
   ChevronDownIcon,
+  ClipboardListIcon,
   HomeIcon,
   MicIcon,
   NotebookIcon,
@@ -154,6 +155,12 @@ export function Sidebar({ onNavigate }: SidebarProps) {
           <NavLink to={routes.training()} className={navLinkClasses} onClick={onNavigate}>
             <MicIcon className="h-4 w-4" />
             Trainingscenter
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={routes.dossier()} className={navLinkClasses} onClick={onNavigate}>
+            <ClipboardListIcon className="h-4 w-4" />
+            Gesprächsmappe
           </NavLink>
         </li>
         <li>

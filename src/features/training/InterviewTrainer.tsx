@@ -4,79 +4,127 @@ import { Button } from '@/components/ui/Button'
 import { ChecklistItem } from '@/components/ui/ChecklistItem'
 import { FeedbackPanel } from '@/components/ui/FeedbackPanel'
 import { ProgressBar } from '@/components/ui/ProgressBar'
-import { ArrowRightIcon, ChatIcon, CheckCircleIcon, RotateCcwIcon } from '@/components/ui/icons'
+import { ArrowRightIcon, ChatIcon } from '@/components/ui/icons'
 import { interviewQuestionSets } from '@/data/interview'
-import { cn } from '@/lib/cn'
-import type { InterviewQuestion, InterviewQuestionSet } from '@/types/content'
+import type { InterviewQuestion } from '@/types/content'
 
-import { RecordingIndicator, RecordingPlayback, RecordingToggle } from './RecordingControls'
+import { InterviewSetup, type TrainerSettings } from './InterviewSetup'
+import { InterviewSummary } from './InterviewSummary'
+import { RecordingIndicator, RecordingPlayback } from './RecordingControls'
 import { TimerDisplay } from './TimerDisplay'
 import { TrainingCard } from './TrainingCard'
+import { MIXED_ROUND_ID, SECURE_SCORE } from './interviewSession'
+import { useInterviewTrainingStore } from './interviewStore'
 import { useAudioRecorder } from './useAudioRecorder'
 import { useCountdown } from './useCountdown'
 
 const ANSWER_SECONDS = 90
+const FOLLOW_UP_SECONDS = 45
 
-type Phase = 'intro' | 'question' | 'speaking' | 'reveal' | 'done'
+/** Extra self-check criterion that is added whenever a follow-up was asked. */
+const FOLLOW_UP_CRITERION =
+  'Bei der Nachfrage bin ich ruhig geblieben und habe konkret geantwortet, statt mich zu wiederholen.'
 
-export function InterviewTrainer() {
-  const firstSet = interviewQuestionSets[0]
-  if (!firstSet) return null
-  return <InterviewTrainerInner firstSet={firstSet} />
-}
+type Phase = 'intro' | 'question' | 'speaking' | 'followUp' | 'reveal' | 'done'
 
 /**
  * Interview simulation: recruiter questions appear one at a time WITHOUT the
- * model answer; the learner answers out loud against a timer, then the ideal
- * answer and a self-check are revealed.
+ * model answer; the learner answers out loud against a timer, may get a
+ * probing follow-up, and only then sees the ideal answer and a self-check.
+ * The self-assessments are remembered to drive the "weak spots" round.
  */
-function InterviewTrainerInner({ firstSet }: { firstSet: InterviewQuestionSet }) {
+export function InterviewTrainer() {
+  const recordRating = useInterviewTrainingStore((state) => state.recordRating)
+
   const [phase, setPhase] = useState<Phase>('intro')
-  const [setId, setSetId] = useState(firstSet.id)
+  const [settings, setSettings] = useState<TrainerSettings>({
+    roundId: interviewQuestionSets[0]?.id ?? MIXED_ROUND_ID,
+    shuffle: false,
+    followUps: true,
+    record: false,
+  })
+  const [questions, setQuestions] = useState<InterviewQuestion[]>([])
+  /** Minute hints only make sense while the reference call runs in its original order */
+  const [showMinutes, setShowMinutes] = useState(false)
   const [questionIndex, setQuestionIndex] = useState(0)
-  const [recordEnabled, setRecordEnabled] = useState(false)
+  const [followUpAsked, setFollowUpAsked] = useState(false)
+  const [checkedItems, setCheckedItems] = useState<boolean[]>([])
+  const [roundScores, setRoundScores] = useState<Record<string, number>>({})
+
   const recorder = useAudioRecorder()
   const countdown = useCountdown(() => {
-    recorder.stop()
-    setPhase('reveal')
+    if (phase === 'speaking') finishMainAnswer()
+    else revealAnswer()
   })
 
-  const questionSet = interviewQuestionSets.find((candidate) => candidate.id === setId) ?? firstSet
-  const question = questionSet.questions[questionIndex]
-  const isLast = questionIndex === questionSet.questions.length - 1
-  if (!question) return null
+  const question = questions[questionIndex]
+  const isLast = questionIndex === questions.length - 1
+  const followUp = settings.followUps ? question?.followUp : undefined
+  const checklist = question
+    ? followUpAsked
+      ? [...question.checklist, FOLLOW_UP_CRITERION]
+      : question.checklist
+    : []
 
-  const startInterview = () => {
-    setQuestionIndex(0)
+  function startRound(roundQuestions: InterviewQuestion[], keepsOriginalOrder: boolean) {
+    if (roundQuestions.length === 0) return
+    recorder.reset()
+    countdown.reset()
+    setQuestions(roundQuestions)
+    setShowMinutes(keepsOriginalOrder)
+    setRoundScores({})
+    showQuestion(0)
+  }
+
+  function showQuestion(index: number) {
+    setQuestionIndex(index)
+    setFollowUpAsked(false)
+    setCheckedItems([])
     setPhase('question')
   }
 
-  const startAnswer = () => {
+  function startAnswer() {
     setPhase('speaking')
     countdown.start(ANSWER_SECONDS)
-    if (recordEnabled) void recorder.start()
+    if (settings.record) void recorder.start()
   }
 
-  const finishAnswer = () => {
+  /** Main answer is over: either the interviewer probes, or the answer is revealed. */
+  function finishMainAnswer() {
+    if (!followUp) {
+      revealAnswer()
+      return
+    }
+    // The recording keeps running so answer and follow-up end up in one take
+    setFollowUpAsked(true)
+    setPhase('followUp')
+    countdown.start(FOLLOW_UP_SECONDS)
+  }
+
+  function revealAnswer() {
     countdown.stop()
     recorder.stop()
     setPhase('reveal')
   }
 
-  const nextQuestion = () => {
-    recorder.reset()
-    if (isLast) {
-      setPhase('done')
-    } else {
-      setQuestionIndex((index) => index + 1)
-      setPhase('question')
-    }
+  function toggleCheck(index: number) {
+    setCheckedItems((items) => checklist.map((_, i) => (i === index ? !items[i] : !!items[i])))
   }
 
-  const restart = () => {
+  function nextQuestion() {
+    if (!question) return
+    const score =
+      checklist.length === 0 ? 0 : checkedItems.filter(Boolean).length / checklist.length
+    recordRating(question.id, score)
+    setRoundScores((scores) => ({ ...scores, [question.id]: score }))
+    recorder.reset()
+    if (isLast) setPhase('done')
+    else showQuestion(questionIndex + 1)
+  }
+
+  function backToSetup() {
     recorder.reset()
     countdown.reset()
-    setQuestionIndex(0)
     setPhase('intro')
   }
 
@@ -84,56 +132,33 @@ function InterviewTrainerInner({ firstSet }: { firstSet: InterviewQuestionSet })
     <TrainingCard
       icon={<ChatIcon className="h-5 w-5" />}
       title="Interview-Trainer"
-      description="Wähle ein Frageset. Die Fragen kommen einzeln – du antwortest laut, erst danach siehst du die Musterantwort und bewertest dich selbst."
+      description="Die Fragen kommen einzeln – du antwortest laut, erst danach siehst du die Musterantwort und bewertest dich selbst. Was noch nicht sitzt, merkt sich der Trainer."
     >
       {phase === 'intro' && (
-        <div className="space-y-5">
-          <div className="space-y-2.5">
-            {interviewQuestionSets.map((candidate) => (
-              <button
-                key={candidate.id}
-                type="button"
-                aria-pressed={candidate.id === setId}
-                onClick={() => setSetId(candidate.id)}
-                className={cn(
-                  'w-full cursor-pointer rounded-lg border px-4 py-3.5 text-left transition-colors outline-brand-500 focus-visible:outline-2 focus-visible:outline-offset-2',
-                  candidate.id === setId
-                    ? 'border-brand-600 bg-brand-50 ring-1 ring-brand-600 dark:border-brand-400 dark:bg-brand-950/40 dark:ring-brand-400'
-                    : 'border-slate-300 bg-white hover:border-brand-500 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-brand-400',
-                )}
-              >
-                <p className="font-semibold">{candidate.title}</p>
-                <p className="mt-0.5 text-sm text-slate-600 dark:text-slate-400">
-                  {candidate.description}
-                </p>
-              </button>
-            ))}
-          </div>
-          <RecordingToggle
-            enabled={recordEnabled}
-            onToggle={() => setRecordEnabled((value) => !value)}
-            isSupported={recorder.isSupported}
-          />
-          <Button onClick={startInterview}>
-            Interview starten
-            <ArrowRightIcon className="h-4 w-4" />
-          </Button>
-        </div>
+        <InterviewSetup
+          settings={settings}
+          onSettingsChange={(change) => setSettings((current) => ({ ...current, ...change }))}
+          isRecordingSupported={recorder.isSupported}
+          onStart={startRound}
+        />
       )}
 
-      {phase !== 'intro' && phase !== 'done' && (
+      {phase !== 'intro' && phase !== 'done' && question && (
         <div className="space-y-4">
           <div className="flex items-center justify-between gap-4">
             <p className="text-sm font-semibold tabular-nums">
-              Frage {questionIndex + 1} von {questionSet.questions.length}
+              Frage {questionIndex + 1} von {questions.length}
+              {showMinutes && question.minute !== undefined && (
+                <span className="ml-3 font-normal text-slate-500 dark:text-slate-400">
+                  im Original etwa Minute {question.minute}
+                </span>
+              )}
             </p>
-            {question.minute !== undefined && (
-              <span className="text-sm text-slate-500 dark:text-slate-400">
-                im Original etwa Minute {question.minute}
-              </span>
-            )}
+            <Button variant="ghost" size="sm" onClick={backToSetup}>
+              Runde abbrechen
+            </Button>
           </div>
-          <ProgressBar percent={(questionIndex / questionSet.questions.length) * 100} />
+          <ProgressBar percent={(questionIndex / questions.length) * 100} />
 
           <figure className="rounded-lg bg-slate-100 px-5 py-4 dark:bg-slate-800/60">
             <figcaption className="text-sm font-semibold text-slate-600 dark:text-slate-300">
@@ -144,6 +169,17 @@ function InterviewTrainerInner({ firstSet }: { firstSet: InterviewQuestionSet })
             </blockquote>
           </figure>
 
+          {followUpAsked && followUp && (
+            <figure className="rounded-lg border-l-4 border-amber-500 bg-amber-50 px-5 py-4 dark:bg-amber-950/30">
+              <figcaption className="text-sm font-semibold text-amber-800 dark:text-amber-300">
+                {question.interviewer} hakt nach
+              </figcaption>
+              <blockquote className="mt-1.5 font-serif text-xl leading-snug">
+                „{followUp}“
+              </blockquote>
+            </figure>
+          )}
+
           {phase === 'question' && (
             <Button onClick={startAnswer}>
               Jetzt laut antworten ({ANSWER_SECONDS} s)
@@ -151,7 +187,7 @@ function InterviewTrainerInner({ firstSet }: { firstSet: InterviewQuestionSet })
             </Button>
           )}
 
-          {phase === 'speaking' && (
+          {(phase === 'speaking' || phase === 'followUp') && (
             <div className="space-y-4 py-2">
               <TimerDisplay
                 remainingSeconds={countdown.remainingSeconds}
@@ -159,7 +195,10 @@ function InterviewTrainerInner({ firstSet }: { firstSet: InterviewQuestionSet })
               />
               {recorder.isRecording && <RecordingIndicator />}
               <div className="flex justify-center">
-                <Button variant="secondary" onClick={finishAnswer}>
+                <Button
+                  variant="secondary"
+                  onClick={phase === 'speaking' ? finishMainAnswer : revealAnswer}
+                >
                   Fertig
                 </Button>
               </div>
@@ -174,7 +213,24 @@ function InterviewTrainerInner({ firstSet }: { firstSet: InterviewQuestionSet })
                 </p>
               </FeedbackPanel>
               <RecordingPlayback audioUrl={recorder.audioUrl} error={recorder.error} />
-              <SelfCheck key={question.id} question={question} />
+              <div className="rounded-lg border border-slate-200 p-5 dark:border-slate-700">
+                <p className="font-semibold">Was traf auf deine Antwort zu?</p>
+                <p className="mt-0.5 mb-3 text-sm text-slate-600 dark:text-slate-400">
+                  Hake ehrlich ab. Unter {Math.round(SECURE_SCORE * 100)} % landet die Frage in
+                  „Meine Schwachstellen“.
+                </p>
+                <ul className="space-y-2">
+                  {checklist.map((item, index) => (
+                    <ChecklistItem
+                      key={index}
+                      checked={checkedItems[index] ?? false}
+                      onToggle={() => toggleCheck(index)}
+                    >
+                      {item}
+                    </ChecklistItem>
+                  ))}
+                </ul>
+              </div>
               <div className="flex justify-end">
                 <Button onClick={nextQuestion}>
                   {isLast ? 'Interview abschließen' : 'Nächste Frage'}
@@ -187,48 +243,13 @@ function InterviewTrainerInner({ firstSet }: { firstSet: InterviewQuestionSet })
       )}
 
       {phase === 'done' && (
-        <div className="space-y-4 py-4 text-center">
-          <CheckCircleIcon className="mx-auto h-12 w-12 text-good dark:text-emerald-400" />
-          <p className="text-xl font-bold">
-            Alle {questionSet.questions.length} Fragen beantwortet
-          </p>
-          <p className="mx-auto max-w-[52ch] text-slate-600 dark:text-slate-400">
-            Tipp: Wiederhole die Fragen, bei denen du ins Stocken geraten bist, bis die Antworten
-            sitzen – am besten einmal pro Tag bis zum Gespräch.
-          </p>
-          <Button onClick={restart}>
-            <RotateCcwIcon className="h-4 w-4" />
-            Neue Runde
-          </Button>
-        </div>
+        <InterviewSummary
+          questions={questions}
+          scores={roundScores}
+          onRepeat={(weakQuestions) => startRound(weakQuestions, false)}
+          onRestart={backToSetup}
+        />
       )}
     </TrainingCard>
-  )
-}
-
-/** Per-question self-assessment; the key prop resets it for each question. */
-function SelfCheck({ question }: { question: InterviewQuestion }) {
-  const [checkedItems, setCheckedItems] = useState<boolean[]>(() =>
-    question.checklist.map(() => false),
-  )
-
-  const toggleItem = (index: number) =>
-    setCheckedItems((items) => items.map((checked, i) => (i === index ? !checked : checked)))
-
-  return (
-    <div className="rounded-lg border border-slate-200 p-5 dark:border-slate-700">
-      <p className="mb-3 font-semibold">Was traf auf deine Antwort zu?</p>
-      <ul className="space-y-2">
-        {question.checklist.map((item, index) => (
-          <ChecklistItem
-            key={index}
-            checked={checkedItems[index] ?? false}
-            onToggle={() => toggleItem(index)}
-          >
-            {item}
-          </ChecklistItem>
-        ))}
-      </ul>
-    </div>
   )
 }

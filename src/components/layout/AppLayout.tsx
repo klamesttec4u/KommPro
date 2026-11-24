@@ -42,7 +42,7 @@ export function AppLayout() {
   return (
     <div className="min-h-dvh lg:flex">
       {/* Mobile header */}
-      <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur lg:hidden dark:border-slate-800 dark:bg-slate-950/90">
+      <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur lg:hidden dark:border-slate-800 dark:bg-slate-950/90 print:hidden">
         <button
           type="button"
           onClick={() => setIsSidebarOpen((open) => !open)}
@@ -72,14 +72,14 @@ export function AppLayout() {
       <aside
         id="app-sidebar"
         className={cn(
-          'fixed inset-y-0 left-0 z-40 w-72 border-r border-slate-200 bg-white transition-transform lg:translate-x-0 dark:border-slate-800 dark:bg-slate-900',
+          'fixed inset-y-0 left-0 z-40 w-72 border-r border-slate-200 bg-white transition-transform lg:translate-x-0 dark:border-slate-800 dark:bg-slate-900 print:hidden',
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
         <Sidebar onNavigate={closeSidebar} />
       </aside>
 
-      <main className="min-w-0 flex-1 px-4 pt-8 pb-16 sm:px-8 lg:ml-72 lg:px-12 lg:pt-12">
+      <main className="min-w-0 flex-1 px-4 pt-8 pb-16 sm:px-8 lg:ml-72 lg:px-12 lg:pt-12 print:ml-0! print:p-0!">
         <div className="mx-auto max-w-3xl">
           <Outlet />
         </div>
