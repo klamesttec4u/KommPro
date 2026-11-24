@@ -16,6 +16,7 @@ import { consultantQualification } from './13-consultant-qualification'
 import { communicationPitfalls } from './14-communication-pitfalls'
 import { speechDelivery } from './15-speech-delivery'
 import { salesPsychology } from './16-sales-psychology'
+import { interviewMindset } from './17-interview-mindset'
 
 /** All learning modules in display order. */
 export const modules: Module[] = [
@@ -35,6 +36,7 @@ export const modules: Module[] = [
   consultantQualification,
   salesPsychology,
   communicationPitfalls,
+  interviewMindset,
 ]
 
 export function findModule(moduleId: string | undefined): Module | undefined {

@@ -385,4 +385,72 @@ export const glossaryEntries: GlossaryEntry[] = [
       'Die seriöse Abschlussfrage am Gesprächsende: „Wie geht es weiter – was ist der nächste Schritt, bis wann entscheiden Sie?" Zeigt Verbindlichkeit und gibt Planbarkeit.',
     lessonId: 'sales-interview',
   },
+
+  // --- Mindset ---
+  {
+    term: 'Augenhöhe-Haltung',
+    definition:
+      'Die innere Haltung, mit der du ins Gespräch gehst: Beide Seiten prüfen, ob es passt. Respekt in beide Richtungen – weder Bittsteller noch überheblich.',
+    lessonId: 'mindset-eye-level',
+  },
+  {
+    term: 'Hochstapler-Phänomen (Impostor)',
+    definition:
+      'Das Gefühl, die eigene Kompetenz nur vorzutäuschen und gleich „aufzufliegen" – trotz objektiver Erfolge. Ein Gefühl, kein Befund; dagegen hilft eine schriftliche Belegliste mit überprüfbaren Fakten.',
+    lessonId: 'mindset-eye-level',
+  },
+  {
+    term: 'Growth Mindset (Wachstumsdenken)',
+    definition:
+      'Grundhaltung nach Carol Dweck: Fähigkeiten sind entwickelbar, eine Lücke ist ein Stand von heute. Im Gespräch: „noch nicht – und so arbeite ich mich ein" statt „kann ich nicht".',
+    lessonId: 'mindset-eye-level',
+  },
+  {
+    term: 'Umdeutung (Reappraisal)',
+    definition:
+      'Denselben Körperzustand anders benennen: Aus „Ich habe Angst" wird „Ich bin aufgeregt, weil es mir wichtig ist". Wirkt besser als der Versuch, sich zu beruhigen.',
+    lessonId: 'mindset-nerves',
+  },
+  {
+    term: 'Yerkes-Dodson-Gesetz',
+    definition:
+      'Zusammenhang zwischen Anspannung und Leistung als umgekehrtes U: Die beste Leistung liegt bei mittlerer Aktivierung – zu wenig macht flach, zu viel blockiert.',
+    lessonId: 'mindset-nerves',
+  },
+  {
+    term: 'Transparenz-Illusion',
+    definition:
+      'Die Neigung zu überschätzen, wie deutlich die eigene Nervosität von außen sichtbar ist. Konsequenz: Nervosität nicht laufend kommentieren oder entschuldigen.',
+    lessonId: 'mindset-nerves',
+  },
+  {
+    term: 'Stressfrage',
+    definition:
+      'Bewusst scharf oder provokant gestellte Frage, die prüft, wie du unter Druck reagierst. Antwort in drei Schritten: Sorge anerkennen, Beleg liefern, Rückfrage stellen.',
+    lessonId: 'mindset-pressure',
+  },
+  {
+    term: 'Nächster Punkt (Reset)',
+    definition:
+      'Prinzip aus dem Sport: eine missglückte Antwort sofort abhaken und die volle Aufmerksamkeit auf die nächste Frage richten – sonst werden aus einem Ausrutscher mehrere.',
+    lessonId: 'mindset-pressure',
+  },
+  {
+    term: 'Wenn-Dann-Plan',
+    definition:
+      'Vorab getroffene Entscheidung im Format „Wenn X passiert, dann tue ich Y". Der Auslöser ruft die Reaktion ab, ohne dass du unter Stress überlegen musst.',
+    lessonId: 'mindset-routine',
+  },
+  {
+    term: 'Prozessziel vs. Ergebnisziel',
+    definition:
+      'Ein Ergebnisziel (die Zusage) liegt nur zum Teil in deiner Hand, ein Prozessziel (drei Storys sauber nach STAR, zwei gute Rückfragen) vollständig. Miss dich am Prozess.',
+    lessonId: 'mindset-routine',
+  },
+  {
+    term: 'Debrief',
+    definition:
+      'Zehn Minuten Nachbereitung direkt nach dem Gespräch: drei Dinge, die gut liefen, eine Sache fürs nächste Mal, offene Punkte – solange die Erinnerung frisch ist.',
+    lessonId: 'mindset-routine',
+  },
 ]
